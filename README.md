@@ -3,6 +3,10 @@
 
 the linux password is qicsand1167661
 
+linux users are root, ameris, and natu with the same pass.
+
+----
+----
 
 
 MVP
