@@ -10,7 +10,7 @@ MVP
   search query
   subscription payment system
   
-  Farmers
+  1. Farmers
     Produce availability
     request prices (not have them out in the open)
     OR have prices only visible to chefs
@@ -22,14 +22,14 @@ MVP
     Payment?
     Invoice generation- first step in helping them get paid
   
-  Chefs
+  2. Chefs
     Order form
     What they need
     contact info
     *Real time updated lists
   
   
-  Final Product is MVP plus…
+  3. Final Product is MVP plus…
     Farmer story (videos, photos)
     Map of supply chain
     Msg capabilities between 
@@ -42,7 +42,7 @@ MVP
   
   ----
   
-  Stretch Goals:
-  Small Grocer managers
-  Featured Products (Cheeses, meats, artisan stuff)
+  4. Stretch Goals:
+    Small Grocer managers
+    Featured Products (Cheeses, meats, artisan stuff)
   
