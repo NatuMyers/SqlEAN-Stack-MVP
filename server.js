@@ -12,7 +12,7 @@ var passport = require('passport');
 var passportLocal = require('passport-local');
 
 // create new user in db
-var Instructor = sequelize.define('instructor', {
+var Purchaser = sequelize.define('purchaser', {
   firstname: {
     type: Sequelize.STRING,
     allowNull: false
@@ -42,7 +42,7 @@ var Instructor = sequelize.define('instructor', {
   }
 });
 
-var Student = sequelize.define('student', {
+var Farmers = sequelize.define('student', {
   firstname: {
     type: Sequelize.STRING,
     allowNull: false
@@ -72,8 +72,8 @@ var Student = sequelize.define('student', {
     }
   }
 });
-//Sequelize link instructor to students
-Instructor.hasMany(Student);
+//Sequelize link purchaser to farmers
+Purchaser.hasMany(Farmers);
 
 var app = express();
 //get css,js, or images from files in public folder
@@ -89,11 +89,11 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-//Student authentication
+//Farmers authentication
 passport.use("student", new passportLocal.Strategy(
   function(username, password, done) {
     //Check password in DB
-    Student.findOne({
+    Farmers.findOne({
       where:{
         username: username
       }
@@ -113,12 +113,12 @@ passport.use("student", new passportLocal.Strategy(
       }
     });
   }));
-//Instructor auth
-passport.use("instructor", new passportLocal.Strategy(
+//Purchaser auth
+passport.use("purchaser", new passportLocal.Strategy(
   function(username, password, done) {
     debugger;
     //Check password in DB
-    Instructor.findOne({
+    Purchaser.findOne({
       where:{
         username: username
       }
@@ -155,24 +155,24 @@ app.engine("handlebars", exphbs({defaultLayout: "main"}));
 app.set("view engine", "handlebars");
 
 app.get("/", function(req, res){
-  Instructor.findAll({}).then(function(instructor){
-    res.render("register", {instructor});
+  Purchaser.findAll({}).then(function(purchaser){
+    res.render("register", {purchaser});
   });
 });
 // { msg: req.query.msg}
 app.post("/register", function(req,res){
   // })
-  //place new user in either student or instructor table
+  //place new user in either student or purchaser table
   if(req.body.status === "student"){
-    Student.create(req.body).then(function(result){
-    res.render("students", {result});
+    Farmers.create(req.body).then(function(result){
+    res.render("farmers", {result});
     }).catch(function(err) {
     console.log(err);
     res.redirect('/?msg=' + err.errors[0].message);
     });
   } else {
-    Instructor.create(req.body).then(function(result){
-    res.render("instructors", {result});
+    Purchaser.create(req.body).then(function(result){
+    res.render("purchasers", {result});
     }).catch(function(err) {
     console.log(err);
     res.redirect('/?msg=' + err.errors[0].message);
@@ -184,35 +184,35 @@ app.get("/login", function(req, res){
   res.render("login");
 });
 
-app.get("/students", function(req, res){
-  res.render("students");
+app.get("/farmers", function(req, res){
+  res.render("farmers");
 });
 
-app.get("/instructors", function(req, res){
+app.get("/purchasers", function(req, res){
   debugger;
-  Instructor.findAll({
+  Purchaser.findAll({
     include: [{
-      model: Student
+      model: Farmers
     }]
-  }).then(function(instructors){
-    console.log(instructors);
-    res.render("instructors",{
-      instructors:instructors
+  }).then(function(purchasers){
+    console.log(purchasers);
+    res.render("purchasers",{
+      purchasers:purchasers
     })
   });
 });
 
-//query the db to see if user is student or instructor and render correct page
+//query the db to see if user is student or purchaser and render correct page
 app.post("/login", function(req,res){
   if(req.body.status === "student"){
     debugger
     passport.authenticate('student', {
-      successRedirect: "/students",
+      successRedirect: "/farmers",
       failureRedirect: "/login"
     });
   } else {
-    passport.authenticate('instructor', {
-      successRedirect: "/instructors",
+    passport.authenticate('purchaser', {
+      successRedirect: "/purchasers",
       failureRedirect: "/login"
     });
   };

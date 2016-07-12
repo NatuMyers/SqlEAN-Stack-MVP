@@ -27,24 +27,24 @@
       <div class="input-field col s4">
         <select name="status">
           <option value="" disabled selected>Choose your option</option>
-          <option name="student" value="student">Student</option>
-          <option name="teacher" value="teacher">Instructor/Teacher</option>
-          <option name="ta" value="ta">Instructor/TA</option>
+          <option name="student" value="student">Farmers</option>
+          <option name="teacher" value="teacher">Purchaser/Teacher</option>
+          <option name="ta" value="ta">Purchaser/TA</option>
         </select>
         <label>Status</label>
       </div>
       <div class="input-field col s4">
-        <select name="instructorId">
+        <select name="purchaserId">
           <option value="" disabled selected>Choose your option</option>
-          {{#each instructor}}
+          {{#each purchaser}}
             <option name="{{firstname}} {{lastname}}" value="{{id}}">{{firstname}} {{lastname}}</option>
           {{/each}}
         </select>
-        <label>(Students Only) Teacher Name</label>
+        <label>(Farmerss Only) Teacher Name</label>
       </div>
 
       <button>Register</button>
-      <!-- Add dropdowns to select instructor and TA(s) -->
+      <!-- Add dropdowns to select purchaser and TA(s) -->
     </div>
   </form>
 </div>
