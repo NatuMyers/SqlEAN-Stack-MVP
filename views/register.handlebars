@@ -1,7 +1,7 @@
 <div class="message">
   {{ msg }}
 </div>
-<h3>Please Register</h3>
+<h3>Create an account</h3>
 <div class="row">
   <form class="col s12" method="POST" action="/register">
     <div class="row">
@@ -26,21 +26,20 @@
       </div>
       <div class="input-field col s4">
         <select name="status">
-          <option value="" disabled selected>Choose your option</option>
-          <option name="farmer" value="farmer">Farmers</option>
-          <option name="teacher" value="teacher">Purchaser/Teacher</option>
-          <option name="ta" value="ta">Purchaser/TA</option>
+          <option value="" disabled selected>Select an option...</option>
+          <option name="producer" value="producer">producer</option>
+          <option name="purchaser" value="purchaser">Purchaser</option>
         </select>
-        <label>Status</label>
+        <label>User type</label>
       </div>
       <div class="input-field col s4">
         <select name="purchaserId">
-          <option value="" disabled selected>Choose your option</option>
+          <option value="" disabled selected>Select an option...</option>
           {{#each purchaser}}
             <option name="{{firstname}} {{lastname}}" value="{{id}}">{{firstname}} {{lastname}}</option>
           {{/each}}
         </select>
-        <label>(Farmerss Only) Teacher Name</label>
+        <label>(Farmers Only) Teacher Name</label>
       </div>
 
       <button>Register</button>
