@@ -1,0 +1,12 @@
+body {
+  background-color: #ffebee;
+}
+.message {
+  color:#D63939;
+}
+h1{
+  background-color: black;
+  color: #D63939;
+  text-align: center;
+  padding: 2% 0;
+}
