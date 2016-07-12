@@ -42,7 +42,7 @@ var Purchaser = sequelize.define('purchaser', {
   }
 });
 
-var Farmers = sequelize.define('student', {
+var Farmers = sequelize.define('farmer', {
   firstname: {
     type: Sequelize.STRING,
     allowNull: false
@@ -90,7 +90,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 //Farmers authentication
-passport.use("student", new passportLocal.Strategy(
+passport.use("farmer", new passportLocal.Strategy(
   function(username, password, done) {
     //Check password in DB
     Farmers.findOne({
@@ -162,8 +162,8 @@ app.get("/", function(req, res){
 // { msg: req.query.msg}
 app.post("/register", function(req,res){
   // })
-  //place new user in either student or purchaser table
-  if(req.body.status === "student"){
+  //place new user in either farmer or purchaser table
+  if(req.body.status === "farmer"){
     Farmers.create(req.body).then(function(result){
     res.render("farmers", {result});
     }).catch(function(err) {
@@ -202,11 +202,11 @@ app.get("/purchasers", function(req, res){
   });
 });
 
-//query the db to see if user is student or purchaser and render correct page
+//query the db to see if user is farmer or purchaser and render correct page
 app.post("/login", function(req,res){
-  if(req.body.status === "student"){
+  if(req.body.status === "farmer"){
     debugger
-    passport.authenticate('student', {
+    passport.authenticate('farmer', {
       successRedirect: "/farmers",
       failureRedirect: "/login"
     });
