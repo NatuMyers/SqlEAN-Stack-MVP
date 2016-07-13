@@ -180,6 +180,9 @@ app.post("/register", function(req,res){
   }
 });
 
+app.get("/login", function(req, res){
+  res.render("login");
+});
 
 
 app.get("/user/:id", function(req, res){
@@ -233,26 +236,13 @@ app.get("/purchasers", function(req, res){
 
 
 app.get('/users/:username/',
+  passport.authenticate('local'),
   function(req, res) {
     // If this function gets called, authentication was successful.
     // `req.user` contains the  user.
     res.redirect('/users/' + req.user.username);
   });
 
-
-app.get('/login', function(req, res, next) {
-  res.render("login");
-    passport.authenticate('local', function(err, user, info) {
-      if (err) { return next(err); }
-      if (!user) { return res.redirect('/login'); }
-      req.logIn(user, function(err) {
-        if (err) { return next(err); }
-        return res.redirect('/users/' + user.username);
-      });
-    })(req, res, next);
-  });
-
-  /*
 
 //query the db to see if user is producer or purchaser and render correct page
 app.post("/login", function(req,res){
@@ -271,7 +261,7 @@ app.post("/login", function(req,res){
     });
   };
 
-*/
+
 
 
 /*
