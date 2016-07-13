@@ -206,7 +206,7 @@ app.get("/purchasers", function(req, res){
       purchasers:purchasers
     })
   });
-});
+
 
 
   // User.findOne({ where: {username: req.body.username} }).then(function(result){
