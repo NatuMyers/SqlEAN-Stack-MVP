@@ -184,21 +184,6 @@ app.get("/login", function(req, res){
   res.render("login");
 });
 
-
-app.get("/user/:id", function(req, res){
-  debugger;
-  Purchaser.findAll({
-    include: [{
-      model: Producers
-    }]
-  }).then(function(purchasers){
-    console.log(purchasers);
-    res.render("purchasers",{
-      purchasers:purchasers
-    })
-});
-
-
 app.get("/logout", function(req, res){
   req.logout();
   res.redirect('/');
@@ -234,46 +219,20 @@ app.get("/purchasers", function(req, res){
 });
 
 
-
-app.get('/users/:username/',
-  passport.authenticate('local'),
-  function(req, res) {
-    // If this function gets called, authentication was successful.
-    // `req.user` contains the  user.
-    res.redirect('/users/' + req.user.username);
-  });
-
-
 //query the db to see if user is producer or purchaser and render correct page
 app.post("/login", function(req,res){
   if(req.body.status === "producer"){
     debugger
     passport.authenticate('producer', {
-      //successRedirect('/users/' + req.user.username),
       successRedirect: "/producers",
       failureRedirect: "/login"
     });
   } else {
     passport.authenticate('purchaser', {
-      //successRedirect('/users/' + req.user.username),
       successRedirect: "/purchasers",
       failureRedirect: "/login"
     });
   };
-
-
-
-
-/*
-app.post('/login')
-    .get(function(req, res) {
-        res.render('login');
-    })
-    .post(passport.authenticate('local', { successRedirect: '/dashboard',
-            failureRedirect: '/login' });
-    );
-*/
-
   // User.findOne({ where: {username: req.body.username} }).then(function(result){
   //   if(result.password === req.body.password){
   //     res.send("You're In");
