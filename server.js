@@ -181,7 +181,7 @@ app.post("/register", function(req,res){
 });
 
 app.get("/login", function(req, res){
-  res.render("login");
+
 });
 
 
@@ -236,7 +236,6 @@ app.get("/purchasers", function(req, res){
 
 
 app.get('/users/:username/',
-  passport.authenticate('local'),
   function(req, res) {
     // If this function gets called, authentication was successful.
     // `req.user` contains the  user.
@@ -244,7 +243,7 @@ app.get('/users/:username/',
   });
 
 
-app.get('/login', function(req, res, next) {
+app.post('/login', function(req, res, next) {
     passport.authenticate('local', function(err, user, info) {
       if (err) { return next(err); }
       if (!user) { return res.redirect('/login'); }
