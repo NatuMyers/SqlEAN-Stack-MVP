@@ -184,6 +184,12 @@ app.get("/login", function(req, res){
   res.render("login");
 });
 
+app.get("/logout", function(req, res){
+  req.logout();
+  res.redirect('/');
+  // res.render("logout");
+});
+
 app.get("/producers", function(req, res){
   res.render("producers");
 });
@@ -201,6 +207,30 @@ app.get("/purchasers", function(req, res){
     })
   });
 });
+
+//query the db to see if user is producer or purchaser and render correct page
+app.post("/login", function(req,res){
+  if(req.body.status === "producer"){
+    debugger
+    passport.authenticate('producer', {
+      successRedirect: "/producers",
+      failureRedirect: "/login"
+    });
+  } else {
+    passport.authenticate('purchaser', {
+      successRedirect: "/purchasers",
+      failureRedirect: "/login"
+    });
+  };
+  // User.findOne({ where: {username: req.body.username} }).then(function(result){
+  //   if(result.password === req.body.password){
+  //     res.send("You're In");
+  //   } else {
+  //     res.send("no match found");
+  //   }
+  // });
+});
+
 
 //query the db to see if user is producer or purchaser and render correct page
 app.post("/login", function(req,res){
