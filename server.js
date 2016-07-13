@@ -249,13 +249,13 @@ app.post("/login", function(req,res){
   if(req.body.status === "producer"){
     debugger
     passport.authenticate('producer', {
-      res.redirect('/users/' + req.user.username),
+      successRedirect('/users/' + req.user.username),
       // successRedirect: "/producers",
       failureRedirect: "/login"
     });
   } else {
     passport.authenticate('purchaser', {
-      res.redirect('/users/' + req.user.username),
+      successRedirect('/users/' + req.user.username),
       // successRedirect: "/purchasers",
       failureRedirect: "/login"
     });
