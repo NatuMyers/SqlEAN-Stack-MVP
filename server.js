@@ -42,7 +42,7 @@ var Purchaser = sequelize.define('purchaser', {
   }
 });
 
-var Farmers = sequelize.define('farmer', {
+var Producers = sequelize.define('producer', {
   firstname: {
     type: Sequelize.STRING,
     allowNull: false
@@ -72,8 +72,8 @@ var Farmers = sequelize.define('farmer', {
     }
   }
 });
-//Sequelize link purchaser to farmers
-Purchaser.hasMany(Farmers);
+//Sequelize link purchaser to producers
+Purchaser.hasMany(Producers);
 
 var app = express();
 //get css,js, or images from files in public folder
@@ -89,11 +89,11 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-//Farmers authentication
-passport.use("farmer", new passportLocal.Strategy(
+//Producers authentication
+passport.use("producer", new passportLocal.Strategy(
   function(username, password, done) {
     //Check password in DB
-    Farmers.findOne({
+    Producers.findOne({
       where:{
         username: username
       }
@@ -162,10 +162,10 @@ app.get("/", function(req, res){
 // { msg: req.query.msg}
 app.post("/register", function(req,res){
   // })
-  //place new user in either farmer or purchaser table
-  if(req.body.status === "farmer"){
-    Farmers.create(req.body).then(function(result){
-    res.render("farmers", {result});
+  //place new user in either producer or purchaser table
+  if(req.body.status === "producer"){
+    Producers.create(req.body).then(function(result){
+    res.render("producers", {result});
     }).catch(function(err) {
     console.log(err);
     res.redirect('/?msg=' + err.errors[0].message);
@@ -184,15 +184,15 @@ app.get("/login", function(req, res){
   res.render("login");
 });
 
-app.get("/farmers", function(req, res){
-  res.render("farmers");
+app.get("/producers", function(req, res){
+  res.render("producers");
 });
 
 app.get("/purchasers", function(req, res){
   debugger;
   Purchaser.findAll({
     include: [{
-      model: Farmers
+      model: Producers
     }]
   }).then(function(purchasers){
     console.log(purchasers);
@@ -202,12 +202,12 @@ app.get("/purchasers", function(req, res){
   });
 });
 
-//query the db to see if user is farmer or purchaser and render correct page
+//query the db to see if user is producer or purchaser and render correct page
 app.post("/login", function(req,res){
-  if(req.body.status === "farmer"){
+  if(req.body.status === "producer"){
     debugger
-    passport.authenticate('farmer', {
-      successRedirect: "/farmers",
+    passport.authenticate('producer', {
+      successRedirect: "/producers",
       failureRedirect: "/login"
     });
   } else {

@@ -14,7 +14,7 @@ MVP
   search query
   subscription payment system
   
-  1. Farmers
+  1. Producers
 
        Produce availability
        
@@ -49,7 +49,7 @@ MVP
   
   3. Final Product is MVP plus…
   
-       Farmer story (videos, photos)
+       Producer story (videos, photos)
       
        Map of supply chain
       
@@ -59,7 +59,7 @@ MVP
       
        Consumers user type
       
-       Can view supply chain farmer to restaurant
+       Can view supply chain producer to restaurant
       
        Visible to consumers
       
