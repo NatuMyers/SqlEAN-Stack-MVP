@@ -180,9 +180,6 @@ app.post("/register", function(req,res){
   }
 });
 
-app.get("/login", function(req, res){
-
-});
 
 
 app.get("/user/:id", function(req, res){
@@ -243,7 +240,8 @@ app.get('/users/:username/',
   });
 
 
-app.post('/login', function(req, res, next) {
+app.get('/login', function(req, res, next) {
+  res.render("login");
     passport.authenticate('local', function(err, user, info) {
       if (err) { return next(err); }
       if (!user) { return res.redirect('/login'); }
