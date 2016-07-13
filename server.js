@@ -208,20 +208,7 @@ app.get("/purchasers", function(req, res){
   });
 });
 
-//query the db to see if user is producer or purchaser and render correct page
-app.post("/login", function(req,res){
-  if(req.body.status === "producer"){
-    debugger
-    passport.authenticate('producer', {
-      successRedirect: "/producers",
-      failureRedirect: "/login"
-    });
-  } else {
-    passport.authenticate('purchaser', {
-      successRedirect: "/purchasers",
-      failureRedirect: "/login"
-    });
-  };
+
   // User.findOne({ where: {username: req.body.username} }).then(function(result){
   //   if(result.password === req.body.password){
   //     res.send("You're In");
