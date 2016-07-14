@@ -13,7 +13,7 @@ if(process.env.NODE_ENV === 'production') {
 }
 else {
   // LOCAL DB
-  var sequelize = new Sequelize('itinerary_db', 'root');
+  var sequelize = new Sequelize('mydb', 'root', 'qicsand1167661');
 }
 
 fs
@@ -36,4 +36,3 @@ db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
 module.exports = db;
-
