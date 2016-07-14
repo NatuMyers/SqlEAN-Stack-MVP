@@ -11,14 +11,14 @@ angular.module('TripChat')
     .then(function(user) {
       $scope.userData = user.data[0];
       $scope.getUserComments($scope.userData.id);
-      $http.get('/api/itineraries/?UserId=' + $scope.userData.id)
-      .then(function(itineraries) {
+      $http.get('/api/items/?UserId=' + $scope.userData.id)
+      .then(function(items) {
 
-        $scope.userItineraries = itineraries.data;
+        $scope.userItems = items.data;
 
-        $scope.userItineraries.forEach(function(itinerary) {
+        $scope.userItems.forEach(function(item) {
 
-          itinerary.Comments.map(function(comment) {
+          item.Comments.map(function(comment) {
 
             $http.get('/api/users/' + comment.UserId)
             .then(function(user) {
@@ -26,7 +26,7 @@ angular.module('TripChat')
               comment.email = user.data.email;
             })
             .then(function() {
-              // console.log($scope.userItineraries);
+              // console.log($scope.userItems);
             })
           })
         })

@@ -3,7 +3,7 @@ angular.module('TripChat')
   // Gets called when the directive is ready:
 
   $scope.getComments = function() {
-    $http.get('/api/comments?ItineraryId=' + $stateParams.id)
+    $http.get('/api/comments?ItemId=' + $stateParams.id)
     .then(function(results) {
       $scope.comments = results.data;
     }, function(err) {
@@ -11,10 +11,10 @@ angular.module('TripChat')
     });
   }
 
-  $scope.addComment = function(itineraryId) {
+  $scope.addComment = function(itemId) {
     $http.post('/api/comments', {
       text: $scope.newComment,
-      ItineraryId: itineraryId,
+      ItemId: itemId,
       UserId: $scope.user.id
     })
     .then(function(results) {

@@ -4,7 +4,7 @@ var x;
 //ACTIVITIES 
 var newActivity = {
   name: 'Basketball',
-  ItineraryId: 1
+  ItemId: 1
 };
 
 models.Activity.create(newActivity)
@@ -15,7 +15,7 @@ models.Activity.create(newActivity)
 
 var newActivity1 = {
   name: 'Basketball',
-  ItineraryId: 1
+  ItemId: 1
 };
 
 models.Activity.create(newActivity1)
@@ -26,7 +26,7 @@ models.Activity.create(newActivity1)
 
 var newActivity2 = {
   name: 'Skydiving',
-  ItineraryId: 2
+  ItemId: 2
 };
 
 models.Activity.create(newActivity2)
@@ -37,7 +37,7 @@ models.Activity.create(newActivity2)
 
 var newActivity3 = {
   name: 'Surfing',
-  ItineraryId: 3
+  ItemId: 3
 };
 
 models.Activity.create(newActivity3)
@@ -52,7 +52,7 @@ models.Activity.create(newActivity3)
 
 
 
-// //Itinerary
+// //Item
 
 
 

@@ -26,7 +26,7 @@ module.exports = function(sequelize, DataTypes) {
   }, {
     classMethods: {
       associate: function(models) {
-        Comment.belongsTo(models.Itinerary),
+        Comment.belongsTo(models.Item),
         Comment.belongsTo(models.User)
       }
     }

@@ -54,7 +54,7 @@
     margin-bottom: 0px;
   }
 
-  .share-itinerary {
+  .share-item {
     margin-bottom: 10px;
   }
 
@@ -87,7 +87,7 @@
     top: -10px;
   }
 
-  .itinerary-number{
+  .item-number{
     font-size: 14px;
   }
 
@@ -98,7 +98,7 @@
 
   /* ALL ITINERARIES */
 
-  .search-itineraries {
+  .search-items {
     margin-top: 15px;
     margin-bottom: 10px;
     z-index: 0;
@@ -121,7 +121,7 @@
 
 
   /*SINGLE ITINERARY */
-  .itinerary-description >p{
+  .item-description >p{
     padding-left: 5px;
     padding-right: 5px;
   }
@@ -134,7 +134,7 @@
     margin-bottom: 10px;
   }
 
-  .add-itinerary-form {
+  .add-item-form {
     margin-top: 0px;
   }
 
@@ -147,12 +147,12 @@
     padding-bottom: 0px;
   }
 
-  .itinerary-name-col{
+  .item-name-col{
     padding-top: 4px;
     padding-bottom: 4px;
   }
 
-  .dash-latest-itineraries-mobile{
+  .dash-latest-items-mobile{
     padding-bottom: 0px;
   }
 

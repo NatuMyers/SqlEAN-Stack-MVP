@@ -18,11 +18,11 @@ module.exports.routes = function(app) {
     sequelize: models.sequelize
   });
 
-  var itineraryResource = epilogue.resource({
-    model: models.Itinerary,
+  var itemResource = epilogue.resource({
+    model: models.Item,
     endpoints: [
-    '/api/itineraries',
-    '/api/itineraries/:id'
+    '/api/items',
+    '/api/items/:id'
     ],
     associations: true
   });
@@ -52,11 +52,11 @@ module.exports.routes = function(app) {
     '/api/users/:id'
     ],
     associations: true
-  });  
+  });
 
   app.get('/loginInfo', controller.getLogin);
   app.get('/logout', controller.logout);
-  
+
 
   app.post('/login', passport.authenticate('local'), function(req, res) {
       res.json(req.user);

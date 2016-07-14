@@ -1,4 +1,4 @@
-var bcrypt            = require('bcryptjs');//REQUIRE FOR THE 
+var bcrypt            = require('bcryptjs');//REQUIRE FOR THE
 
 module.exports = function(sequelize, DataTypes) {
   var User = sequelize.define('User', {
@@ -21,23 +21,27 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        notEmpty: true  
+        notEmpty: true
       }
     },
     fname: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        notEmpty: true  
+        notEmpty: true
       }
     },
     lname: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        notEmpty: true  
+        notEmpty: true
       }
     },
+    summary: {
+      type: DataTypes.STRING,
+    },
+
   }, {
     hooks: {
       beforeCreate: function(input){

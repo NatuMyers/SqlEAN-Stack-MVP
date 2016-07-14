@@ -1,11 +1,11 @@
-.itinerary-panel, .add-itinerary-panel
+.item-panel, .add-item-panel
 {
   border: 1px #c9c9c9 solid;
   margin-bottom: 20px;
   padding: 10px 20px;
 }
 
-.add-itinerary-panel{
+.add-item-panel{
   margin-top: 20px;
 }
 
@@ -48,17 +48,17 @@ li.interest{
   padding: 0px 15px;
 }
 
-.dash-itinerary-heading{
+.dash-item-heading{
   display: inline-block;
   margin-top: 0px;
   margin-bottom: 0px;
 }
 
-h3.dash-itinerary-heading{
+h3.dash-item-heading{
   font-size: 20px;
 }
 
-.username-dash-itinerary-heading {
+.username-dash-item-heading {
   color: white;
   text-decoration: none;
 }
@@ -94,7 +94,7 @@ h3.dash-itinerary-heading{
   padding-bottom: 5px;
 }
 
-.itinerary-footer{
+.item-footer{
   margin-left: 15px;
   background-color: #fff;
   padding-left: 20px;
@@ -109,7 +109,7 @@ h3.dash-itinerary-heading{
   height: 18vw;
 }
 
-.dash-latest-itineraries{
+.dash-latest-items{
   border: 1px solid #c7c7c7;
   padding: 10px;
   margin-bottom: 10px;
@@ -151,7 +151,7 @@ a.panel-footer-link:hover{
 }
 
 
-.latest-itineraries-header{
+.latest-items-header{
   margin-top: 5px;
   margin-bottom: 5px;
 }
@@ -168,18 +168,18 @@ a.handle:hover{
   text-decoration: none;
 }
 
-.latest-itinerary-link{
+.latest-item-link{
   font-size: 20px;
   color:#337AB7;
 }
 
-a.latest-itinerary-link:hover{
+a.latest-item-link:hover{
   color:#337AB7;
   text-decoration: none;
   cursor: pointer;
 }
 
-.latest-itinerary-body{
+.latest-item-body{
   padding: 10px;
   margin-top: 10px;
   margin-bottom: 10px;
@@ -187,7 +187,7 @@ a.latest-itinerary-link:hover{
   border-bottom: 1px solid #f9f9f9;
 }
 
-.latest-itinerary-location{
+.latest-item-location{
   font-size: 16px;
   margin-bottom: 5px;
   border-bottom: 1px solid #EAEAEA;
@@ -202,7 +202,7 @@ a.latest-itinerary-link:hover{
   margin-bottom: -7px;
 }
 
-.itinerary-comment{
+.item-comment{
   margin-top:40px;
 }
 
@@ -221,7 +221,7 @@ a.latest-itinerary-link:hover{
   font-size: 15px;
 }
 
-.itinerary-number{
+.item-number{
   color: #fff;
 }
 
@@ -236,12 +236,12 @@ a.latest-itinerary-link:hover{
   border-bottom: none;
 }
 
-.add-itinerary-panel-head{
+.add-item-panel-head{
   border-bottom-left-radius: 30px;
   border-top-left-radius: 30px;
 }
 
-.share-itinerary{
+.share-item{
   margin-bottom: 0px;
 }
 

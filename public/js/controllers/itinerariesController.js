@@ -1,11 +1,11 @@
 angular.module('TripChat')
-.controller('itinerariesController', ['$scope', '$http', '$stateParams', function ($scope, $http, $stateParams) {
+.controller('itemsController', ['$scope', '$http', '$stateParams', function ($scope, $http, $stateParams) {
   // Gets called when the directive is ready:
 
   $scope.init = function() {
-    $scope.getCurrentItinerary();
+    $scope.getCurrentItem();
     // $scope.getComments();
-    $scope.getItineraries();
+    $scope.getItems();
     $scope.makeMarkers();
     $scope.getGeo();
   }
@@ -14,20 +14,20 @@ angular.module('TripChat')
 
   $scope.location = $stateParams.location;
 
-  $scope.getItineraries = function() {
-    $http.get('/api/itineraries')
+  $scope.getItems = function() {
+    $http.get('/api/items')
     .then(function(result) {
-      $scope.allItineraries = result.data;
+      $scope.allItems = result.data;
     }, function(err) {
       console.log(err)
     });
   }
 
-  $scope.getCurrentItinerary = function() {
-    $http.get('/api/itineraries/' + $stateParams.id)
+  $scope.getCurrentItem = function() {
+    $http.get('/api/items/' + $stateParams.id)
     .then(function(result) {
-      $scope.currentItinerary = result.data;
-      $scope.currentItineraryGeo($scope.currentItinerary.city)
+      $scope.currentItem = result.data;
+      $scope.currentItemGeo($scope.currentItem.city)
       $scope.getComments();
     }, function(err) {
       console.log(err)
@@ -35,9 +35,9 @@ angular.module('TripChat')
   }
 
   $scope.getComments = function() {
-    $http.get('/api/comments?ItineraryId=' + $stateParams.id)
+    $http.get('/api/comments?ItemId=' + $stateParams.id)
     .then(function(results) {
-      $scope.currentItinerary.comments = results.data;
+      $scope.currentItem.comments = results.data;
     }, function(err) {
       console.log(err);
     });
@@ -48,7 +48,7 @@ angular.module('TripChat')
   $scope.comment = {};
   $scope.comment.link = '';
 
-  $scope.addComment = function(itineraryId, city) {
+  $scope.addComment = function(itemId, city) {
     var lng;
     var lat;
 
@@ -59,7 +59,7 @@ angular.module('TripChat')
     if(!$scope.comment.address) {
       $http.post('/api/comments', {
         text: $scope.comment.text,
-        ItineraryId: itineraryId,
+        ItemId: itemId,
         UserId: $scope.user.id,
         address: $scope.comment.address,
         city: city,
@@ -83,7 +83,7 @@ angular.module('TripChat')
           lng = result[0].geometry.location.lng();
           $http.post('/api/comments', {
             text: $scope.comment.text,
-            ItineraryId: itineraryId,
+            ItemId: itemId,
             UserId: $scope.user.id,
             address: $scope.comment.address,
             city: city,
@@ -269,21 +269,21 @@ angular.module('TripChat')
   CURRENT ITINERARY
   =================================================================*/
 
-  $scope.currentItineraryGeo = function(city) {
+  $scope.currentItemGeo = function(city) {
     geocoder.geocode({ address: city}, function (result, status) {
       if (status === google.maps.GeocoderStatus.OK) {
         $scope.map.center = {
           latitude: result[0].geometry.location.lat(),
           longitude: result[0].geometry.location.lng()
         }
-        $scope.currentItineraryMarkers();
+        $scope.currentItemMarkers();
       }
     });
   }
 
-  $scope.currentItineraryMarkers = function() {
+  $scope.currentItemMarkers = function() {
     $scope.map.markers = [];
-    $http.get('/api/comments?ItineraryId=' + $stateParams.id)
+    $http.get('/api/comments?ItemId=' + $stateParams.id)
       .then(function(result) {
         var markers = [];
         result.data.forEach(function(element, index) {

@@ -4,68 +4,68 @@ angular.module("TripChat")
   $scope.init = function() {
     setTimeout(function() {
       $scope.checkAuthentication();
-      $scope.getUserItineraries();
-      $scope.getItineraries();
+      $scope.getUserItems();
+      $scope.getItems();
     },100);
   }
 
-  $scope.getUserItineraries = function() {
-    $http.get('/api/itineraries?UserId=' + $scope.user.id)
+  $scope.getUserItems = function() {
+    $http.get('/api/items?UserId=' + $scope.user.id)
     .then(function(result) {
-      $scope.userItineraries = result.data;
-      for(var i = 0; i < $scope.userItineraries.length; i++) {
-        $scope.userItineraries[i].newActivity = {};
+      $scope.userItems = result.data;
+      for(var i = 0; i < $scope.userItems.length; i++) {
+        $scope.userItems[i].newActivity = {};
       }
     }, function(err) {
       console.log(err)
     });
   };
 
-  $scope.addItinerary = function(){
-    $http.post("/api/itineraries", {
-      title:$scope.itinerary.title,
-      city: $scope.itinerary.city,
-      state: $scope.itinerary.state,
-      country: $scope.itinerary.country,
-      description: $scope.itinerary.description,
+  $scope.addItem = function(){
+    $http.post("/api/items", {
+      title:$scope.item.title,
+      city: $scope.item.city,
+      state: $scope.item.state,
+      country: $scope.item.country,
+      description: $scope.item.description,
       UserId: $scope.user.id
     })
     .then(function (result) {
-      $scope.userItineraries.push(result.data);
-      $scope.itinerary.title = "";
-      $scope.itinerary.city = "";
-      $scope.itinerary.state = "";
-      $scope.itinerary.country = "";
-      $scope.itinerary.description = "";
+      $scope.userItems.push(result.data);
+      $scope.item.title = "";
+      $scope.item.city = "";
+      $scope.item.state = "";
+      $scope.item.country = "";
+      $scope.item.description = "";
      },function(err) {
       console.log(err)
     });
   };
 
-  $scope.deleteItinerary = function(itineraryId){
-    $http.delete("/api/itineraries/" + itineraryId)
+  $scope.deleteItem = function(itemId){
+    $http.delete("/api/items/" + itemId)
     .then(function (result) {
-      $scope.getUserItineraries();
+      $scope.getUserItems();
      }), (function(err) {
       console.log(err);
     });
   };
 
-  $scope.editItinerary = function(itinerary) {
-    $http.put('/api/itineraries/' + itinerary.id, {
-      title: itinerary.title,
-      city:itinerary.city,
-      state:itinerary.state,
-      country:itinerary.country,
-      description:itinerary.description
+  $scope.editItem = function(item) {
+    $http.put('/api/items/' + item.id, {
+      title: item.title,
+      city:item.city,
+      state:item.state,
+      country:item.country,
+      description:item.description
     });
   };
 
-  $scope.addActivity = function(itineraryId, newActivity){
-    newActivity.ItineraryId = itineraryId;
+  $scope.addActivity = function(itemId, newActivity){
+    newActivity.ItemId = itemId;
     $http.post("/api/activities", newActivity)
     .then(function (result) {
-      $scope.getUserItineraries();
+      $scope.getUserItems();
      }), (function(err) {
       console.log(err);
     });
@@ -75,7 +75,7 @@ angular.module("TripChat")
 
     $http.delete("/api/activities/" + activityId)
     .then(function (result) {
-      // $scope.getUserItineraries();
+      // $scope.getUserItems();
 
      }), (function(err) {
       console.log(err);
@@ -83,15 +83,15 @@ angular.module("TripChat")
   };
 
   //FOR SEARCH PARTIAL WHEN COMPLETED
-  $scope.getItineraries = function() {
-    $http.get('/api/itineraries')
+  $scope.getItems = function() {
+    $http.get('/api/items')
       .then(function(result) {
-        $scope.allItineraries = result.data;
+        $scope.allItems = result.data;
       }, function(err) {
         console.log(err)
       });
     }
-  $scope.getItineraries();
+  $scope.getItems();
 
   // Block users from going to dashboard page when not logged in.
   $scope.checkAuthentication = function() {

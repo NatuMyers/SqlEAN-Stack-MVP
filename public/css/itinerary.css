@@ -11,7 +11,7 @@
   display: block;
 }
 
-.search-itineraries{
+.search-items{
   margin-top: 120px;
   margin-bottom: 15px;
 }
@@ -27,7 +27,7 @@
   border-color: #4cae4c;
   border-bottom: 2px solid #5cb85c;
  }
-.itinerariesTitle {
+.itemsTitle {
   color: white;
   background-color: #337AB7;
   text-align: center;
@@ -35,7 +35,7 @@
   margin-bottom: 10px;
 }
 
-.searchItinerary {
+.searchItem {
   color: white;
   background-color: #337AB7;
   text-align: center;
@@ -50,7 +50,7 @@
   width: 20%;
 }
 
-.itinerary {
+.item {
   border-style: solid;
   border-color: black;
   border-width: 1px;
@@ -64,13 +64,13 @@
   margin-top: 3px;
 }
 
-.itineraryName {
+.itemName {
   color: #337AB7;
  /* text-align: center;*/
   font-family: 'Oswald', sans-serif;
 }
 
-.itineraryLocation {
+.itemLocation {
 /*  text-align: center;*/
   margin-top: 0px;
   margin-bottom: 0px;
@@ -88,13 +88,13 @@
   font-family: 'Oswald', sans-serif;
 }
 
-.itineraryLists {
+.itemLists {
   margin-top: 0px;
   height: 66vh;
   overflow: scroll;
 }
 
-#itinerarySuggestions {
+#itemSuggestions {
   border-style: solid;
   border-color: black;
 }
@@ -112,7 +112,7 @@
     margin-bottom: 0px;
 }
 
-.itinerariesMap {
+.itemsMap {
   width: 100%;
   min-height: 100%;
   position: absolute;
@@ -122,7 +122,7 @@
   margin-bottom: 0px;
 }
 
-.searchItinerary {
+.searchItem {
   text-align: center;
   color: white;
   background-color: #337AB7;
@@ -163,7 +163,7 @@
 }
 
 
-.allItinerariesBox {
+.allItemsBox {
    margin-top:5px;
    margin-bottom: 5px;
    margin-right: 5px;
@@ -179,7 +179,7 @@
   margin-top: 120px;
 }
 
-.all-itinerary-username{
+.all-item-username{
   font-size: 14px;
   margin-bottom: 0px;
  }

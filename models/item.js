@@ -1,6 +1,6 @@
 
 module.exports = function(sequelize, DataTypes) {
-  var Itinerary = sequelize.define('Itinerary', {
+  var Item = sequelize.define('Item', {
     title: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -27,14 +27,14 @@ module.exports = function(sequelize, DataTypes) {
   }, {
     classMethods: {
       associate: function(models) {
-        Itinerary.belongsTo(models.User),
-        Itinerary.hasMany(models.Comment),
-        Itinerary.hasMany(models.Activity)
+        Item.belongsTo(models.User),
+        Item.hasMany(models.Comment),
+        Item.hasMany(models.Activity)
       }
     }
   });
 
-  return Itinerary;
+  return Item;
 }
 
 

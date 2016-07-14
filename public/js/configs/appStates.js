@@ -14,21 +14,21 @@ angular.module('TripChat')
       controller: 'dashboardCtrl',
       templateUrl: 'views/partials/dashboard-partial.html'
     })
-    .state('itineraries', {
-      url: '/itineraries',
-      controller: 'itinerariesController',
-      templateUrl: 'views/partials/itineraries-partial.html',
+    .state('items', {
+      url: '/items',
+      controller: 'itemsController',
+      templateUrl: 'views/partials/items-partial.html',
       params: {location: null}
     })
-    .state('showItinerary', {
-      url: '/itineraries/:id',
-      controller: 'itinerariesController',
-      templateUrl: 'views/partials/showItinerary-partial.html'
+    .state('showItem', {
+      url: '/items/:id',
+      controller: 'itemsController',
+      templateUrl: 'views/partials/showItem-partial.html'
     })
-    .state('itineraries.details', {
+    .state('items.details', {
       url: '/details/:id',
       controller: 'detailsController',
-      templateUrl: 'views/partials/itineraries-partial.details.html'
+      templateUrl: 'views/partials/items-partial.details.html'
     })
     .state('user', {
       url: '/:username',

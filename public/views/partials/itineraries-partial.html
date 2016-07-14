@@ -1,11 +1,11 @@
 <div class="container-fluid header-background" ng-init="init()">
-  <h3 class="dash-header text-center">All Itineraries</h3>
+  <h3 class="dash-header text-center">All Items</h3>
 </div>
 
 <div class="container-fluid">
   <div class="row add-comment-row">
     <div class="col-sm-5">
-      <div class="form-inline input-group search-itineraries">
+      <div class="form-inline input-group search-items">
         <input type="text" ng-model="search.city" ng-change="filterGeo(); numItins()" ng-model-options=" { debounce: 500 } " class="form-control" placeholder="Search a specific location">
         <div class="input-group-btn">
           <button ng-click="filterGeo()" class="btn btn-success">Search</button>
@@ -14,17 +14,17 @@
     </div>
     <div class="col-sm-5 col-sm-offset-2">
       <div class="prodash-link pull-right">
-        <p class="add-new-itin">Going somewhere? Create Your Own Itinerary! </p>
-        <a type="button" ng-show="user" href="/dashboard" class="btn btn-success add-itin-dash-link">Add Itinerary</a>
-        <a type="button" ng-show="!user" class="btn btn-success add-itin-dash-link" disabled="disabled" data-toggle="tooltip" data-placement="top" title="Log in to share">Add Itinerary</a>
+        <p class="add-new-itin">Going somewhere? Create Your Own Item! </p>
+        <a type="button" ng-show="user" href="/dashboard" class="btn btn-success add-itin-dash-link">Add Item</a>
+        <a type="button" ng-show="!user" class="btn btn-success add-itin-dash-link" disabled="disabled" data-toggle="tooltip" data-placement="top" title="Log in to share">Add Item</a>
       </div>
     </div>
   </div>
   <div class="row interest-row">
     <div class='col-sm-12'>
 
-      <!-- When there are 1 or more itineraries -->
-      <h4 class="itinerary-number" ng-show="result.length">There <ng-pluralize count="result.length"
+      <!-- When there are 1 or more items -->
+      <h4 class="item-number" ng-show="result.length">There <ng-pluralize count="result.length"
           when="{
             '1': 'is',
             'other': 'are'
@@ -32,13 +32,13 @@
         </ng-pluralize> <span ng-show="result.length">{{result.length}}</span>
         <ng-pluralize ng-show="result.length" count="result.length"
           when="{
-            '1': 'itinerary',
-            'other': 'itineraries'
+            '1': 'item',
+            'other': 'items'
           }">
         </ng-pluralize></h4>
 
-        <!-- When there are no itineraries -->
-        <h4 class="itinerary-number" ng-show="!result.length">There are no itineraries.</h4>
+        <!-- When there are no items -->
+        <h4 class="item-number" ng-show="!result.length">There are no items.</h4>
     </div>
   </div>
 </div>
@@ -46,43 +46,43 @@
 <div class="container-fluid">
   <div class="row">
 
-    <div class="itineraryLists col-sm-4 ">
-      <div ng-show="!(allItineraries | filter:search:strict).length">
+    <div class="itemLists col-sm-4 ">
+      <div ng-show="!(allItems | filter:search:strict).length">
         <div class="clearfix">
           <br />
-          <h4>No itineraries for this location.</h4>
-          <h4>Be the first to post an itinerary here!</h4>
+          <h4>No items for this location.</h4>
+          <h4>Be the first to post an item here!</h4>
         </div>
       </div>
 
-      <div class="panel add-panel itin-panel" ng-repeat="itinerary in allItineraries | orderBy:'-createdAt' | filter:search:strict as result">
+      <div class="panel add-panel itin-panel" ng-repeat="item in allItems | orderBy:'-createdAt' | filter:search:strict as result">
 
-        <div class="panel-heading itin-heading clearfix" ng-mouseenter="hoverGeo(itinerary.city)">
+        <div class="panel-heading itin-heading clearfix" ng-mouseenter="hoverGeo(item.city)">
           <div class="dash-heading-container clearfix" >
             <div class="col-sm-12">
-              <h3 class="dash-itinerary-heading clearfix itinHead" ui-sref="showItinerary({id: itinerary.id})">{{itinerary.title}}</h3>
+              <h3 class="dash-item-heading clearfix itinHead" ui-sref="showItem({id: item.id})">{{item.title}}</h3>
             <!-- </div>
             <div class="col-sm-6"> -->
             </div>
           </div>
         </div>
 
-        <div class="panel-body showItinerary-panel-body allItinerariesBox">
+        <div class="panel-body showItem-panel-body allItemsBox">
          <div class="itin-head-location clearfix">
-                <h5 class="dash-itinerary-heading pull-right"> {{itinerary.city}}, {{itinerary.state}} {{itinerary.country}}</h5>
+                <h5 class="dash-item-heading pull-right"> {{item.city}}, {{item.state}} {{item.country}}</h5>
               </div>
-          <div class="itineraryInfo">
+          <div class="itemInfo">
 
               <div class="col-sm-12">
-                <a ui-sref="user({username: itinerary.User.username})" class="all-itin-profile-img pull-left">
-                  <img class="userImage" src="http://www.gravatar.com/avatar/{{ itinerary.User.email | gravatar }}?s=100&d=mm">
+                <a ui-sref="user({username: item.User.username})" class="all-itin-profile-img pull-left">
+                  <img class="userImage" src="http://www.gravatar.com/avatar/{{ item.User.email | gravatar }}?s=100&d=mm">
                 </a>
               <!-- </div>
               <div class="col-sm-8 description-col"> -->
                 <div class="all-itin-description-text">
-                  <p class="all-itinerary-username clearfix itinHead"><a ui-sref="user({username: itinerary.User.username})">
-                    <span>{{ itinerary.User.username }} :</span>
-                    </a>{{itinerary.description}}
+                  <p class="all-item-username clearfix itinHead"><a ui-sref="user({username: item.User.username})">
+                    <span>{{ item.User.username }} :</span>
+                    </a>{{item.description}}
                   </p>
                 </div>
               </div>
@@ -91,7 +91,7 @@
           <div class="form-group clearfix" ng-show="showCommentBox">
             <form>
               <div class="col-sm-12 interest-col">
-                <textarea class="form-control" rows="3" id="comment" ng-model="comment.text" placeholder="Add a comment for {{itinerary.User.username}} to visit."></textarea>
+                <textarea class="form-control" rows="3" id="comment" ng-model="comment.text" placeholder="Add a comment for {{item.User.username}} to visit."></textarea>
               </div>
               <div class="col-sm-6 interest-col">
                 <input ng-model="comment.address" class="form-control col-sm-6 latest-address-input" type="text"  placeholder="Street Address"/>
@@ -103,12 +103,12 @@
           </div>
         </div>
 
-        <div class="itinerary-footer">
+        <div class="item-footer">
           <div class="row">
 
             <div class="col-sm-12">
               <div class="button-container pull-right">
-                <a type="button" class="btn" ui-sref="showItinerary({id: itinerary.id})">View Itinerary</a>
+                <a type="button" class="btn" ui-sref="showItem({id: item.id})">View Item</a>
               </div>
             </div>
           </div>

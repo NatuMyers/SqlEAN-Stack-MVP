@@ -1,6 +1,6 @@
 var models = require('./models');
 
-var newItinerary1 = {
+var newItem1 = {
   title: 'Adventure Time!',
   city: 'New York City',
   state: 'NY',
@@ -9,12 +9,12 @@ var newItinerary1 = {
   description: 'put description here'
 };
 
-models.Itinerary.create(newItinerary1)
+models.Item.create(newItem1)
 .then(function(result){
 
 });
 
-var newItinerary2 = {
+var newItem2 = {
   title: 'Time for another adventure!',
   city: 'Jersey City',
   state: 'NJ',
@@ -23,12 +23,12 @@ var newItinerary2 = {
 };
 
 
-models.Itinerary.create(newItinerary2)
+models.Item.create(newItem2)
 .then(function(result){
 
 });
 
-var newItinerary3 = {
+var newItem3 = {
   title: 'Beach time!',
   city: 'Miami',
   state: 'FL',
@@ -37,12 +37,12 @@ var newItinerary3 = {
 };
 
 
-models.Itinerary.create(newItinerary3)
+models.Item.create(newItem3)
 .then(function(result){
 
 });
 
-var newItinerary4 = {
+var newItem4 = {
   title: 'Camping Trip',
   city: 'Catskill',
   state: 'NY',
@@ -51,12 +51,12 @@ var newItinerary4 = {
 };
 
 
-models.Itinerary.create(newItinerary4)
+models.Item.create(newItem4)
 .then(function(result){
 
 });
 
-var newItinerary5 = {
+var newItem5 = {
   title: 'Surfing!',
   city: 'Juno',
   state: 'AK',
@@ -65,12 +65,12 @@ var newItinerary5 = {
 };
 
 
-models.Itinerary.create(newItinerary5)
+models.Item.create(newItem5)
 .then(function(result){
 
 });
 
-var newItinerary6 = {
+var newItem6 = {
   title: 'Motorcycle Trip!',
   city: 'Los Angeles',
   state: 'CA',
@@ -79,12 +79,12 @@ var newItinerary6 = {
 };
 
 
-models.Itinerary.create(newItinerary6)
+models.Item.create(newItem6)
 .then(function(result){
 
 });
 
-var newItinerary7 = {
+var newItem7 = {
   title: 'Museums',
   city: 'New York City',
   state: 'NY',
@@ -93,7 +93,7 @@ var newItinerary7 = {
 };
 
 
-models.Itinerary.create(newItinerary7)
+models.Item.create(newItem7)
 .then(function(result){
 
 });
