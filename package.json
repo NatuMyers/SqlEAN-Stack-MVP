@@ -1,5 +1,5 @@
 {
-  "name": "tripchat",
+  "name": "mvpapp",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/paulducsantos/tripchat.git"
+    "url": "git+https://github.com/paulducsantos/mvpapp.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/paulducsantos/tripchat/issues"
+    "url": "https://github.com/paulducsantos/mvpapp/issues"
   },
-  "homepage": "https://github.com/paulducsantos/tripchat#readme",
+  "homepage": "https://github.com/paulducsantos/mvpapp#readme",
   "dependencies": {
     "angular-md5": "^0.1.10",
     "angular-ui-bootstrap": "^1.3.2",

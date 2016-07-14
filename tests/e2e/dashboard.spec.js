@@ -4,7 +4,7 @@ describe('Dashboard page', function() {
   });
 
   it('should have a title', function() {
-    expect(browser.getTitle()).toEqual('TripChat');
+    expect(browser.getTitle()).toEqual('mvpApp');
   });
 
   it('should open a model when login is clicked', function() {

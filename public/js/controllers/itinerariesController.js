@@ -1,4 +1,4 @@
-angular.module('TripChat')
+angular.module('mvpApp')
 .controller('itemsController', ['$scope', '$http', '$stateParams', function ($scope, $http, $stateParams) {
   // Gets called when the directive is ready:
 

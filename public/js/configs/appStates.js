@@ -1,4 +1,4 @@
-angular.module('TripChat')
+angular.module('mvpApp')
 .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function($stateProvider, $urlRouterProvider, $locationProvider) {
 
   $urlRouterProvider.otherwise('/');

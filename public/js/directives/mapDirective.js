@@ -1,4 +1,4 @@
-angular.module('TripChat')
+angular.module('mvpApp')
 .directive('smallMap', function () {
   return {
     restrict: 'A',

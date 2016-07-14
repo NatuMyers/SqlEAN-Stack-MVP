@@ -1,4 +1,4 @@
-angular.module('TripChat')
+angular.module('mvpApp')
 .controller('rootController', ['$scope', '$http', function ($scope, $http) {
   // Gets called when the directive is ready:
   geocoder = new google.maps.Geocoder();

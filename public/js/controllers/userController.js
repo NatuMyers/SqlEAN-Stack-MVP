@@ -1,4 +1,4 @@
-angular.module('TripChat')
+angular.module('mvpApp')
 .controller('userController', ['$scope', '$http', '$stateParams', 'md5', function ($scope, $http, $stateParams, md5) {
   // Gets called when the directive is ready:
 

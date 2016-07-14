@@ -1,4 +1,4 @@
-angular.module("TripChat")
+angular.module("mvpApp")
 .controller('dashboardCtrl', ['$scope', '$http', '$location', function($scope, $http, $location) {
 
   $scope.init = function() {

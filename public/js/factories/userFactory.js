@@ -1,4 +1,4 @@
-angular.module('TripChat')
+angular.module('mvpApp')
 .factory('userFactory', function($http) {
   return {
     saveUser: function(users) {
