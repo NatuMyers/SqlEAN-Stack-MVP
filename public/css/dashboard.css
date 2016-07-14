@@ -1,0 +1,289 @@
+.item-panel, .add-item-panel
+{
+  border: 1px #c9c9c9 solid;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+}
+
+.add-item-panel{
+  margin-top: 20px;
+}
+
+li.interest{
+  list-style-type: none;
+}
+
+.interest{
+  background-color: #337AB7;
+  color: #fff;
+  font-size: 15px;
+  height: 31px;
+  margin-bottom: 15px;
+  padding-top: 5px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.interest-delete{
+  position: absolute;
+  right: 0%;
+  top: 0;
+  background-color: #fff;
+  color: #337AB7;
+  border: 2px #337AB7 solid;
+  border-radius: 20px;
+  width: 31px;
+  text-align: center;
+  height: 31px;
+  padding-top: 2px;
+  padding-right: 4px;
+}
+
+.interest-name{
+  position: relative;
+  top: 17%;
+}
+
+.add-interest-form{
+  padding: 0px 15px;
+}
+
+.dash-item-heading{
+  display: inline-block;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+h3.dash-item-heading{
+  font-size: 20px;
+}
+
+.username-dash-item-heading {
+  color: white;
+  text-decoration: none;
+}
+
+.header-background{
+  height: 60px;
+  background-color: #337AB7;
+  background-size: cover;
+  background-position: center center;
+  margin-top: -60px;
+}
+
+.panel{
+  margin-top: 20px;
+}
+
+.dash-header{
+  color: #fff;
+  font-size: 25px;
+  padding: 2px 15px;
+  text-align: center;
+
+
+}
+
+.editable-input-fields{
+  margin-bottom: 10px;
+}
+
+.editable-inputs{
+  border-bottom: 1px solid #c9c9c9;
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+}
+
+.item-footer{
+  margin-left: 15px;
+  background-color: #fff;
+  padding-left: 20px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 4px;
+  border-bottom: 1px solid #c9c9c9;
+}
+
+.dash-map .angular-google-map-container {
+  width: 100%;
+  height: 18vw;
+}
+
+.dash-latest-items{
+  border: 1px solid #c7c7c7;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color:#fff;
+}
+
+.panel{
+  background-color: transparent;
+  border: none;
+}
+
+.panel-heading{
+  background-color:#337AB7;
+  color:#fff;
+
+}
+
+.itin-heading{
+  border-bottom-left-radius: 30px;
+  border-top-left-radius: 30px;
+  margin-bottom: 0px;
+
+}
+
+.panel-footer{
+  background-color:#337AB7;
+
+}
+
+.panel-footer-link{
+  font-size: 18px;
+  color: #fff;
+}
+
+a.panel-footer-link:hover{
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+.latest-items-header{
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.handle{
+  color: #337AB7;
+  font-size: 14px;
+}
+
+a.handle:hover{
+  color: #337AB7;
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.latest-item-link{
+  font-size: 20px;
+  color:#337AB7;
+}
+
+a.latest-item-link:hover{
+  color:#337AB7;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.latest-item-body{
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-top: 1px solid #f9f9f9;
+  border-bottom: 1px solid #f9f9f9;
+}
+
+.latest-item-location{
+  font-size: 16px;
+  margin-bottom: 5px;
+  border-bottom: 1px solid #EAEAEA;
+}
+
+.latest-address-input{
+  margin-top: 10px;
+}
+
+.dash-latest-itin-share-group{
+  margin-top: -7px;
+  margin-bottom: -7px;
+}
+
+.item-comment{
+  margin-top:40px;
+}
+
+.comment-button-group{
+  margin-top: 5px;
+}
+
+.dash-main-header{
+  margin-top: 15px;
+  margin-bottom: 5px;
+  color: #fff;
+}
+.dash-main-para{
+  color:#fff;
+  margin-top:22px;
+  font-size: 15px;
+}
+
+.item-number{
+  color: #fff;
+}
+
+.add-panel{
+  border-right: 1px solid #c9c9c9;
+  border-bottom: 1px solid #c9c9c9;
+  border-bottom-left-radius: 0px;
+  box-shadow: none;
+}
+
+.itin-panel{
+  border-bottom: none;
+}
+
+.add-item-panel-head{
+  border-bottom-left-radius: 30px;
+  border-top-left-radius: 30px;
+}
+
+.share-item{
+  margin-bottom: 0px;
+}
+
+p{
+  font-size: 17px;
+}
+
+.middle-col{
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.add-itin-form{
+  margin-top: 15px;
+}
+
+.add-itin-button{
+  width: 100%;
+}
+
+.description{
+  background-color: #FFFFFF;
+  padding: 10px;
+  margin-right: 15px;
+  border-bottom: 1px solid #c9c9c9;
+  border-right: 1px solid #c9c9c9;
+  border-bottom-right-radius: 4px;
+}
+.description-text{
+  margin-bottom: 0px;
+  font-size: 15px;
+}
+
+.activity-question{
+  margin-top: 10px;
+}
+
+.latest-description-text>p{
+  font-size: 14px;
+  padding-left: 5px;
+}
+
+.description-box-input{
+  height: 83px!important;
+}

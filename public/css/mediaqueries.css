@@ -1,0 +1,164 @@
+@media (max-width: 480px) {
+/* GLOBAL */
+  .dash-header{
+    text-align: left;
+    font-size: 20px;
+    padding-left: 0px;
+    padding-top: 4px;
+  }
+
+  .already{
+    font-size: 13px;
+  }
+/* LANDING PAGE */
+
+  .mainpic {
+    width: 100%;
+    height: 450px;
+    background-position: center center;
+  }
+
+  .slogan{
+    font-size:20px;
+  }
+
+  .searchbar {
+    width: 70%;
+
+    height: 35px
+  }
+
+  .search-container {
+    top: 40%;
+  }
+
+  .btn-begin {
+    height: 37px;
+    font-size: 15px;
+  }
+
+  .social-columns {
+    padding-bottom: 50px;
+    margin-top: -70px;
+  }
+
+
+
+/* DASHBOARD PAGE */
+   .dash-main-header{
+    margin-top: 10px;
+   }
+
+   .dash-main-para {
+    margin-top: 5px;
+    margin-bottom: 0px;
+  }
+
+  .share-item {
+    margin-bottom: 10px;
+  }
+
+  .form-group {
+    margin-bottom: 10px;
+  }
+
+  .add-itin-form {
+    margin-top: 10px;
+  }
+
+  .dash-map .angular-google-map-container {
+    width: 100%;
+    height: 50vw;
+  }
+
+  .description {
+    margin-left: 15px;
+  }
+
+  .middle-col {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  /* PROFILE PAGE */
+
+  .user-profile-info {
+    padding-left: 0px;
+    top: -10px;
+  }
+
+  .item-number{
+    font-size: 14px;
+  }
+
+  .description-profile{
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  /* ALL ITINERARIES */
+
+  .search-items {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    z-index: 0;
+  }
+
+  .prodash-link {
+    margin-top: 10px;
+  }
+
+  .add-new-itin {
+    padding-top: 0px;
+    padding-right: 5px;
+  }
+
+  .add-itin-dash-link {
+    margin-top: 0px;
+    margin-bottom: 10px;
+  }
+
+
+
+  /*SINGLE ITINERARY */
+  .item-description >p{
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  .add-comment-panel {
+    margin-top: 0;
+  }
+
+  .add-itin-textarea{
+    margin-bottom: 10px;
+  }
+
+  .add-item-form {
+    margin-top: 0px;
+  }
+
+  .angular-google-map-container{
+    height: 50vh;
+  }
+
+  .interest-name{
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+
+  .item-name-col{
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+
+  .dash-latest-items-mobile{
+    padding-bottom: 0px;
+  }
+
+  .date-mobile{
+    padding-top: 6px
+  }
+
+
+}

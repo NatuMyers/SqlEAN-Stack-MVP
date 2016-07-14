@@ -1,0 +1,207 @@
+<div class="container-fluid header-background"  ng-init="init()">
+  <h3 class="dash-header">Dashboard</h3>
+</div>
+<div class="container-fluid">
+  <div class="row add-comment-row">
+    <div class="col-sm-4">
+      <h4 class="dash-main-header">Going somewhere? Share a new item!</h4>
+      <p class="dash-main-para">Share your interests with fellow mvpAppters and see where their suggestions take you!</p>
+    </div>
+    <div class="col-sm-8">
+      <form class="row" name="itemForm">
+        <div class="col-sm-6">
+          <div class="add-itin-form">
+            <div class="form-group col-sm-12 middle-col">
+              <input ng-model="item.title" name="title" type="text" class="form-control validate" placeholder="Intinerary Name">
+            </div>
+            <div class="form-group col-sm-6 middle-col">
+              <input ng-model="item.city" name="city" type="text" class="form-control validate" placeholder="City">
+            </div>
+            <div class="form-group col-sm-3 middle-col">
+              <input ng-model="item.state" name="state" type="text" class="form-control validate" placeholder="State">
+            </div>
+             <div class="form-group col-sm-3 middle-col">
+              <input ng-model="item.country" name"country" type="text" class="form-control validate" placeholder="Country">
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6">
+          <div class="add-itin-form">
+            <div class="form-group">
+              <textarea ng-model="item.description" rows="3" name="description" type="text" class="description-box-input form-control validate" placeholder="Describe Your Trip"></textarea>
+            </div>
+            <div class="form-group share-item">
+              <button class="btn btn-success add-itin-button" ng-click="addItem()" ng-submit="addItem()">Share Item</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="row interest-row">
+    <div class="col-sm-12">
+      <h4 class="item-number">
+        You have </i> <span ng-show="userItems.length">{{userItems.length}}</span>
+        <ng-pluralize ng-show="userItems.length" count="userItems.length"
+          when="{
+            '1': 'item',
+            'other': 'items'
+          }">
+        </ng-pluralize>
+        <span ng-show="!userItems.length">0 items</span>
+      </h4>
+    </div>
+  </div>
+
+</div>
+
+
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-8">
+      <div class="panel add-panel itin-panel" ng-repeat="item in userItems | orderBy:'-createdAt'">
+        <div class="panel-heading itin-heading clearfix">
+          <div class="dash-heading-container clearfix" >
+            <div class="col-sm-6">
+            <a ui-sref="showItem({id: item.id})" class="text-dec-none"><h3 class="dash-item-heading clearfix">{{item.title}}</h3></a>
+            </div>
+            <div class="col-sm-6">
+              <h3 class="dash-item-heading pull-right hide-on-small-only"> {{item.city}}, {{item.state}} {{item.country}}</h3>
+            </div>
+          </div>
+        </div>
+        <div class="panel-body">
+          <div class="editable-inputs" ng-show="editOptions">
+            <div class="row">
+              <div class="col-sm-12">
+                <input type="text" ng-model="item.title"  class="form-control editable-input-fields">
+              </div>
+              <div class="col-sm-12">
+                <input type="text" ng-model="item.description"  class="form-control editable-input-fields">
+              </div>
+              <div class="col-sm-4">
+                <input type="text" ng-model="item.city"  class="form-control editable-input-fields">
+              </div>
+
+              <div class="col-sm-4">
+                <input type="text" ng-model="item.state"  class="form-control editable-input-fields">
+              </div>
+
+              <div class="col-sm-4">
+                <input type="text" ng-model="item.country"  class="form-control editable-input-fields">
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-4">
+              <div small-map city="item.city" class="dash-map"></div>
+            </div>
+            <div class="col-sm-8">
+              <div class="row">
+                <div class="description" ng-hide="editOptions">
+                  <p class="description-text">{{item.description}}</p>
+                </div>
+                <form>
+                  <div class="form-group">
+                    <p  class="activity-question" ng-hide="editOptions">What are you interested in?</p>
+                    <div class="form-inline input-group add-interest-form" ng-hide="editOptions">
+                      <input placeholder="e.g. Museums"  ng-model="item.newActivity.name" type="text" class="validate form-control">
+                      <div class="input-group-btn">
+                        <button class="btn btn-success" ng-submit="addActivity(item.id, item.newActivity)" ng-click="addActivity(item.id, item.newActivity)">Add</button>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+
+               <div ng-repeat="activity in item.Activities">
+                  <div class="col-md-4"ng-hide="deleted">
+                    <div class="interest text-center">
+                      <span>{{activity.name}}</span>
+                    </div>
+                    <button class="interest-delete" ng-show="editOptions" ng-click="deleteActivity(activity.id); deleted=true"  class="delete-activity">&times;</button>
+                  </div><!-- end col s4 -->
+                </div>
+              </div><!-- end row -->
+            </div><!-- end col s9 -->
+          </div><!-- end row -->
+
+        </div>
+
+
+        <div class="item-footer clearfix">
+          <div class="button-container pull-right">
+            <a ui-sref="showItem({id: item.id})" class="btn">View</a>
+            <a ng-click="editItem(item); editOptions=false" ng-show="editOptions" class="btn">Done</a>
+            <a ng-click="showEditableItem(item.id); editOptions=true" ng-hide="editOptions" class="btn">Edit</a>
+            <a data-toggle="modal" data-target=".delete-confirmation" class="btn">Delete Item</a>
+
+            <!-- Delete Confirmation Modal -->
+            <aside>
+              <div ng-controller="AppCtrl">
+                <div class="modal fade delete-confirmation dismiss" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+                  <div class="modal-dialog modal-sm">
+                    <div class="modal-content">
+                      <div class="row">
+                        <div class="col-xs-12">
+                          <h1 class="loginSignup">Delete?</h1>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-xs-10 col-xs-offset-1">
+                          <p>
+                            Are you sure you want to delete this item?<br />
+                            This cannot be undone.
+                          </p>
+                          <button class="loginSubmitBtn btn btn-danger" ng-click="deleteItem(item.id)" type="submit" data-dismiss="modal">Delete</button>
+                          <button id="cancel-delete-modal" type="button" class="loginSubmitBtn btn btn-default" data-dismiss="modal">Cancel</button>
+                          <br />
+                          <br />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </aside>
+
+          </div>
+        </div>
+      </div><!-- End Itineray-panel -->
+    </div><!-- END col-sm-8 -->
+
+    <div class="col-sm-4">
+      <div class="panel">
+        <div class="panel-heading">
+          <h3 class="dash-item-heading">Latest Items</h3>
+        </div>
+        <div class="panel-body-latest-itin ">
+          <div class="dash-latest-items clearfix" ng-repeat="item in allItems | orderBy:'-createdAt' | limitTo: 5">
+            <div class="dash-latest-itin-heading">
+            <span class="" ng-click="" ><h5 class="inline">{{item.User.fname}}</h5></span><a ui-sref="user({username: item.User.username})" class="handle"> <small>@{{item.User.username}}</small></a> <span class="date pull-right">{{item.createdAt | date: "mediumDate"}}</span>
+            </div>
+            <div class="latest-item-body clearfix">
+              <a class="latest-item-link clearfix" ui-sref="showItem({id: item.id})">{{item.title}}</a>
+              <div class="latest-item-location">{{item.city}}, {{item.state}}, {{item.country}}</div>
+              <div class="">
+                <div class="latest-description-text">
+                  <p>{{item.description}}</p>
+                </div>
+              </div>
+            </div>
+            <div class="dash-latest-itin-share-group pull-right">
+              <a ui-sref="showItem({id: item.id})" type="button" class="btn">View</a>
+            </div>
+          </div>
+        </div>
+        <div class="panel-footer clearfix">
+          <a class="panel-footer-link pull-right" href="/items">View All Items</a>
+        </div>
+       </div>
+    </div>
+
+  </div><!-- end row-->
+</div><!-- end container -->

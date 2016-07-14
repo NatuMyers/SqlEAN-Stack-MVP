@@ -1,0 +1,135 @@
+
+<div class="container-fluid header-background"  ng-init="init()">
+  <h3 class="dash-header text-center">{{currentItem.title}}</h3>
+</div>
+<div class="container-fluid">
+  <div class="row add-comment-row">
+
+    <div class="col-sm-6">
+      <div class="add-comment-activites">
+        <div class="item-description">
+          <p>{{currentItem.description}}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-6">
+
+      <!-- When user is not logged in -->
+      <div class="panel add-panel itin-panel add-comment-panel single-item-form-panel">
+        <div class="form-group" >
+          <form>
+            <div class="col-sm-12 interest-col ">
+              <textarea  ng-model="comment.text" class="form-control add-itin-textarea" rows="4" id="comment" placeholder="Been there, done that?  Share your experience! Tell  {{currentItem.User.fname}} where to go in {{currentItem.city}}."></textarea>
+            </div>
+
+            <div class="col-sm-5  interest-col">
+              <div class="form-group add-item-form">
+              <input ng-model="comment.address" class="form-control" type="text"  placeholder="Street Address"/>
+            </div>
+            </div>
+
+            <div class="col-sm-5 interest-col">
+              <div class="form-group add-item-form">
+              <input ng-model="comment.link" class="form-control"  type="text"  placeholder="Website"/>
+              </div>
+            </div>
+
+            <!-- Disable btn when user is not logged in -->
+            <div ng-show="!user" class="col-sm-2 interest-col" data-toggle="tooltip" data-placement="top" title="Log in to share">
+              <div class="form-group add-item-form">
+                <button type="button" class="btn btn-success share-btn" disabled="disabled">Share It!</button>
+              </div>
+            </div> <!-- end disabled btn -->
+
+            <!-- Enable btn when user is logged in -->
+            <div ng-show="user" class="col-sm-2 interest-col">
+              <div class="form-group add-item-form">
+                <button type="button" ng-click="addComment(currentItem.id, currentItem.city)"class="btn btn-success share-btn">Share It!</button>
+              </div>
+            </div> <!-- end enabled btn -->
+
+          </form>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="row interest-row">
+    <div class="col-sm-12 item-name-col">
+      <div class="single-itin-interest-name clearfix">
+
+        <!-- When no activities have been listed -->
+        <div  ng-show="!currentItem.Activities.length">
+          <h4 class="item-number" >No activities have been listed by {{ currentItem.User.username }} yet.</h4>
+        </div>
+        <div class="interest-name interest-name-head" ng-show="currentItem.Activities.length">
+          <a class="username-link" ui-sref="user({username: currentItem.User.username})">{{currentItem.User.fname}}</a> is interested in:
+        </div>
+
+       </div>
+
+        <div class="interest-name" ng-repeat="activity in currentItem.Activities">
+
+          <!-- When activities have been listed -->
+          <span >{{activity.name}}</span>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="container-fluid">
+
+  <div class="row">
+
+    <div class="col-sm-12 col-md-8 col-md-push-4 map-col">
+      <div id="map" class="singleMap">
+        <ui-gmap-google-map center="map.center" zoom="map.zoom" options="map.options">
+          <ui-gmap-markers models="map.markers" coords="'coords'" idKey="id" click="onClick" doCluster="true" options="'options'">
+            <ui-gmap-windows show="show">
+              <div ng-non-bindable>
+                {{title}}
+                <br /> Located at: {{address}}
+                <br /><a class="website" ng-show="link" href="{{ link }}" target="_blank">Visit Suggested Site</a>
+              </div>
+            </ui-gmap-windows>
+          </ui-gmap-marker>
+        </ui-gmap-google-map>
+      </div>
+    </div>
+
+
+    <div class="col-sm-12 col-md-4 col-md-pull-8 comments-column">
+       <!-- End Panel-->
+      <div class="">
+        <div class="comment-box" ng-repeat="comment in currentItem.comments | orderBy:'-createdAt'"><!-- ng-repeat="comment in comments" -->
+          <div class="row">
+            <div class="col-sm-12">
+
+              <div class="comment-heading">
+                <span class="" ng-click="" ><img src="http://www.gravatar.com/avatar/{{ comment.User.email | gravatar }}?s=30&d=mm"> {{comment.User.fname}}</span><a ui-sref="user({username: comment.User.username})" class="itin-handle"> @{{comment.User.username}}</a> commented: <span class="comment-date pull-right">{{comment.createdAt | date: "mediumDate"}}</span>
+              </div>
+            </div>
+            <div class="col-sm-12">
+              <div class="comment-text">
+                {{comment.text}}
+              </div>
+
+              <div class="comment-location">
+                <span class="street-address">{{comment.address}}</span>
+              </div>
+              <div class="comment-footer clearfix" ng-show="comment.link || user.id == comment.UserId || user.id == comment.Item.UserId">
+                <div class="itin-button-container pull-right">
+                  <a class="website" ng-show="comment.link" href="{{ comment.link }}" target="_blank">Visit Site</a>
+                  <a class="delete-comment" ng-show="user.id == comment.UserId || user.id == comment.Item.UserId" ng-click="deleteComment(comment.id)">Delete</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

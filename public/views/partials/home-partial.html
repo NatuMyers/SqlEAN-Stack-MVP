@@ -1,0 +1,163 @@
+<div class="container-fluid">
+  <div class="row"><!--hero-->
+    <div class="mainpic">
+      <div class="search-container text-center">
+      <h2 class="slogan">Where Will Your Adventure Begin?</h2>
+        <input type="text" ng-model="findLocation" class="form-control searchbar" placeholder="Yosemite">
+        <button ui-sref="items({location: findLocation})" class="btn btn-default btn-begin">Search</button>
+
+      </div>
+    </div><!-- end mainpic-->
+  </div><!-- end hero-->
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <h3 class="text-center discover-heading">Discover Roads Less Traveled</h3>
+
+    <div class="col-sm-6  index-col">
+      <div class="discover-panel">
+        <div id="top-left" class="discover-panel-body text-center hide-on-med-and-down" ng-mouseenter="topLeft = true" ng-mouseleave="topLeft = false">
+          <h4 class="discover-panel-location">Mazatlan | Mexico</h4>
+          <div class="discover-panel-footer" ng-show="topLeft">
+            <div class="button-group">
+              <button type="button" class="btn btn-view" ui-sref="items({location: 'Mazatlan'})">Discover</button>
+              <button data-toggle="modal" data-target=".signup" class="btn btn-link start">Or Start Your Own Journey</button>
+            </div>
+          </div>
+        </div>
+
+        <div id="top-left" class="discover-panel-body text-center hide-on-large-only">
+          <h4 class="discover-panel-location">Mazatlan | Mexico</h4>
+          <div class="discover-panel-footer">
+            <div class="button-group">
+              <button type="button" class="btn btn-view" ui-sref="items({location: 'Mazatlan'})">Discover</button>
+              <button data-toggle="modal" data-target=".signup" class="btn btn-link start">Or Start Your Own Journey</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-6 index-col">
+      <div class="discover-panel">
+        <div id="top-right" class="discover-panel-body text-center hide-on-med-and-down" ng-mouseenter="topRight = true" ng-mouseleave="topRight = false">
+          <h4 class="discover-panel-location">Machu Picchu | Peru</h4>
+          <div class="discover-panel-footer" ng-show="topRight">
+            <div class="button-group">
+              <button ng-click="" class="btn btn-view" ui-sref="items({location: 'Machu Picchu'})">Discover</button>
+              <button data-toggle="modal" data-target=".signup" class="btn btn-link start">Or Start Your Own Journey</button>
+            </div>
+          </div>
+        </div>
+        <div id="top-right" class="discover-panel-body text-center hide-on-large-only">
+          <h4 class="discover-panel-location">Machu Picchu | Peru</h4>
+          <div class="discover-panel-footer">
+            <div class="button-group">
+              <button ng-click="" class="btn btn-view" ui-sref="items({location: 'Machu Picchu'})">Discover</button>
+              <button data-toggle="modal" data-target=".signup" class="btn btn-link start">Or Start Your Own Journey</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-sm-6  index-col">
+      <div class="discover-panel">
+        <div id="bottom-left" class="discover-panel-body text-center hide-on-med-and-down" ng-mouseenter="bottomLeft = true" ng-mouseleave="bottomLeft = false">
+          <h4 class="discover-panel-location">Iguazu Falls | Argentina</h4>
+          <div class="discover-panel-footer" ng-show="bottomLeft">
+            <div class="button-group">
+              <button ng-click="" class="btn btn-view" ui-sref="items({location: 'Iguazu Falls'})">Discover</button>
+              <button data-toggle="modal" data-target=".signup" class="btn btn-link start">Or Start Your Own Journey</button>
+            </div>
+          </div>
+        </div>
+
+        <div id="bottom-left" class="discover-panel-body text-center hide-on-large-only">
+          <h4 class="discover-panel-location">Iguazu Falls | Argentina</h4>
+          <div class="discover-panel-footer">
+            <div class="button-group">
+              <button ng-click="" class="btn btn-view" ui-sref="items({location: 'Iguazu Falls'})">Discover</button>
+              <button data-toggle="modal" data-target=".signup" class="btn btn-link start">Or Start Your Own Journey</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-6 index-col">
+      <div class="discover-panel">
+        <div id="bottom-right" class="discover-panel-body text-center hide-on-med-and-down" ng-mouseenter="bottomRight = true" ng-mouseleave="bottomRight = false">
+          <h4 class="discover-panel-location">Antelope Canyon | Arizona</h4>
+          <div class="discover-panel-footer"  ng-show="bottomRight">
+            <div class="button-group">
+              <button ng-click="" class="btn btn-view" ui-sref="items({location: 'Antelope Canyon'})">Discover</button>
+              <button data-toggle="modal" data-target=".signup" class="btn btn-link start">Or Start Your Own Journey</button>
+            </div>
+          </div>
+        </div>
+
+         <div id="bottom-right" class="discover-panel-body text-center hide-on-large-only" >
+          <h4 class="discover-panel-location">Antelope Canyon | Arizona</h4>
+          <div class="discover-panel-footer">
+            <div class="button-group">
+              <button ng-click="" class="btn btn-view" ui-sref="items({location: 'Antelope Canyon'})">Discover</button>
+              <button data-toggle="modal" data-target=".signup" class="btn btn-link start">Or Start Your Own Journey</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="all-items text-center">
+    <a ng-click="" href="/items" class="btn btn-all">Discover All Items</a>
+  </div>
+</div>
+
+<div class="container">
+ <hr>
+  <div class="row social-row">
+    <div class="col-sm-4">
+      <div class="social-columns text-center">
+        <div class="icon-circle icon-outer">
+          <i class="material-icons material-icon-outer">chrome_reader_mode</i>
+        </div>
+        <div class="social-container social-outer">
+          <h2 class="social-header social-header-outer">View</h2>
+          <p class="social-paragraph">Browse through hundreds intineraries shared from mvpAppters all over the world, sharing their interests, activities and the must sees on your next trip.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-4">
+      <div class="social-columns text-center">
+        <div class="icon-circle icon-middle">
+          <i class="material-icons material-icon-middle">queue</i>
+        </div>
+        <div class="social-container social-middle">
+          <h2 class="social-header social-header-inner">Create</h2>
+          <p class="social-paragraph">Going somewhere? Create an item, share your interests and prepare for feedback! mvpAppter will suggest great locations for you to experience the best of the best according your interests and location!</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-4">
+      <div class="social-columns text-center">
+        <div class="icon-circle icon-outer">
+          <i class="material-icons material-icon-outer">share</i>
+        </div>
+        <div class="social-container social-outer">
+          <h2 class="social-header social-header-outer">Share</h2>
+          <p class="social-paragraph">Been there, done that? Share your experiences! View items of other mvpAppters and recommend the locations off the beaten path they must see! </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer Bar -->
+<div class-"footer-bar" ng-include="'/views/partials/footer-bar-partial.html'"></div>
