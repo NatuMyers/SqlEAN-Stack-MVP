@@ -23,7 +23,14 @@ module.exports = function(sequelize, DataTypes) {
     },
     description:{
       type: DataTypes.STRING
-    }
+    },
+    availibility:{
+      type: DataTypes.INTEGER
+    },
+    :{
+      type: DataTypes.INTEGER
+    },
+
   }, {
     classMethods: {
       associate: function(models) {
@@ -36,5 +43,3 @@ module.exports = function(sequelize, DataTypes) {
 
   return Item;
 }
-
-
