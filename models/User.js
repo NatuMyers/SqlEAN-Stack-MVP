@@ -41,6 +41,9 @@ module.exports = function(sequelize, DataTypes) {
     summary: {
       type: DataTypes.STRING,
     },
+    type: {
+      type: DataTypes.STRING,
+    },
 
   }, {
     hooks: {
@@ -52,7 +55,7 @@ module.exports = function(sequelize, DataTypes) {
     classMethods: {
       associate: function(models) {
         User.hasMany(models.Comment),
-        User.hasMany(models.Itinerary)
+        User.hasMany(models.Item)
       }
     }
   });
