@@ -1,0 +1,245 @@
+.index-col{
+  padding:0;
+}
+
+.mainpic{
+  width: 100%;
+  height: 600px;
+  background-image: url("../images/waterfall3.png");
+  background-size: cover;
+  margin-top: -70px;
+  position: relative;
+}
+
+.search-container{
+  position:relative;
+  top: 60%;
+}
+
+.slogan{
+  color: #fff;
+}
+
+.btn-begin{
+  color: #fff;
+  border-radius: 3px;
+  border: 2px solid #fff;
+  background-color: transparent;
+  height: 45px;
+  font-size: 18px;
+}
+
+.btn-begin:hover{
+  color: #fff;
+  border: 2px solid#549A17;
+  background-color: #549A17;
+}
+
+.discover-heading{
+  padding-top:20px;
+  padding-bottom: 15px;
+}
+
+.searchbar{
+  width: 35%;
+  margin: 10px auto;
+  height: 45px;
+  opacity: .6;
+  font-size: 18px;
+}
+
+.searchbar::-webkit-input-placeholder {
+   color: #337AB7;
+}
+
+.searchbar:-moz-placeholder { /* Firefox 18- */
+   color: #337AB7;
+}
+
+.searchbar::-moz-placeholder {  /* Firefox 19+ */
+   color: #337AB7;
+}
+
+.searchbar:-ms-input-placeholder {
+   color: #337AB7;
+}
+
+.discover-panel{
+  overflow: hidden;
+}
+
+#top-left{
+  background-image: url("../images/mexico_lp.png");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+#top-right{
+  background-image: url("../images/machupechu_lp.png");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+#bottom-left{
+  background-image: url("../images/waterfall2_lp.png");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+#bottom-right{
+  background-image: url("../images/lowerantelope_lp.png");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.discover-panel-body{
+  min-height:375px;
+  position: relative;
+}
+
+.discover-panel-location{
+  color: #fff;
+  font-size: 25px;
+  border-bottom: 2px solid #fff;
+  border-top: 2px solid #fff;
+  display: inline-block;
+  padding: 7px 10px;
+  position: relative;
+  top: 100px;
+}
+
+.discover-panel-footer{
+  position: relative;
+  top: 225px;
+
+}
+
+.button-group{
+   background-color: rgba(0,0,0,0.4);
+   display: inline-block;
+   border-radius: 3px;
+}
+
+.btn-view{
+  color: #3E3B3B;
+  font-size: 18px;
+  border: 2px solid #fff;
+  background-color: #fff;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 0px;
+  border-top-right-radius: 0px;
+}
+
+.btn-view:hover{
+  color:#fff;
+  background-color: #549A17;
+  border: 2px solid #549A17;
+  text-decoration: none;
+}
+
+.btn-link{
+  color: #fff;
+  background-color: none;
+  font-size: 15px;
+  text-decoration: none;
+}
+
+.btn-link:hover{
+  color: #c7c7c7;
+  text-decoration: none;
+}
+
+.all-itineraries{
+ padding-top: 35px;
+}
+
+.btn-all{
+  background-color: #fff;
+  color: #777;
+  border: 1px solid #777;
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.material-icons{
+  font-size: 70px;
+  padding-top:20px;
+}
+
+.material-icon-middle{
+  color: #F5F5F5;
+}
+
+.material-icon-outer{
+  color: #337AB7;
+}
+
+hr{
+  padding: 15px;
+}
+
+.social-paragraph{
+  font-size: 18px;
+}
+
+.social-columns{
+  padding-bottom:30px;
+  margin-top: -40px;
+}
+
+.icon-circle{
+  width: 120px;
+  height: 120px;
+  border-radius: 63px;
+  position: relative;
+  top: 56px;
+  z-index: 2;
+  margin: 0 auto;
+}
+
+.icon-middle{
+  border: 2px solid #337AB7;
+  background-color: #337AB7;
+}
+
+.icon-outer{
+  border: 2px solid #337AB7;
+  background-color: #F5F5F5;
+}
+
+.social-container {
+  min-height: 225px;
+  border-radius: 9px;
+  padding: 50px 20px 20px;
+ }
+
+.social-middle{
+  background-color: #F5F5F5;
+  color: #337AB7;
+  border: 2px solid  #337AB7;
+}
+
+.social-outer{
+  background-color: #337AB7;
+  color: #F5F5F5;
+}
+
+.social-header{
+  display: inline-block;
+  padding: 7px 30px;
+}
+.social-header-outer{
+  border-bottom: 2px solid #F5F5F5;
+  border-top: 2px solid #F5F5F5;
+}
+
+.social-header-inner{
+  border-bottom: 2px solid #337AB7;
+  border-top: 2px solid #337AB7;
+}
+

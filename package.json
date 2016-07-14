@@ -1,23 +1,39 @@
 {
-  "name": "class_app",
+  "name": "tripchat",
   "version": "1.0.0",
-  "description": "creating a system for my class",
-  "main": "server.js",
+  "description": "",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
-  "author": "Stephanie Harris",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paulducsantos/tripchat.git"
+  },
+  "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/paulducsantos/tripchat/issues"
+  },
+  "homepage": "https://github.com/paulducsantos/tripchat#readme",
   "dependencies": {
+    "angular-md5": "^0.1.10",
+    "angular-ui-bootstrap": "^1.3.2",
     "bcryptjs": "^2.3.0",
     "body-parser": "^1.15.0",
+    "epilogue": "^0.6.5",
     "express": "^4.13.4",
-    "express-handlebars": "^3.0.0",
     "express-session": "^1.13.0",
+    "morgan": "^1.7.0",
     "mysql": "^2.10.2",
     "passport": "^0.3.2",
+    "passport-facebook": "^2.1.0",
     "passport-local": "^1.0.0",
-    "sequelize": "^3.19.3"
+    "request": "^2.72.0",
+    "sequelize": "^3.20.0"
+  },
+  "directories": {
+    "test": "tests"
   }
 }

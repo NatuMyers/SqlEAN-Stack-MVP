@@ -1,0 +1,105 @@
+.loginSignup {
+  text-align: center;
+  border-style: solid;
+  border-color: #337AB7;
+  margin-top: 0px;
+  background-color: #337AB7;
+  color: white;
+  margin-bottom: 20px;
+  padding: 5px;
+
+}
+
+
+
+.fields {
+  color: white;
+  border-style: solid;
+  background-color: #337AB7;
+  margin-left: 40px;
+  border-bottom-left-radius: 30px;
+  border-top-left-radius: 30px;
+  border-top-width: 0px;
+  border-bottom-width: 0px;
+  margin-left: 3px;
+  width: 100%;
+  padding-left: 15px;
+
+}
+
+
+
+.mdLgFields {
+  border-left: none;
+  border-top: none;
+  padding-top: 0px;
+  margin-left: 0px;
+  width: 100%;
+  padding-left: 20px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  -webkit-box-shadow: inset 0 0px 0px rgba(0,0,0,.075);
+  box-shadow: inset 0 0px 0px rgba(0,0,0,.075);
+}
+
+
+
+
+
+
+/****************************************************
+LOGIN/SIGNUP
+****************************************************/
+
+.or {
+  text-align: center;
+}
+
+
+.formPadding {
+  padding-left: 12px;
+}
+
+.inputField {
+  margin-bottom: 15px;
+}
+
+.grey-text {
+  color: grey;
+}
+
+.already{
+  margin-top: 10px;
+}
+
+.remember{
+  margin-top: -10px;
+  margin-bottom: 10px;
+
+}
+
+.quickLogin {
+  text-decoration: underline;
+}
+
+
+
+/****************************************************
+LOGIN
+****************************************************/
+.loginSubmitBtn {
+  width: 100%;
+}
+
+.guestLogin {
+  text-align: center;
+}
+
+
+
+/****************************************************
+SIGNUP
+****************************************************/
+.signupBtn {
+  width: 100%;
+}

@@ -1,0 +1,32 @@
+<div class="navbar">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+      <a class="navbar-brand hide-on-med-and-down" href="/">Trip Chats</a>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div ng-show="!user" class="dropdown pull-right">
+      <button class="btn btn-signup dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="false" aria-expanded="true">
+        Sign In
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+        <li><a href="#" data-toggle="modal" data-target=".login">Login</a></li>
+        <li><a href="#" data-toggle="modal" data-target=".signup">Sign Up</a></li>
+      </ul>
+    </div>
+    <div ng-show="user" class="dropdown pull-right">
+      <button class="btn btn-logged-in dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="false" aria-expanded="true">
+        {{ user.username }}
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+        <li><a href="/" >Home</a></li>
+        <li><a href="/dashboard">Dashboard</a></li>
+        <li><a href="/{{ user.username }}">Profile</a></li>
+        <li><a href="/itineraries">All Itineraries</a></li>
+        <li role="separator" class="divider"></li>
+        <li><a  ng-click="logout()">Log Out</a></li>
+      </ul>
+    </div>
+  </div><!-- /.container-fluid -->
+</div>
+

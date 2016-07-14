@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html ng-app="TripChat">
+<head>
+
+  <title>Trip Chats</title>
+  <meta charset="utf-8">
+  <!-- Viewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <!-- Created by: -->
+  <meta designer="Dan Petro" url="https://danpetro.herokuapp.com">
+  <meta designer="Jeremy M" url="http://www.jmigsdesign.com">
+  <meta developer="Darryl Mendonez" url="https://darrylmendonez.herokuapp.com">
+  <meta developer="Paul Santos" url="https://paulsantos.herokuapp.com">
+  <!-- BootStrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <!-- Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Questrial Google Font -->
+  <link href='https://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <!-- Custom Styles -->
+  <link rel="stylesheet" type="text/css" href="/css/index.css">
+  <link rel="stylesheet" type="text/css" href="/css/landingpage.css">
+  <link rel="stylesheet" type="text/css" href="/css/itinerary.css">
+  <link rel="stylesheet" type="text/css" href="/css/dashboard.css">
+  <link rel="stylesheet" type="text/css" href="/css/animate.css">
+  <link rel="stylesheet" type="text/css" href="/css/footer.css">
+  <link rel="stylesheet" type="text/css" href="/css/loginSignup.css">
+  <link rel="stylesheet" type="text/css" href="/css/hidingcontent.css">
+  <link rel="stylesheet" type="text/css" href="/css/singleItinerary.css">
+  <link rel="stylesheet" type="text/css" href="/css/profile.css">
+  <link rel="stylesheet" type="text/css" href="/css/mediaqueries.css">
+  <!-- Angular -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.2/angular.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.min.js"></script>
+  <base href="/" />
+</head>
+<body ng-controller="AppCtrl">
+
+
+
+  <!-- Navbar -->
+  <div ng-include="'/views/partials/navbar-partial.html'"></div>
+
+  <!-- Login Modal -->
+  <div ng-include="'/views/partials/login-modal-partial.html'"></div>
+
+  <!-- Signup Modal -->
+  <div ng-include="'/views/partials/signup-modal-partial.html'"></div>
+
+  <!-- Views -->
+  <div>
+    <ui-view></ui-view>
+  <div>
+
+  <!-- Contact Modal -->
+  <div ng-include="'/views/partials/contact-modal-partial.html'"></div>
+
+
+
+  <!-- SCRIPTS -->
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <!-- Angular Google Maps -->
+  <script src="//rawgit.com/angular-ui/angular-google-maps/2.1.5/dist/angular-google-maps.min.js"></script>
+  <script src="//maps.googleapis.com/maps/api/js?sensor=false"></script>
+  <!-- Lodash -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/3.5.0/lodash.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.3.2/ui-bootstrap-tpls.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-md5/0.1.10/angular-md5.min.js"></script>
+  <!-- Angular app controllers and states -->
+  <script type="text/javascript" src="js/app.js"></script>
+  <script type="text/javascript" src="js/fixmapsize.js"></script>
+  <script type="text/javascript" src="js/controllers/formController.js"></script>
+  <script type="text/javascript" src="js/configs/appStates.js"></script>
+  <script type="text/javascript" src="js/controllers/rootController.js"></script>
+  <script type="text/javascript" src="js/controllers/dashboard-controller.js"></script>
+  <script type="text/javascript" src="js/controllers/itinerariesController.js"></script>
+  <script type="text/javascript" src="js/controllers/detailsController.js"></script>
+  <script type="text/javascript" src="js/controllers/userController.js"></script>
+  <script type="text/javascript" src="js/directives/mapDirective.js"></script>
+  <!-- Custom Scripts -->
+  <script type="text/javascript" src="js/scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+.profile-pic {
+  width: 150px;
+}
+
+.names-in-contact-modal, .profile-icons  {
+  text-decoration: none;
+  color: black;
+}
+
+.names-in-contact-modal {
+  font-size: 125%;
+}
