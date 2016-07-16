@@ -7,7 +7,8 @@ angular.module('mvpApp')
       password: $scope.password,
       email: $scope.email,
       fname: $scope.fname,
-      lname: $scope.lname
+      lname: $scope.lname,
+      type: $scope.type
     })
     .then(function(result) {
       $('.login').modal('toggle')
@@ -55,7 +56,7 @@ angular.module('mvpApp')
 
   $scope.alerts = [];
 
-  
+
 
   $scope.closeAlert = function(index) {
     $scope.alerts.splice(index, 1);
