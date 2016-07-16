@@ -1,11 +1,11 @@
-<nav role="navigation" class = "black">
-            <div class="nav-wrapper container "><a id="logo-container" href="#" class="brand-logo center thin white-text">Google Killer</a>
+<nav role="navigation" class="orange">
+    <div class="nav-wrapper container "><a id="logo-container" href="#" class="brand-logo center thin white-text">Google Killer</a>
         <div ng-show="isAuthenticated">
 
-          <div ng-show="!user" class="dropdown pull-right">
-            <!-- ABOUT -->
+            <div ng-show="!user" class="dropdown pull-right">
+                <!-- ABOUT -->
                 <!-- Desktop version -->
-                <ul class="left hide-on-med-and-down">
+                <ul class="right hide-on-med-and-down">
                     <li class="thin"><a ui-sref="about">About</a>
                     </li>
                 </ul>
@@ -15,55 +15,69 @@
                     </li>
                 </ul>
 
+                <a class='dropdown-button btn' href='#' data-activates='dropdownVisitor'>Drop Me!</a>
 
-                   <button class = "dropdown-button btn" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="false" data-activates='dropdown1' aria-expanded="true">
+
+                <button class="dropdown-button btn" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="false" data-activates='dropdown1' aria-expanded="true">
                     Sign In
                     <span class="caret"></span>
-                  </button>
-                  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenudropdownVisitor">
                     <li><a href="#" data-toggle="modal" data-target=".login">Login</a></li>
                     <li><a href="#" data-toggle="modal" data-target=".signup">Sign Up</a></li>
-                  </ul>
-                </div>
-                <div ng-show="user" class="dropdown pull-right">
-                   <button class = "btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="false" aria-expanded="true">
+                </ul>
+
+
+            </div>
+
+            <div ng-show="user" class="dropdown pull-right">
+
+              <!-- searchbar -->
+              <ul class="right hide-on-med-and-down">
+                  <form>
+                      <div class="input-field">
+                          <input id="search" type="search" required>
+                          <label for="search"><i class="material-icons">search</i></label>
+                          <i class="material-icons">close</i>
+                      </div>
+                  </form>
+              </ul>
+
+
+              <!-- Dropdown Trigger -->
+              <a class='dropdown-button btn' href='#' data-activates='dropdown1'>Drop Me!</a>
+
+
+                <button class="dropdown-button btne" data-activates='dropdown1' type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="false" aria-expanded="true">
                     {{ user.username }}
                     <span class="caret"></span>
-                  </button>
-                  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                    <li><a href="/" >Home</a></li>
+                </button>
+                <ul id='dropdown1' class='dropdown-content'>
+                    <li><a href="/">Home</a></li>
                     <li><a href="/dashboard">Dashboard</a></li>
                     <li><a href="/{{ user.username }}">Profile</a></li>
                     <li><a href="/items">All Items</a></li>
                     <li role="separator" class="divider"></li>
-                    <li><a  ng-click="logout()">Log Out</a></li>
-                  </ul>
-                </div>
+                    <li><a ng-click="logout()">Log Out</a></li>
+                </ul>
+
+            </div>
 
 
         </div>
-            <!-- searchbar -->
-            <ul class="right hide-on-med-and-down">
-            <form>
-                <div class="input-field">
-                <input id="search" type="search" required>
-                <label for="search"><i class="material-icons">search</i></label>
-                <i class="material-icons">close</i>
-                </div>
-            </form>
-            </ul>
-            <!-- ABOUT -->
-                <!-- Desktop version -->
-                <ul class="left hide-on-med-and-down">
-                    <li class="thin"><a ui-sref="about">About</a>
-                    </li>
-                </ul>
-                <!-- Mobile Version -->
-                <ul id="nav-mobile" class="side-nav">
-                    <li><a ui-sref="about">About</a>
-                    </li>
-                </ul>
-            <!-- minimenu -->
-                <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
-            </div>
+
+        <!-- ABOUT -->
+        <!-- Desktop version -->
+        <ul class="left hide-on-med-and-down">
+            <li class="thin"><a ui-sref="about">About</a>
+            </li>
+        </ul>
+        <!-- Mobile Version -->
+        <ul id="nav-mobile" class="side-nav">
+            <li><a ui-sref="about">About</a>
+            </li>
+        </ul>
+        <!-- minimenu -->
+        <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
 </nav>
