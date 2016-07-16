@@ -4,7 +4,7 @@
       <a class="navbar-brand hide-on-med-and-down" href="/">Trip Chats</a>
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div ng-show="!user" class="dropdown pull-right">
-       btn-signup dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="false" aria-expanded="true">
+       <button class = "btn btn-signup dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="false" aria-expanded="true">
         Sign In
         <span class="caret"></span>
       </button>
@@ -14,7 +14,7 @@
       </ul>
     </div>
     <div ng-show="user" class="dropdown pull-right">
-       btn-logged-in dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="false" aria-expanded="true">
+       <button class = "btn btn-logged-in dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="false" aria-expanded="true">
         {{ user.username }}
         <span class="caret"></span>
       </button>
@@ -29,4 +29,3 @@
     </div>
   </div><!-- /.container-fluid -->
 </div>
-
