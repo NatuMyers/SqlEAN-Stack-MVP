@@ -6,20 +6,20 @@
           <h3 class="loginSignup">Login</h3>
 
           <div class="form-group">
-            <div class="col-xs-10 col-xs-offset-1 inputField">
+            <div class="col s 10 col s offset-1 inputField">
                 <h7 class="dash-item-heading fields">Username</h7>
               <input type="text" class="form-control validate mdLgFields formPadding" id="username" name="username" ng-model="username">
             </div>
 
 
-            <div class="col-xs-10 col-xs-offset-1">
+            <div class="col s 10 col s offset-1">
               <h7 class="dash-item-heading fields">Password</h7>
               <input type="password" class="form-control mdLgFields formPadding inputField" id="password" ng-model="password">
               <uib-alert ng-repeat="alert in alerts" type="danger" close="closeAlert($index)">{{alert.msg}}</uib-alert>
 
             </div>
 
-            <div class="col-xs-10 col-xs-offset-1">
+            <div class="col s 10 col s offset-1">
               <button class="loginSubmitBtn btn btn-success" ng-click="login()" type="submit">Log in</button>
               <div class="text-center already">
 
@@ -30,13 +30,13 @@
           </div>
 
           <div class="row">
-            <div class="col-sm-5 col-xs-5">
+            <div class="col-sm-5 col s 5">
               <hr class="loginDivder">
             </div>
-            <div class="col-sm-2 col-xs-2">
+            <div class="col-sm-2 col s 2">
               <h6 class="or">or</h6>
             </div>
-            <div class="col-sm-5 col-xs-5">
+            <div class="col-sm-5 col s 5">
               <hr class="loginDivder">
             </div>
           </div>
