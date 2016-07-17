@@ -103,7 +103,7 @@
                 <div class="col s12">
                     <!-- Number of Items -->
                     <h4 class="item-number"> <!-- If user has items -->
-   Hey {{ userData.fname }}! you have shared
+   Hey {{ user.fname }}! You have shared
       <!-- <i class="fa fa-list-ul" aria-hidden="true"></i> --> <span ng-show="userItems.length">{{userItems.length}}</span>
       <ng-pluralize ng-show="userItems.length" count="userItems.length"
         when="{
@@ -328,12 +328,13 @@
 
                                 <div class="card hoverable z-depth-1">
                                     <div class="card-content center black-text">
-                                        <span class="" ng-click=""><h4 class="inline thin">{{item.title}}</h5></span> Posted by: <a ui-sref="user({username: item.User.username})" class="handle">  @{{item.User.username}}</a> <span class="date pull-right">{{item.createdAt | date: "mediumDate"}}</span>
                                         <span class="grey white-text badge">{{item.city}}, {{item.state}}, {{item.country}}</span><br>
 
                                         <br></p>
                                         Description: {{item.description}} - {{item.User.fname}}
-                                        <br></br>
+                                        <br>
+                                        <span class="" ng-click=""><h4 class=" thin">{{item.title}}</h5></span> Posted by: <a ui-sref="user({username: item.User.username})" class="handle">  @{{item.User.username}}</a> <span class="date pull-right">{{item.createdAt | date: "mediumDate"}}</span>
+                                        </br>
 
                                         <a ui-sref="showItem({id: item.id})" "waves-effect waves-light black black-text btn" class="btn waves-effect waves-light"><i class="material-icons left">send</i>View</a>
 
