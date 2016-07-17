@@ -1,20 +1,8 @@
-<script>
-$('.dropdown-button').dropdown({
-    inDuration: 300,
-    outDuration: 225,
-    constrain_width: false, // Does not change width of dropdown to that of the activator
-    hover: true, // Activate on hover
-    gutter: 0, // Spacing from edge
-    belowOrigin: false, // Displays dropdown below the button
-    alignment: 'left' // Displays dropdown with edge aligned to the left of button
-  }
-);
 
 </script>
 
 <nav role="navigation" class="orange">
     <div class="nav-wrapper container "><a id="logo-container" href="#" class="brand-logo center thin white-text">Google Killer</a>
-        <div ng-show="isAuthenticated">
 
             <div ng-show="!user" class="dropdown pull-right">
                 <!-- ABOUT -->
@@ -39,7 +27,7 @@ $('.dropdown-button').dropdown({
             <div ng-show="user" class="dropdown pull-right">
 
               <!-- searchbar -->
-              <ul class="right hide-on-med-and-down">
+              <ul class="left hide-on-med-and-down">
                   <form>
                       <div class="input-field">
                           <input id="search" type="search" required>
@@ -63,5 +51,5 @@ $('.dropdown-button').dropdown({
         </div>
 
 
-    </div>
+
 </nav>
