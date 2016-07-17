@@ -1,17 +1,17 @@
 <div ng-controller="AppCtrl">
-  <div class="card hoverable z-depth-1 col s12 m6 l6">
+  <div class="card  z-depth-1 col s12 m6 l6 offset m3 l3">
       <div class="card-content center black-text">
         <form class="form-horizontal formLogin">
           <h3 class="loginSignup">Login</h3>
 
           <div class="form-group">
-            <div class="col s 10 col s offset-1 inputField">
+            <div class="col m6 l6 inputField">
                 <h7 class="dash-item-heading fields">Username</h7>
               <input type="text" class="form-control validate mdLgFields formPadding" id="username" name="username" ng-model="username">
             </div>
 
 
-            <div class="col s 10 col s offset-1">
+            <div class="col m6 l6 ">
               <h7 class="dash-item-heading fields">Password</h7>
               <input type="password" class="form-control mdLgFields formPadding inputField" id="password" ng-model="password">
               <uib-alert ng-repeat="alert in alerts" type="danger" close="closeAlert($index)">{{alert.msg}}</uib-alert>
