@@ -12,11 +12,9 @@ $('.dropdown-button').dropdown({
 
 </script>
 
-<nav role="navigation" class="orange">
+<nav role="navigation" <!-- class="orange" --> >
     <div class="nav-wrapper container "><a id="logo-container" href="#" class="brand-logo center thin white-text">Google Killer</a>
         <div ng-show="isAuthenticated">
-
-
 
             <div ng-show="!user" class="dropdown pull-right">
                 <!-- ABOUT -->
@@ -51,16 +49,7 @@ $('.dropdown-button').dropdown({
                   </form>
               </ul>
 
-
-              <!-- Dropdown Trigger -->
-              <a class='dropdown-button btn' href='#' data-activates='dropdown1'>Drop Me!</a>
-
-
-                <button class="dropdown-button btne" data-activates='dropdown1' type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="false" aria-expanded="true">
-                    {{ user.username }}
-                    <span class="caret"></span>
-                </button>
-                <ul id='dropdown1' class='dropdown-content'>
+              <ul class="right hide-on-med-and-down">
                     <li><a href="/">Home</a></li>
                     <li><a href="/dashboard">Dashboard</a></li>
                     <li><a href="/{{ user.username }}">Profile</a></li>
@@ -71,25 +60,8 @@ $('.dropdown-button').dropdown({
 
             </div>
 
-
         </div>
 
-        <!-- Mobile Version -->
-        <ul id="nav-mobile" class="side-nav">
-            <li><a ui-sref="about">About</a>
-            </li>
-        </ul>
 
-        <!-- Desktop version -->
-        <ul class="right hide-on-med-and-down">
-          <li class="thin"><a ui-sref="about">About</a>
-          </li>
-          <li class="thin"><a href="#" data-toggle="modal" data-target=".login">Login</a>
-          </li>
-          <li class="thin"><a href="#" data-toggle="modal" data-target=".signup">Sign Up</a>
-          </li>
-        </ul>
-        <!-- minimenu -->
-        <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
     </div>
 </nav>
