@@ -316,13 +316,13 @@
                     <div class="card  z-depth-4">
                         <h3 class="thin">Latest Items</h3>
 
+
+                        <div class="container section col s12 ">
                             <br>
                             <div class="row">
 
                                 <!-- ngrepeat 3 times -->
                                 <div class="dash-latest-items clearfix" ng-repeat="item in allItems | orderBy:'-createdAt' | limitTo: 3">
-
-                                    <div class="col s12 m6 l4">
 
                                         <div class="card hoverable z-depth-1">
                                             <div class="card-content center black-text">
@@ -335,10 +335,11 @@
                                                 <br></br>
 
                                                 <a ui-sref="showItem({id: item.id})" "waves-effect waves-light black black-text btn"><i class=
-                  "btn waves-effect waves-light material-icons left">View</a>
-
+                  "btn waves-effect waves-light material-icons left">send</i>View</a>
+                                            </div>
                                         </div>
-                                    </div>
+
+
 
                                 </div>
 
