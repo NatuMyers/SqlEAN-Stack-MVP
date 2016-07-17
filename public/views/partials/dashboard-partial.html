@@ -81,7 +81,7 @@
         <!--- profile -->
         <div class="">
             <div class="row add-comment-row">
-                <div class="col-md-6">
+                <div class="col m6">
                     <img class="main-profile-img" src="http://www.gravatar.com/avatar/{{ userData.email | gravatar }}?s=200&d=mm" width="150px" class="center-block">
                     <div class="user-profile-info">
                         <div class="user-profile-info-text">
@@ -95,7 +95,7 @@
             <!-- end row -->
 
             <div class="row interest-row">
-                <div class="col-sm-12">
+                <div class="col s12">
                     <!-- Number of Items -->
                     <h4 class="item-number"> <!-- If user has items -->
    {{ userData.fname }} has shared
@@ -127,7 +127,7 @@
 
             <div class="row">
                 <!-- Items Column -->
-                <div class="col-sm-12 col-md-8">
+                <div class="col-sm-12 col m8">
                     <div class="panel add-panel itin-panel" ng-repeat="item in userItems | orderBy:'-createdAt'">
                         <div class="panel-heading itin-heading clearfix">
                             <h3 class="dash-item-heading clearfix"><a href="/items/{{item.id}}" class="profile-item-link">{{item.title}}</a></h3>
@@ -135,17 +135,17 @@
 
                         <div class="panel-body">
                             <div class="row">
-                                <div class="col-md-4" ng-hide="deleted">
+                                <div class="col m4" ng-hide="deleted">
                                     <div small-map city="item.city" class="dash-map"></div>
                                 </div>
 
-                                <div class="col-md-8" ng-hide="deleted">
+                                <div class="col m8" ng-hide="deleted">
                                     <div class="description description-profile">
                                         <p class="description-text">{{item.description}}</p>
                                     </div>
                                     <h5>Interests:</h5>
                                     <div ng-repeat="activity in item.Activities">
-                                        <div class="col-sm-4">
+                                        <div class="col s4">
                                             <div class="interest text-center">
                                                 <span class="">{{activity.name}}</span>
                                             </div>
@@ -165,7 +165,7 @@
                 </div>
                 <!-- end col -->
                 <!-- Comments Column -->
-                <div class="col-sm-12 col-md-4">
+                <div class="col s12 col m4">
                     <div class="panel">
                         <div class="panel-heading">
                             <h3 class="dash-item-heading">Recent Activity</h3>
@@ -195,14 +195,14 @@
         <!--- items -->
         <div class="">
             <div class="row">
-                <div class="col-sm-8">
+                <div class="col s8">
                     <div class="panel add-panel itin-panel" ng-repeat="item in userItems | orderBy:'-createdAt'">
                         <div class="panel-heading itin-heading clearfix">
                             <div class="dash-heading-container clearfix">
-                                <div class="col-sm-6">
+                                <div class="col s6">
                                     <a ui-sref="showItem({id: item.id})" class="text-dec-none"><h3 class="dash-item-heading clearfix">{{item.title}}</h3></a>
                                 </div>
-                                <div class="col-sm-6">
+                                <div class="col s6">
                                     <h3 class="dash-item-heading pull-right hide-on-small-only"> {{item.city}}, {{item.state}} {{item.country}}</h3>
                                 </div>
                             </div>
@@ -210,31 +210,31 @@
                         <div class="panel-body">
                             <div class="editable-inputs" ng-show="editOptions">
                                 <div class="row">
-                                    <div class="col-sm-12">
+                                    <div class="col s12">
                                         <input type="text" ng-model="item.title" class="form-control editable-input-fields">
                                     </div>
-                                    <div class="col-sm-12">
+                                    <div class="col s12">
                                         <input type="text" ng-model="item.description" class="form-control editable-input-fields">
                                     </div>
-                                    <div class="col-sm-4">
+                                    <div class="col s4">
                                         <input type="text" ng-model="item.city" class="form-control editable-input-fields">
                                     </div>
 
-                                    <div class="col-sm-4">
+                                    <div class="col s4">
                                         <input type="text" ng-model="item.state" class="form-control editable-input-fields">
                                     </div>
 
-                                    <div class="col-sm-4">
+                                    <div class="col s4">
                                         <input type="text" ng-model="item.country" class="form-control editable-input-fields">
                                     </div>
                                 </div>
                             </div>
 
                             <div class="row">
-                                <div class="col-sm-4">
+                                <div class="col s4">
                                     <div small-map city="item.city" class="dash-map"></div>
                                 </div>
-                                <div class="col-sm-8">
+                                <div class="col s8">
                                     <div class="row">
                                         <div class="description" ng-hide="editOptions">
                                             <p class="description-text">{{item.description}}</p>
@@ -338,7 +338,7 @@
                                             <br></br>
 
                                             <a ui-sref="showItem({id: item.id})" "waves-effect waves-light black black-text btn"><i class=
-                  "btn-large waves-effect waves-light material-icons left">send</i>View</a>
+                  "btn waves-effect waves-light material-icons left">send</i>View</a>
                                         </div>
                                     </div>
                                 </div>
