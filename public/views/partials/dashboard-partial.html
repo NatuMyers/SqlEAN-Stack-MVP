@@ -304,25 +304,91 @@
         <div class="panel-heading">
           <h3 class="dash-item-heading">Latest Items</h3>
         </div>
-        <div class="panel-body-latest-itin ">
-          <div class="dash-latest-items clearfix" ng-repeat="item in allItems | orderBy:'-createdAt' | limitTo: 5">
-            <div class="dash-latest-itin-heading">
-            <span class="" ng-click="" ><h5 class="inline">{{item.User.fname}}</h5></span><a ui-sref="user({username: item.User.username})" class="handle"> <small>@{{item.User.username}}</small></a> <span class="date pull-right">{{item.createdAt | date: "mediumDate"}}</span>
-            </div>
-            <div class="latest-item-body clearfix">
-              <a class="latest-item-link clearfix" ui-sref="showItem({id: item.id})">{{item.title}}</a>
-              <div class="latest-item-location">{{item.city}}, {{item.state}}, {{item.country}}</div>
-              <div class="">
-                <div class="latest-description-text">
-                  <p>{{item.description}}</p>
+
+
+        <div class="container section col s10 offset-s1">
+          <br>
+          <div class="row">
+            <div class="dash-latest-items clearfix" ng-repeat="item in allItems | orderBy:'-createdAt' | limitTo: 3">
+
+            <div class="col s12 m6 l4">
+
+              <div class="card black orange-text z-depth-5">
+                <div class="card-content center white-text">
+                  <span class="" ng-click="" ><h5 class="inline">{{item.User.fname}}</h5></span><a ui-sref="user({username: item.User.username})" class="handle"> <small>@{{item.User.username}}</small></a> <span class="date pull-right">{{item.createdAt | date: "mediumDate"}}</span>
+                  <span class="green white-text badge">OPEN</span><br>
+                  <div class="latest-item-location">{{item.city}}, {{item.state}}, {{item.country}}</div>
+                  <p class="bounceEffect"><img src="http://placehold.it/160x160" width=
+                  "70%"><br></p>
+                  {{item.description}}
+
+                    <b>Request: Mixing</b><br>
+                    <b>Reward: $5</b><br>
+                    <b>By: eviluser287</b>
+                  <br></br>
+                  <a ui-sref="showItem({id: item.id})"
+                  "waves-effect waves-light black white-text btn"><i class=
+                  "material-icons left">send</i>View</a>
                 </div>
               </div>
             </div>
-            <div class="dash-latest-itin-share-group pull-right">
-              <a ui-sref="showItem({id: item.id})" type="button" class="btn">View</a>
+            <div class="col s12 m6 l4">
+              <div class="card black orange-text z-depth-5" style=
+              "background-image: url('frontendimg/bgautumndark.jpg');">
+                <div class="card-content center white-text">
+                  <span class="blue white-text badge">COMPLETE</span><br>
+                  <h5 class="white-text light">"Collab name here cannot be too
+                  long"</h5>
+                  <p class="bounceEffect"><img src="http://placehold.it/160x160" width=
+                  "70%"><br></p>
+
+                    <b>Request: Mixing</b><br>
+                    <b>Reward: $5</b><br>
+                    <b>By: eviluser287</b>
+                  <br></br>
+                  <a class=
+                  "waves-effect waves-light black white-text btn"><i class=
+                  "material-icons left">send</i>View</a>
+                </div>
+              </div>
             </div>
-          </div>
+               <div class="col s12 m6 l4">
+              <div class="card black orange-text z-depth-5" style=
+              "background-image: url('frontendimg/bgautumndark.jpg');">
+                <div class="card-content center white-text">
+                  <span class="orange darken-3 white-text badge">INPROGRESS</span><br>
+                  <h5 class="white-text light">"Collab name here cannot be too
+                  long"</h5>
+                  <p class="bounceEffect"><img src="http://placehold.it/160x160" width=
+                  "70%"><br></p>
+                    <b>Request: Mixing</b><br>
+                    <b>Reward: $5</b><br>
+                    <b>By: eviluser287</b>
+                  <br></br>
+                  <a class=
+                  "waves-effect waves-light black white-text btn"><i class=
+                  "material-icons left">send</i>View</a>
+                </div>
+              </div>
+            </div>
+
+            </div>
+
+          </div><!-- END ROW -->
+          <a class="waves-effect waves-light black darken-3 white-text btn" href=
+          "search.html">See All</a>
         </div>
+      </div><!-- END CARDD -->
+
+
+
+
+
+
+
+
+
+
         <div class="panel-footer clearfix">
           <a class="panel-footer-link pull-right" href="/items">View All Items</a>
         </div>
