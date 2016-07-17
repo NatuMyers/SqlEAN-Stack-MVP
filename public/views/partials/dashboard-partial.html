@@ -127,7 +127,7 @@
 
             <div class="row">
                 <!-- Items Column -->
-                <div class="col-sm-12 col m8">
+                <div class="col s12 col m6 l6">
                     <div class="panel add-panel itin-panel" ng-repeat="item in userItems | orderBy:'-createdAt'">
                         <div class="panel-heading itin-heading clearfix">
                             <h3 class="dash-item-heading clearfix"><a href="/items/{{item.id}}" class="profile-item-link">{{item.title}}</a></h3>
@@ -135,11 +135,11 @@
 
                         <div class="panel-body">
                             <div class="row">
-                                <div class="col m4" ng-hide="deleted">
+                                <div  ng-hide="deleted">
                                     <div small-map city="item.city" class="dash-map"></div>
                                 </div>
 
-                                <div class="col m8" ng-hide="deleted">
+                                <div ng-hide="deleted">
                                     <div class="description description-profile">
                                         <p class="description-text">{{item.description}}</p>
                                     </div>
@@ -318,52 +318,52 @@
 
 
 
-                    <div class="container section col s12 ">
-                        <br>
-                        <div class="row">
+                        <div class="container section col s12 ">
+                            <br>
+                            <div class="row">
 
-                            <!-- ngrepeat 3 times -->
-                            <div class="dash-latest-items clearfix" ng-repeat="item in allItems | orderBy:'-createdAt' | limitTo: 3">
+                                <!-- ngrepeat 3 times -->
+                                <div class="dash-latest-items clearfix" ng-repeat="item in allItems | orderBy:'-createdAt' | limitTo: 3">
 
-                                <div class="col s12 m6 l4">
+                                    <div class="col s12 m6 l4">
 
-                                    <div class="card hoverable z-depth-1">
-                                        <div class="card-content center black-text">
-                                            <span class="" ng-click=""><h5 class="inline thin">{{item.title}}</h5></span>
-                                            <a ui-sref="user({username: item.User.username})" class="handle"> <small>@{{item.User.username}}</small></a> <span class="date pull-right">{{item.createdAt | date: "mediumDate"}}</span>
-                                            <span class="green black-text badge">{{item.city}}, {{item.state}}, {{item.country}}</span><br>
+                                        <div class="card hoverable z-depth-1">
+                                            <div class="card-content center black-text">
+                                                <span class="" ng-click=""><h5 class="inline thin">{{item.title}}</h5></span>
+                                                <a ui-sref="user({username: item.User.username})" class="handle"> <small>@{{item.User.username}}</small></a> <span class="date pull-right">{{item.createdAt | date: "mediumDate"}}</span>
+                                                <span class="green black-text badge">{{item.city}}, {{item.state}}, {{item.country}}</span><br>
 
-                                            <br></p>
-                                            {{item.description}} - {{item.User.fname}}
-                                            <br></br>
+                                                <br></p>
+                                                {{item.description}} - {{item.User.fname}}
+                                                <br></br>
 
-                                            <a ui-sref="showItem({id: item.id})" "waves-effect waves-light black black-text btn"><i class=
+                                                <a ui-sref="showItem({id: item.id})" "waves-effect waves-light black black-text btn"><i class=
                   "btn waves-effect waves-light material-icons left">send</i>View</a>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
 
+
+                                </div>
 
                             </div>
 
+                            <!-- END ROW -->
+                            <a class="waves-effect waves-light black btn" href="search.html">See All</a>
+
+
+                            <a class="waves-effect waves-light black btn" href="/items">See All</a>
+
+
                         </div>
-
-                        <!-- END ROW -->
-                        <a class="waves-effect waves-light black btn" href="search.html">See All</a>
-
-
-                        <a class="waves-effect waves-light black btn" href="/items">See All</a>
-
+                        <!-- END CARDD -->
 
                     </div>
-                    <!-- END CARDD -->
+
 
                 </div>
-
-
+                <!-- end row-->
             </div>
-            <!-- end row-->
-        </div>
         </div>
         <!-- end container -->
     </div>
