@@ -71,11 +71,6 @@
 
 
     <div ng-if="User.type != 'producer'">
-        <!-- orders profile items-->
-
-        <div class=" header-background" ng-init="init()">
-            <h3 class="dash-header">Purchaser Dashboard</h3>
-        </div>
 
 
         <!--- profile -->
@@ -91,7 +86,9 @@
 
 
                             <h3>{{ userData.fname }} {{ userData.lname }}</h3>
-                            <h4>@{{ User.username }}</h4>
+                            <h4>@{{ userData.username }}</h4>
+
+                            <a href="/{{ user.username }}" type="button" class="btn pull-right">View Self</a>
 
 
                 </div>
@@ -186,7 +183,7 @@
                                 </div>
                                 <div class="dash-latest-itin-share-group clearfix">
                                     <div class="date date-mobile hide-on-med-and-up pull-left">{{comment.Item.createdAt | date: "mediumDate"}}</div>
-                                    <a href="/items/{{comment.ItemId}}" type="button" class="btn pull-right">View</a>
+                                    <a href="/items/{{comment.ItemId}}" type="button" class="btn pull-right">View </a>
                                 </div>
                             </div>
                         </div>
