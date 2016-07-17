@@ -1,163 +1,57 @@
 
 
-<div class="">
-  <div class="row"><!--hero-->
-    <div class="mainpic">
-      <div class="search-container text-center">
-      <h2 class="slogan">Where Will Your Adventure Begin?</h2>
-        <input type="text" ng-model="findLocation" class="form-control searchbar" placeholder="Yosemite">
-        <button ui-sref="items({location: findLocation})" class="btn btn-default btn-begin">Search</button>
-
+<div id="index-banner" class="parallax-container">
+  <div class="section no-pad-bot">
+    <div class="container">
+      <br><br>
+      <h1 class="header center teal-text text-lighten-2">Parallax Template</h1>
+      <div class="row center">
+        <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
       </div>
-    </div><!-- end mainpic-->
-  </div><!-- end hero-->
+      <div class="row center">
+        <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Get Started</a>
+      </div>
+      <br><br>
+
+    </div>
+  </div>
+  <div class="parallax"><img src="background1.jpg" alt="Unsplashed background img 1"></div>
 </div>
 
-<div class="">
-  <div class="row">
-    <h3 class="text-center discover-heading">Discover Roads Less Traveled</h3>
-
-    <div class="  index-col">
-      <div class="discover-panel">
-        <div id="top-left" class="discover-panel-body text-center hide-on-med-and-down" ng-mouseenter="topLeft = true" ng-mouseleave="topLeft = false">
-          <h4 class="discover-panel-location">Mazatlan | Mexico</h4>
-          <div class="discover-panel-footer" ng-show="topLeft">
-            <div class="button-group">
-              <button type="button" class="btn btn-view" ui-sref="items({location: 'Mazatlan'})">Discover</button>
-              <button data-toggle="modal" data-target=".signup" class="btn btn-link start">Or Start Your Own Journey</button>
-            </div>
-          </div>
-        </div>
-
-        <div id="top-left" class="discover-panel-body text-center hide-on-large-only">
-          <h4 class="discover-panel-location">Mazatlan | Mexico</h4>
-          <div class="discover-panel-footer">
-            <div class="button-group">
-              <button type="button" class="btn btn-view" ui-sref="items({location: 'Mazatlan'})">Discover</button>
-              <button data-toggle="modal" data-target=".signup" class="btn btn-link start">Or Start Your Own Journey</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class=" index-col">
-      <div class="discover-panel">
-        <div id="top-right" class="discover-panel-body text-center hide-on-med-and-down" ng-mouseenter="topRight = true" ng-mouseleave="topRight = false">
-          <h4 class="discover-panel-location">Machu Picchu | Peru</h4>
-          <div class="discover-panel-footer" ng-show="topRight">
-            <div class="button-group">
-              <button ng-click="" class="btn btn-view" ui-sref="items({location: 'Machu Picchu'})">Discover</button>
-              <button data-toggle="modal" data-target=".signup" class="btn btn-link start">Or Start Your Own Journey</button>
-            </div>
-          </div>
-        </div>
-        <div id="top-right" class="discover-panel-body text-center hide-on-large-only">
-          <h4 class="discover-panel-location">Machu Picchu | Peru</h4>
-          <div class="discover-panel-footer">
-            <div class="button-group">
-              <button ng-click="" class="btn btn-view" ui-sref="items({location: 'Machu Picchu'})">Discover</button>
-              <button data-toggle="modal" data-target=".signup" class="btn btn-link start">Or Start Your Own Journey</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-  <div class="row">
-    <div class="  index-col">
-      <div class="discover-panel">
-        <div id="bottom-left" class="discover-panel-body text-center hide-on-med-and-down" ng-mouseenter="bottomLeft = true" ng-mouseleave="bottomLeft = false">
-          <h4 class="discover-panel-location">Iguazu Falls | Argentina</h4>
-          <div class="discover-panel-footer" ng-show="bottomLeft">
-            <div class="button-group">
-              <button ng-click="" class="btn btn-view" ui-sref="items({location: 'Iguazu Falls'})">Discover</button>
-              <button data-toggle="modal" data-target=".signup" class="btn btn-link start">Or Start Your Own Journey</button>
-            </div>
-          </div>
-        </div>
-
-        <div id="bottom-left" class="discover-panel-body text-center hide-on-large-only">
-          <h4 class="discover-panel-location">Iguazu Falls | Argentina</h4>
-          <div class="discover-panel-footer">
-            <div class="button-group">
-              <button ng-click="" class="btn btn-view" ui-sref="items({location: 'Iguazu Falls'})">Discover</button>
-              <button data-toggle="modal" data-target=".signup" class="btn btn-link start">Or Start Your Own Journey</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class=" index-col">
-      <div class="discover-panel">
-        <div id="bottom-right" class="discover-panel-body text-center hide-on-med-and-down" ng-mouseenter="bottomRight = true" ng-mouseleave="bottomRight = false">
-          <h4 class="discover-panel-location">Antelope Canyon | Arizona</h4>
-          <div class="discover-panel-footer"  ng-show="bottomRight">
-            <div class="button-group">
-              <button ng-click="" class="btn btn-view" ui-sref="items({location: 'Antelope Canyon'})">Discover</button>
-              <button data-toggle="modal" data-target=".signup" class="btn btn-link start">Or Start Your Own Journey</button>
-            </div>
-          </div>
-        </div>
-
-         <div id="bottom-right" class="discover-panel-body text-center hide-on-large-only" >
-          <h4 class="discover-panel-location">Antelope Canyon | Arizona</h4>
-          <div class="discover-panel-footer">
-            <div class="button-group">
-              <button ng-click="" class="btn btn-view" ui-sref="items({location: 'Antelope Canyon'})">Discover</button>
-              <button data-toggle="modal" data-target=".signup" class="btn btn-link start">Or Start Your Own Journey</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="all-items text-center">
-    <a ng-click="" href="/items" class="btn btn-all">Discover All Items</a>
-  </div>
-</div>
 
 <div class="container">
- <hr>
-  <div class="row social-row">
-    <div class="">
-      <div class="social-columns text-center">
-        <div class="icon-circle icon-outer">
-          <i class="material-icons material-icon-outer">chrome_reader_mode</i>
+  <div class="section">
+
+    <!--   Icon Section   -->
+    <div class="row">
+      <div class="col s12 m4">
+        <div class="icon-block">
+          <h2 class="center brown-text"><i class="material-icons">flash_on</i></h2>
+          <h5 class="center">Speeds up development</h5>
+
+          <p class="light">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</p>
         </div>
-        <div class="social-container social-outer">
-          <h2 class="social-header social-header-outer">View</h2>
-          <p class="social-paragraph">Browse through hundreds intineraries shared from mvpAppters all over the world, sharing their interests, activities and the must sees on your next trip.</p>
+      </div>
+
+      <div class="col s12 m4">
+        <div class="icon-block">
+          <h2 class="center brown-text"><i class="material-icons">group</i></h2>
+          <h5 class="center">User Experience Focused</h5>
+
+          <p class="light">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
+        </div>
+      </div>
+
+      <div class="col s12 m4">
+        <div class="icon-block">
+          <h2 class="center brown-text"><i class="material-icons">settings</i></h2>
+          <h5 class="center">Easy to work with</h5>
+
+          <p class="light">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
         </div>
       </div>
     </div>
 
-    <div class="">
-      <div class="social-columns text-center">
-        <div class="icon-circle icon-middle">
-          <i class="material-icons material-icon-middle">queue</i>
-        </div>
-        <div class="social-container social-middle">
-          <h2 class="social-header social-header-inner">Create</h2>
-          <p class="social-paragraph">Going somewhere? Create an item, share your interests and prepare for feedback! mvpAppter will suggest great locations for you to experience the best of the best according your interests and location!</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="">
-      <div class="social-columns text-center">
-        <div class="icon-circle icon-outer">
-          <i class="material-icons material-icon-outer">share</i>
-        </div>
-        <div class="social-container social-outer">
-          <h2 class="social-header social-header-outer">Share</h2>
-          <p class="social-paragraph">Been there, done that? Share your experiences! View items of other mvpAppters and recommend the locations off the beaten path they must see! </p>
-        </div>
-      </div>
-    </div>
   </div>
 </div>
 
