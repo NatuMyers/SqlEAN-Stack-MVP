@@ -11,7 +11,7 @@ angular.module('mvpApp')
       type: $scope.type
     })
     .then(function(result) {
-      //$('.login').modal('toggle')
+      $('.login')
       $state.go('dashboard');
     })
   } // end sign up
