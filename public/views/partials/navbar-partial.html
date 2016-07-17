@@ -28,34 +28,12 @@ $('.dropdown-button').dropdown({
 
                 <!-- Desktop version -->
                 <ul class="right hide-on-med-and-down">
-                    <li class="thin"><a ui-sref="about">About</a>
-                    </li>
-
-                    <!-- Dropdown Trigger -->
-                    <a class='dropdown-button btn' href='#' data-activates='dropdown1'>Drop Me!</a>
-
-                    <!-- Dropdown Structure -->
-                    <ul id='dropdown1' class='dropdown-content'>
-                      <li><a href="#!">one</a></li>
-                      <li><a href="#!">two</a></li>
-                      <li class="divider"></li>
-                      <li><a href="#!">three</a></li>
-                    </ul>
-
-
-                <li class="thin"><a class='dropdown-button btn' href='#' data-activates='dropdownVisitor'>Drop Me!</a>
-                </li>
-
-
-                <button class="dropdown-button btn" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="false" data-activates='dropdown1' aria-expanded="true">
-                    Sign In
-                    <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenudropdownVisitor">
-                    <li><a href="#" data-toggle="modal" data-target=".login">Login</a></li>
-                    <li><a href="#" data-toggle="modal" data-target=".signup">Sign Up</a></li>
-                </ul>
-
+                  <li class="thin"><a ui-sref="about">About</a>
+                  </li>
+                  <li class="thin"><a href="#" data-toggle="modal" data-target=".login">Login</a>
+                  </li>
+                  <li class="thin"><a href="#" data-toggle="modal" data-target=".signup">Sign Up</a>
+                  </li>
                 </ul>
 
             </div>
