@@ -307,7 +307,7 @@
         </div>
 
 
-        <div class="container section col s10 offset-s1">
+        <div class="container section col s12 ">
           <br>
           <div class="row">
 
@@ -315,13 +315,13 @@
 
             <div class="col s12 m6 l4">
 
-              <div class="card orange orange-text z-depth-5">
+              <div class="card  z-depth-5">
                 <div class="card-content center white-text">
-                  <span class="" ng-click="" ><h5 class="inline">{{item.User.fname}}</h5></span><a ui-sref="user({username: item.User.username})" class="handle"> <small>@{{item.User.username}}</small></a> <span class="date pull-right">{{item.createdAt | date: "mediumDate"}}</span>
+                  <span class="" ng-click="" ><h5 class="inline thin">{{item.title}}</h5></span><a ui-sref="user({username: item.User.username})" class="handle"> <small>@{{item.User.username}}</small></a> <span class="date pull-right">{{item.createdAt | date: "mediumDate"}}</span>
                   <span class="green white-text badge">{{item.city}}, {{item.state}}, {{item.country}}</span><br>
 
                   <br></p>
-                  {{item.description}}
+                  {{item.description}} - {{item.User.fname}}
                   <br></br>
                   <a ui-sref="showItem({id: item.id})"
                   "waves-effect waves-light black white-text btn"><i class=
