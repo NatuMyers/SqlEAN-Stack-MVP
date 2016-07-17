@@ -1,6 +1,22 @@
+<script>
+$('.dropdown-button').dropdown({
+    inDuration: 300,
+    outDuration: 225,
+    constrain_width: false, // Does not change width of dropdown to that of the activator
+    hover: true, // Activate on hover
+    gutter: 0, // Spacing from edge
+    belowOrigin: false, // Displays dropdown below the button
+    alignment: 'left' // Displays dropdown with edge aligned to the left of button
+  }
+);
+
+</script>
+
 <nav role="navigation" class="orange">
     <div class="nav-wrapper container "><a id="logo-container" href="#" class="brand-logo center thin white-text">Google Killer</a>
         <div ng-show="isAuthenticated">
+
+
 
             <div ng-show="!user" class="dropdown pull-right">
                 <!-- ABOUT -->
@@ -15,8 +31,20 @@
                     <li class="thin"><a ui-sref="about">About</a>
                     </li>
 
+                    <!-- Dropdown Trigger -->
+                    <a class='dropdown-button btn' href='#' data-activates='dropdown1'>Drop Me!</a>
 
-                <a class='dropdown-button btn' href='#' data-activates='dropdownVisitor'>Drop Me!</a>
+                    <!-- Dropdown Structure -->
+                    <ul id='dropdown1' class='dropdown-content'>
+                      <li><a href="#!">one</a></li>
+                      <li><a href="#!">two</a></li>
+                      <li class="divider"></li>
+                      <li><a href="#!">three</a></li>
+                    </ul>
+
+
+                <li class="thin"><a class='dropdown-button btn' href='#' data-activates='dropdownVisitor'>Drop Me!</a>
+                </li>
 
 
                 <button class="dropdown-button btn" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="false" data-activates='dropdown1' aria-expanded="true">
