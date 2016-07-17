@@ -16,12 +16,12 @@ angular.module('mvpApp')
     })
     .state('login', {
       url: '/login',
-      controller: 'formController',
+      //controller: 'formController',
       templateUrl: 'views/partials/login-partial.html'
     })
     .state('signup', {
       url: '/signup',
-      controller: 'formController',
+      //controller: 'formController',
       templateUrl: 'views/partials/signup-partial.html'
     })
     .state('items', {
