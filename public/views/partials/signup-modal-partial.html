@@ -1,41 +1,47 @@
 <div ng-controller="AppCtrl">
-  <div class="modal fade signup" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
-    <div class="modal-dialog modal-md">
-      <div class="modal-content">
-        <form class="form-horizontal">
+
+        <form>
           <h3 class="loginSignup">Sign-Up</h3>
           <div class="row">
-            <div class="col-xs-12">
+            <div class="col s12">
               <div class="form-group signupMargin">
-                <div class="col-xs-8 col-xs-offset-2">
+                <div class="col s8  offset s2">
                   <h7 class="dash-item-heading fields">First Name</h7>
                   <input type="text" class="form-control mdLgFields inputField" id="fname" placeholder="John" ng-model="fname">
                 </div>
-                <div class="col-xs-8 col-xs-offset-2">
+                <div class="col s8  offset s2">
                   <h7 class="dash-item-heading fields">Last Name</h7>
                   <input type="text" class="form-control mdLgFields inputField" id="lname" placeholder="Doe" ng-model="lname">
                 </div>
-                <div class="col-xs-8 col-xs-offset-2">
+                <div class="col s8  offset s2">
                   <h7 class="dash-item-heading fields">Email Address</h7>
                   <input type="email" class="form-control mdLgFields inputField" id="email" placeholder="example@example.com" ng-model="email">
                 </div>
 
-                <div class="col-xs-8 col-xs-offset-2">
-                  <input type="radio" ng-model="type" value="producer" id="type">Producer
-                  <input type="radio" ng-model="type" value="purchaser" id="type">Purchaser
+                <div class="col s8 offset s2">
+
+                <p>
+                  <input name="group1" type="radio" id="test1" ng-model="type" value="producer" />
+                  <label for="test1">Producer</label>
+                </p>
+                <p>
+                  <input name="group1" type="radio" id="test2" ng-model="type" value="purchaser"/>
+                  <label for="test2">Purchaser</label>
+                </p>
+
                 </div>
 
 
 
-                <div class="col-xs-8 col-xs-offset-2">
+                <div class="col s8 col soffset-2">
                   <h7 class="dash-item-heading fields">Username</h7>
                   <input type="text" class="form-control mdLgFields inputField" id="username" placeholder="Username" ng-model="username">
                 </div>
-                <div class="col-xs-8 col-xs-offset-2">
+                <div class="col s8 col soffset-2">
                   <label for="password" class="dash-item-heading fields">Password</label>
                   <input type="password" class="form-control mdLgFields inputField" id="password" placeholder="Password" ng-model="password">
                 </div>
-                <div class="col-xs-6 col-xs-offset-3">
+                <div class="col s6 col soffset-3">
                   <button ng-click="signup()" type="submit" class="btn btn-success signupBtn" data-dismiss="modal">Sign Up</button>
                   <div class="text-center already">
                   <span class="grey-text">Already a member?</span>
@@ -46,6 +52,4 @@
           </div>
         </div>
       </form>
-    </div>
-  </div>
 </div>
