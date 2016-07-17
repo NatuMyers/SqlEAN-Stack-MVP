@@ -326,15 +326,15 @@
                                 <div class="col s12 m6 l4">
 
                                     <div class="card  z-depth-1">
-                                        <div class="card-content center white-text">
+                                        <div class="card-content center black-text">
                                             <span class="" ng-click=""><h5 class="inline thin">{{item.title}}</h5></span>
                                             <a ui-sref="user({username: item.User.username})" class="handle"> <small>@{{item.User.username}}</small></a> <span class="date pull-right">{{item.createdAt | date: "mediumDate"}}</span>
-                                            <span class="green white-text badge">{{item.city}}, {{item.state}}, {{item.country}}</span><br>
+                                            <span class="green black-text badge">{{item.city}}, {{item.state}}, {{item.country}}</span><br>
 
                                             <br></p>
                                             {{item.description}} - {{item.User.fname}}
                                             <br></br>
-                                            <a ui-sref="showItem({id: item.id})" "waves-effect waves-light black white-text btn"><i class=
+                                            <a ui-sref="showItem({id: item.id})" "waves-effect waves-light black black-text btn"><i class=
                   "material-icons left">send</i>View</a>
                                         </div>
                                     </div>
@@ -342,16 +342,19 @@
 
 
                             </div>
-                            <!-- END ROW -->
-                            <a class="waves-effect waves-light black darken-3 white-text btn" href="search.html">See All</a>
+
                         </div>
+
+                        <!-- END ROW -->
+                        <a class="waves-effect waves-light black btn" href="search.html">See All</a>
+
+
+                        <a class="waves-effect waves-light black btn" href="/items">See All</a>
+
+
                     </div>
                     <!-- END CARDD -->
 
-
-                    <div class="panel-footer clearfix">
-                        <a class="panel-footer-link pull-right" href="/items">View All Items</a>
-                    </div>
                 </div>
 
 
