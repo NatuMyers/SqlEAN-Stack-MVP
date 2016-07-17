@@ -2,11 +2,11 @@
 <div ng-if="User.type == 'producer'">
 <!-- postitem -->
 
-<div class="container-fluid header-background"  ng-init="init()">
+<div class=" header-background"  ng-init="init()">
     <h3 class="dash-header">Producer Dashboard</h3>
 </div>
 
-<div class="container-fluid">
+<div class="">
   <div class="row add-comment-row">
     <div class="col-sm-4">
       <h4 class="dash-main-header">Going somewhere? Share a new item!</h4>
@@ -72,13 +72,13 @@
 <div ng-if="User.type != 'producer'">
 <!-- orders profile items-->
 
-<div class="container-fluid header-background"  ng-init="init()">
+<div class=" header-background"  ng-init="init()">
     <h3 class="dash-header">Purchaser Dashboard</h3>
 </div>
 
 
 <!--- profile -->
-<div class="container-fluid">
+<div class="">
   <div class="row add-comment-row">
     <div class="col-md-6">
       <img class="main-profile-img" src="http://www.gravatar.com/avatar/{{ userData.email | gravatar }}?s=200&d=mm" width="150px" class="center-block">
@@ -185,7 +185,7 @@
 </div> <!-- end container -->
 
 <!--- items -->
-<div class="container-fluid">
+<div class="">
   <div class="row">
     <div class="col-sm-8">
       <div class="panel add-panel itin-panel" ng-repeat="item in userItems | orderBy:'-createdAt'">
