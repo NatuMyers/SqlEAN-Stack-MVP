@@ -74,16 +74,20 @@ $('.dropdown-button').dropdown({
 
         </div>
 
-        <!-- ABOUT -->
-        <!-- Desktop version -->
-        <ul class="left hide-on-med-and-down">
-            <li class="thin"><a ui-sref="about">About</a>
-            </li>
-        </ul>
         <!-- Mobile Version -->
         <ul id="nav-mobile" class="side-nav">
             <li><a ui-sref="about">About</a>
             </li>
+        </ul>
+
+        <!-- Desktop version -->
+        <ul class="right hide-on-med-and-down">
+          <li class="thin"><a ui-sref="about">About</a>
+          </li>
+          <li class="thin"><a href="#" data-toggle="modal" data-target=".login">Login</a>
+          </li>
+          <li class="thin"><a href="#" data-toggle="modal" data-target=".signup">Sign Up</a>
+          </li>
         </ul>
         <!-- minimenu -->
         <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
