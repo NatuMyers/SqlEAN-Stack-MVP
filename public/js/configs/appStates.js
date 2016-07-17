@@ -17,12 +17,12 @@ angular.module('mvpApp')
     .state('enter', {
       url: '/enter',
       controller: 'formController',
-      templateUrl: 'views/partials/signup-partial.html'
+      templateUrl: 'views/partials/login-partial.html'
     })
     .state('join', {
       url: '/join',
       controller: 'formController',
-      templateUrl: 'views/partials/login-partial.html'
+      templateUrl: 'views/partials/signup-partial.html'
     })
     .state('items', {
       url: '/items',
