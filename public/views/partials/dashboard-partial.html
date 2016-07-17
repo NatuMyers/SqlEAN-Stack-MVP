@@ -81,7 +81,11 @@
 
 
                     <div class="row add-comment-row">
+
+
                         <div class="col s12 m6 l6">
+                            <div class = "center">
+
                             <img class="main-profile-img" src="http://www.gravatar.com/avatar/{{ userData.email | gravatar }}?s=200&d=mm" width="150px" class="center-block">
 
 
@@ -89,6 +93,8 @@
                             <h4>@{{ user.username }}</h4>
 
                             <a href="/{{ user.username }}" type="button" class="btn pull-right">View Self</a>
+
+                          </div>
 
 
                         </div>
@@ -329,12 +335,12 @@
                                 <div class="card hoverable z-depth-1">
                                     <div class="card-content center black-text">
                                         <span class="grey white-text badge">{{item.city}}, {{item.state}}, {{item.country}}</span><br>
-
-                                        <br></p>
-                                        Description: {{item.description}} - {{item.User.fname}}
                                         <br>
                                         <span class="" ng-click=""><h4 class=" thin">{{item.title}}</h5></span> Posted by: <a ui-sref="user({username: item.User.username})" class="handle">  @{{item.User.username}}</a> <span class="date pull-right">{{item.createdAt | date: "mediumDate"}}</span>
                                         </br>
+                                        <br></p>
+                                        Description: {{item.description}} - {{item.User.fname}}
+
 
                                         <a ui-sref="showItem({id: item.id})" "waves-effect waves-light black black-text btn" class="btn waves-effect waves-light"><i class="material-icons left">send</i>View</a>
 

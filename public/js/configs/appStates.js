@@ -14,6 +14,16 @@ angular.module('mvpApp')
       controller: 'dashboardCtrl',
       templateUrl: 'views/partials/dashboard-partial.html'
     })
+    .state('enter', {
+      url: '/enter',
+      controller: 'formController',
+      templateUrl: 'views/partials/signup-partial.html'
+    })
+    .state('join', {
+      url: '/join',
+      controller: 'formController',
+      templateUrl: 'views/partials/login-partial.html'
+    })
     .state('items', {
       url: '/items',
       controller: 'itemsController',
