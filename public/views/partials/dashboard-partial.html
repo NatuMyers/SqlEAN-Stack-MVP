@@ -326,16 +326,16 @@
 
                                         <div class="card hoverable z-depth-1">
                                             <div class="card-content center black-text">
-                                                <span class="" ng-click=""><h5 class="inline thin">{{item.title}}</h5></span>
-                                                <a ui-sref="user({username: item.User.username})" class="handle"> <small>@{{item.User.username}}</small></a> <span class="date pull-right">{{item.createdAt | date: "mediumDate"}}</span>
+                                                <span class="" ng-click=""><h4 class="inline thin">{{item.title}}</h5></span>
+                                                Posted by: <a ui-sref="user({username: item.User.username})" class="handle">  @{{item.User.username}}</a> <span class="date pull-right">{{item.createdAt | date: "mediumDate"}}</span>
                                                 <span class="green black-text badge">{{item.city}}, {{item.state}}, {{item.country}}</span><br>
 
                                                 <br></p>
-                                                {{item.description}} - {{item.User.fname}}
+                                                Description: {{item.description}} - {{item.User.fname}}
                                                 <br></br>
 
-                                                <a ui-sref="showItem({id: item.id})" "waves-effect waves-light black black-text btn"><i class=
-                  "btn waves-effect waves-light material-icons left">send</i>View</a>
+                                                <a ui-sref="showItem({id: item.id})" "waves-effect waves-light black black-text btn" class="btn waves-effect waves-light"><i class="material-icons left">send</i>View</a>
+
                                             </div>
                                         </div>
 
