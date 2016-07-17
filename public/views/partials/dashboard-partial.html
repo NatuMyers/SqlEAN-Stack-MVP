@@ -1,6 +1,6 @@
 <div class="container">
 
-<div ng-if="userData.type == 'producer'">
+<div ng-if="User.type == 'producer'">
 <!-- postitem -->
 
 <div class=" header-background"  ng-init="init()">
@@ -70,7 +70,7 @@
 
 
 
-<div ng-if="userData.type == 'purchaser'">
+<div ng-if="User.type != 'producer'">
 <!-- orders profile items-->
 
 <div class=" header-background"  ng-init="init()">
