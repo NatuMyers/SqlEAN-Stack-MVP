@@ -11,7 +11,8 @@ angular.module('mvpApp')
       type: $scope.type
     })
     .then(function(result) {
-      $('.login').modal('toggle')
+      //$('.login').modal('toggle')
+      $state.go('dashboard');
     })
   } // end sign up
 
@@ -33,7 +34,7 @@ angular.module('mvpApp')
         $scope.alerts.push({msg: 'Oops! Wrong username/password!'});
       } else {
         $scope.getLogin();
-        $('.login').modal('toggle')
+        //$('.login').modal('toggle')
         $state.go('dashboard');
       }
     }, function(err) {
