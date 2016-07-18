@@ -27,7 +27,7 @@ module.exports = function(sequelize, DataTypes) {
     availibility:{
       type: DataTypes.INTEGER
     },
-    :{
+    price:{
       type: DataTypes.INTEGER
     },
 
