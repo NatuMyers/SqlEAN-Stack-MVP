@@ -1,32 +1,64 @@
-<div class="navbar">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-      <a class="navbar-brand hide-on-med-and-down" href="/">Trip Chats</a>
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div ng-show="!user" class="dropdown pull-right">
-      <button class="btn btn-signup dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="false" aria-expanded="true">
-        Sign In
-        <span class="caret"></span>
-      </button>
-      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-        <li><a href="#" data-toggle="modal" data-target=".login">Login</a></li>
-        <li><a href="#" data-toggle="modal" data-target=".signup">Sign Up</a></li>
-      </ul>
-    </div>
-    <div ng-show="user" class="dropdown pull-right">
-      <button class="btn btn-logged-in dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="false" aria-expanded="true">
-        {{ user.username }}
-        <span class="caret"></span>
-      </button>
-      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-        <li><a href="/" >Home</a></li>
-        <li><a href="/dashboard">Dashboard</a></li>
-        <li><a href="/{{ user.username }}">Profile</a></li>
-        <li><a href="/items">All Items</a></li>
-        <li role="separator" class="divider"></li>
-        <li><a  ng-click="logout()">Log Out</a></li>
-      </ul>
-    </div>
-  </div><!-- /.container-fluid -->
-</div>
 
+
+
+
+
+
+<nav role="navigation" class="orange">
+    <div class="nav-wrapper container ">
+
+            <div ng-show="!user" class="dropdown pull-right">
+              <!--<a id="logo-container" href="#" class="brand-logo left thin white-text">Google Killer</a>-->
+                <!-- ABOUT -->
+                <!-- Mobile Version -->
+                <ul id="nav-mobile" class="side-nav">
+                    <li><a ui-sref="about">About</a>
+                    </li>
+                </ul>
+
+                <!-- Modal Trigger -->
+                <a class="waves-effect waves-light btn modal-trigger" href="/login"  data-target=".login">Login</a>
+                <!-- Modal Trigger -->
+                <a class="waves-effect waves-light btn modal-trigger" href="/signup"   data-target=".signup">Signup</a>
+
+
+
+                                <!-- Desktop version -->
+                                <ul class="right hide-on-med-and-down">
+                                  <li class="thin"><a ui-sref="about">About</a>
+                                  </li>
+                                  <!-- <li class="thin large waves-effect waves-light"><a href="#" data-toggle="modal" data-target=".login">Login</a> -->
+                                </ul>
+
+            </div>
+
+            <div ng-show="user" class="dropdown pull-right">
+
+
+              <!-- searchbar -->
+              <ul class="left hide-on-med-and-down">
+                  <form>
+                      <div class="input-field">
+                          <input id="search" type="search" required>
+                          <label for="search"><i class="material-icons">search</i></label>
+                          <i class="material-icons">close</i>
+                      </div>
+                  </form>
+              </ul>
+
+              <ul class="right hide-on-med-and-down">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/dashboard">Dashboard</a></li>
+                    <li><a href="/{{ user.username }}">Profile</a></li>
+                    <li><a href="/items">All Items</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a ng-click="logout()">Log Out</a></li>
+                </ul>
+
+            </div>
+
+        </div>
+
+
+
+</nav>

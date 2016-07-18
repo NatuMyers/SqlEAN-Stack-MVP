@@ -1,8 +1,16 @@
 
-<div class="container-fluid header-background"  ng-init="init()">
+<div class=" header-background"  ng-init="init()">
   <h3 class="dash-header text-center">{{currentItem.title}}</h3>
 </div>
-<div class="container-fluid">
+<div class="">
+
+<!-- When no activities have been listed -->
+<div  ng-show="!currentItem.Activities.length">
+  <h4 class="item-number" >No activities have been listed by {{ currentItem.User.username }} yet.</h4>
+
+
+
+
   <div class="row add-comment-row">
 
     <div class="col-sm-6">
@@ -59,10 +67,7 @@
     <div class="col-sm-12 item-name-col">
       <div class="single-itin-interest-name clearfix">
 
-        <!-- When no activities have been listed -->
-        <div  ng-show="!currentItem.Activities.length">
-          <h4 class="item-number" >No activities have been listed by {{ currentItem.User.username }} yet.</h4>
-        </div>
+
         <div class="interest-name interest-name-head" ng-show="currentItem.Activities.length">
           <a class="username-link" ui-sref="user({username: currentItem.User.username})">{{currentItem.User.fname}}</a> is interested in:
         </div>
@@ -76,11 +81,11 @@
         </div>
     </div>
   </div>
-</div>
 
 
 
-<div class="container-fluid">
+
+<div class="">
 
   <div class="row">
 
@@ -132,4 +137,11 @@
       </div>
     </div>
   </div>
+  </div>
+</div>
+
+
+</div>
+
+
 </div>

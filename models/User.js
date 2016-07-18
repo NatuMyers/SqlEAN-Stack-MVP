@@ -14,14 +14,17 @@ module.exports = function(sequelize, DataTypes) {
       unique: true,
       allowNull: false,
       validate: {
-        len: [6,30]
+        len: [6,30],
+        isAlphanumeric: true,
+
       }
     },
     password: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        notEmpty: true
+        notEmpty: true,
+        len: [6,99]
       }
     },
     fname: {
@@ -43,6 +46,10 @@ module.exports = function(sequelize, DataTypes) {
     },
     type: {
       type: DataTypes.STRING,
+      allowNull: false,
+      isIn: [
+          ['producer', 'purchaser']
+      ]
     },
 
   }, {
