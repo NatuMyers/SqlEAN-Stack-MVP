@@ -13,7 +13,7 @@ angular.module('mvpApp')
     .then(function(result) {
       //$('.login')
       // After you successfully login
-      $state.go('/signup');
+      $state.go('/login');
     })
   } // end sign up
 
