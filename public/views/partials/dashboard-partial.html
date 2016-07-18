@@ -1,6 +1,6 @@
 <div class="container">
 
-    <div ng-if="User.type == 'producer'">
+  <!-- Producer -->
         <!-- postitem -->
 
         <div class=" header-background" ng-init="init()">
@@ -33,7 +33,7 @@
                         </div>
 
                         <div class="col s6">
-                            <div class="add-itin-form">
+
                               <div class="form-group">
                                   <textarea ng-model="item.description" rows="3" name="description" type="text" class="description-box-input form-control validate" placeholder="Describe Your Trip"></textarea>
                               </div>
@@ -41,7 +41,7 @@
                               <div class="form-group share-item">
                                   <a class="waves-effect waves-light black btn"  ng-click="addItem()" ng-submit="addItem()">Add Item</a>
                               </div>
-                            </div>
+
                         </div>
                     </form>
                 </div>
@@ -375,4 +375,3 @@
             </div>
         </div>
         <!-- end container -->
-    </div>
