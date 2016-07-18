@@ -11,9 +11,9 @@ angular.module('mvpApp')
       type: $scope.type
     })
     .then(function(result) {
-      $('.login')
+      //$('.login')
       // After you successfully signup
-      $state.go('home');
+      $state.go('login');
     })
   } // end sign up
 
