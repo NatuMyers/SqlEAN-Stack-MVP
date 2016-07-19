@@ -58,28 +58,42 @@
 
                     <div class="card blue-grey lighten-5">
                         <div class="card-content black-text">
-                            <span class="card-title black-text">Contact</span>
+                            <span class="card-title black-text">Add items</span>
 
 
 
 
+                                                      <form class="row" name="itemForm">
+                                                          <div class="col s6">
+                                                              <div class="add-itin-form">
+                                                                  <div class="form-group col-sm-12 middle-col">
+                                                                      <input ng-model="item.title" name="title" type="text" class=" validate" placeholder="Intinerary Name">
+                                                                  </div>
+                                                                  <div class="form-group col s6 middle-col">
+                                                                      <input ng-model="item.city" name="city" type="text" class=" validate" placeholder="City">
+                                                                  </div>
+                                                                  <div class="form-group col s3 middle-col">
+                                                                      <input ng-model="item.state" name="state" type="text" class=" validate" placeholder="State">
+                                                                  </div>
+                                                                  <div class="form-group col s3 middle-col">
+                                                                      <input ng-model="item.country" name "country" type="text" class=" validate" placeholder="Country">
+                                                                  </div>
+                                                              </div>
+                                                          </div>
 
-                            <div class="dash-latest-items clearfix" ng-repeat="item in allItems | orderBy:'-createdAt' | limitTo: 3">
+                                                          <div class="col s6">
 
-                                    <div class="card-content center black-text">
-                                        <span class="grey white-text badge">{{item.city}}, {{item.state}}, {{item.country}}</span><br>
-                                        <br>
-                                        <span class="" ng-click=""><h4 class=" thin">{{item.title}}</h5></span> Posted by: <a ui-sref="user({username: item.User.username})" class="handle">  @{{item.User.username}}</a> <span class="date pull-right">{{item.createdAt | date: "mediumDate"}}</span>
-                                        </br>
-                                        <br></p>
-                                        Description: {{item.description}} - {{item.User.fname}}
+                                                              <div class="form-group">
+                                                                  <textarea ng-model="item.description" rows="3" name="description" type="text" class="description-box-input  validate" placeholder="Describe Your Trip"></textarea>
+                                                              </div>
 
+                                                              <div class="form-group share-item">
+                                                                  <a class="waves-effect waves-light black btn" ng-click="addItem()" ng-submit="addItem()">Add Item</a>
+                                                              </div>
 
-                                        <a ui-sref="showItem({id: item.id})" "waves-effect waves-light black black-text btn" class="btn waves-effect waves-light"><i class="material-icons left">send</i>View</a>
+                                                          </div>
+                                                      </form>
 
-                                    </div>
-
-                            </div>
 
 
 
@@ -152,36 +166,8 @@
                       <div class="card-content ">
 
 
-                          <form class="row" name="itemForm">
-                              <div class="col s6">
-                                  <div class="add-itin-form">
-                                      <div class="form-group col-sm-12 middle-col">
-                                          <input ng-model="item.title" name="title" type="text" class=" validate" placeholder="Intinerary Name">
-                                      </div>
-                                      <div class="form-group col s6 middle-col">
-                                          <input ng-model="item.city" name="city" type="text" class=" validate" placeholder="City">
-                                      </div>
-                                      <div class="form-group col s3 middle-col">
-                                          <input ng-model="item.state" name="state" type="text" class=" validate" placeholder="State">
-                                      </div>
-                                      <div class="form-group col s3 middle-col">
-                                          <input ng-model="item.country" name "country" type="text" class=" validate" placeholder="Country">
-                                      </div>
-                                  </div>
-                              </div>
 
-                              <div class="col s6">
 
-                                  <div class="form-group">
-                                      <textarea ng-model="item.description" rows="3" name="description" type="text" class="description-box-input  validate" placeholder="Describe Your Trip"></textarea>
-                                  </div>
-
-                                  <div class="form-group share-item">
-                                      <a class="waves-effect waves-light black btn" ng-click="addItem()" ng-submit="addItem()">Add Item</a>
-                                  </div>
-
-                              </div>
-                          </form>
                       </div>
                   </div>
 
