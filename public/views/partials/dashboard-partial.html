@@ -22,9 +22,9 @@
                         <img class="main-profile-img" src="http://www.gravatar.com/avatar/{{ userData.email | gravatar }}?s=200&d=mm" width="150px" class="center-block">
                     </center>
               <span class="card-title black-text">Anthony Nguyen</span>
-              <p>{{ user.fname }}</p>
-            <p class="blue-grey-text darken-5">{{ user.company }}</p>
+              <p>{{ user.fname }} of {{ user.company }}</p>
                 <p class="blue-grey-text darken-5">@{{ user.username }}</p><br>
+
 
                 <a href="/{{ user.username }}" type="button" class="btn pull-right">View Self</a>
 
@@ -207,7 +207,7 @@ pooo
                     <div class="center">
                         <img class="main-profile-img" src="http://www.gravatar.com/avatar/{{ userData.email | gravatar }}?s=200&d=mm" width="150px" class="center-block">
 
-                        <h3>{{ user.fname }} of {{ user.company }} </h3>
+                        <h3>{{ user.fname }} of {{ user.company }}</h3>
                         <h4>{{ user.username }}</h4>
 
                     </div>
