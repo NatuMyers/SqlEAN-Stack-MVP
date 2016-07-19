@@ -35,7 +35,20 @@
                 <div class="col s12 m4">
                     <div class="card blue-grey lighten-5 hide-on-small-only">
                         <div class="card-content black-text">
-                            <span class="card-title black-text">Items</span>
+
+                            <h5 class="thin card-title">
+                You have </i> <span ng-show="userItems.length">{{userItems.length}}</span>
+                <ng-pluralize ng-show="userItems.length" count="userItems.length"
+                  when="{
+                    '1': 'item',
+                    'other': 'items'
+                  }">
+                </ng-pluralize>
+                <span ng-show="!userItems.length">0 items</span>
+              </h5>
+
+
+
 
                             <div class="collection z-depth-1">
                                 <a href="http://redhotchilipeppers.com" target="_blank" class="collection-item black-text">Favourite Band
@@ -163,7 +176,7 @@
 
             <div class="row interest-row">
                 <div class="col-sm-12">
-                    <h3 class="thin">
+                    <h5 class="thin">
         You have </i> <span ng-show="userItems.length">{{userItems.length}}</span>
         <ng-pluralize ng-show="userItems.length" count="userItems.length"
           when="{
@@ -172,7 +185,7 @@
           }">
         </ng-pluralize>
         <span ng-show="!userItems.length">0 items</span>
-      </h4>
+      </h5>
                 </div>
             </div>
 
