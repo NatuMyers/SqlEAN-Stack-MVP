@@ -22,16 +22,14 @@
                 <div class="card-content black-text">
                   <br>
 
+            <p>
+            <a href="/{{ user.username }}" type="button" class="btn pull-right">View Self</a>
+            </p>
 
-
-                  <p>
-                    <a href="/{{ user.username }}" type="button" class="btn pull-left">View Self</a>
-                  </p>
-
-
+                    <div class = "center">
 
                       <div class = "row">
-                    <img class="main-profile-img  pull-left" src="http://www.gravatar.com/avatar/{{ userData.email | gravatar }}?s=200&d=mm" width="150px" >
+                    <img class="main-profile-img" src="http://www.gravatar.com/avatar/{{ userData.email | gravatar }}?s=200&d=mm" width="150px" >
                       </div>
 
                     <p>{{ user.fname }} of {{ user.company }}</p>
