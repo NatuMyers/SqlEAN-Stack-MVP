@@ -7,13 +7,13 @@ angular.module('mvpApp')
       password: $scope.password,
       email: $scope.email,
       fname: $scope.fname,
-      lname: $scope.lname,
+      company: $scope.company,
       type: $scope.type
     })
     .then(function(result) {
       //$('.login')
       // After you successfully signup
-      $state.go('login'); 
+      $state.go('login');
     })
   } // end sign up
 
