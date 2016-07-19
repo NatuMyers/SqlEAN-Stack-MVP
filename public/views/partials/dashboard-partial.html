@@ -60,7 +60,35 @@
                         <div class="card-content black-text">
                             <span class="card-title black-text">Contact</span>
 
-                            <p>Feel free to shoot me an email: anthony.nguyen(at)queensu.ca</p>
+
+
+
+
+                            <div class="dash-latest-items clearfix" ng-repeat="item in allItems | orderBy:'-createdAt' | limitTo: 3">
+
+                                    <div class="card-content center black-text">
+                                        <span class="grey white-text badge">{{item.city}}, {{item.state}}, {{item.country}}</span><br>
+                                        <br>
+                                        <span class="" ng-click=""><h4 class=" thin">{{item.title}}</h5></span> Posted by: <a ui-sref="user({username: item.User.username})" class="handle">  @{{item.User.username}}</a> <span class="date pull-right">{{item.createdAt | date: "mediumDate"}}</span>
+                                        </br>
+                                        <br></p>
+                                        Description: {{item.description}} - {{item.User.fname}}
+
+
+                                        <a ui-sref="showItem({id: item.id})" "waves-effect waves-light black black-text btn" class="btn waves-effect waves-light"><i class="material-icons left">send</i>View</a>
+
+                                    </div>
+
+                            </div>
+
+
+
+
+
+
+
+
+
                         </div>
                     </div>
                 </div>
