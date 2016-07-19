@@ -21,15 +21,17 @@
                   <div class="card white z-depth-1">
                 <div class="card-content black-text">
             <br>
-                    <center>
-                        <img class="main-profile-img" src="http://www.gravatar.com/avatar/{{ userData.email | gravatar }}?s=200&d=mm" width="150px" class="center-block">
-                    </center>
-                    <p>
-                    <a href="/{{ user.username }}" type="button" class="btn pull-right">View Self</a>
-                  </p>
 
-              <p>{{ user.fname }} of {{ user.company }}</p>
-                <p class="blue-grey-text darken-5">(@{{ user.username }})</p>
+            <p>
+            <a href="/{{ user.username }}" type="button" class="btn pull-right">View Self</a>
+            </p>
+                    <center>
+                    <img class="main-profile-img" src="http://www.gravatar.com/avatar/{{ userData.email | gravatar }}?s=200&d=mm" width="150px" class="center-block">
+
+
+                    <p>{{ user.fname }} of {{ user.company }}</p>
+                    <p class="blue-grey-text darken-5">(@{{ user.username }})</p>
+                  </center>
 
 
             </div>
