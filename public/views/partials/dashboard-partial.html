@@ -23,16 +23,16 @@
                     <div class="col s6">
                         <div class="add-itin-form">
                             <div class="form-group col-sm-12 middle-col">
-                                <input ng-model="item.title" name="title" type="text" class="form-control validate" placeholder="Intinerary Name">
+                                <input ng-model="item.title" name="title" type="text" class=" validate" placeholder="Intinerary Name">
                             </div>
                             <div class="form-group col s6 middle-col">
-                                <input ng-model="item.city" name="city" type="text" class="form-control validate" placeholder="City">
+                                <input ng-model="item.city" name="city" type="text" class=" validate" placeholder="City">
                             </div>
                             <div class="form-group col s3 middle-col">
-                                <input ng-model="item.state" name="state" type="text" class="form-control validate" placeholder="State">
+                                <input ng-model="item.state" name="state" type="text" class=" validate" placeholder="State">
                             </div>
                             <div class="form-group col s3 middle-col">
-                                <input ng-model="item.country" name "country" type="text" class="form-control validate" placeholder="Country">
+                                <input ng-model="item.country" name "country" type="text" class=" validate" placeholder="Country">
                             </div>
                         </div>
                     </div>
@@ -40,7 +40,7 @@
                     <div class="col s6">
 
                         <div class="form-group">
-                            <textarea ng-model="item.description" rows="3" name="description" type="text" class="description-box-input form-control validate" placeholder="Describe Your Trip"></textarea>
+                            <textarea ng-model="item.description" rows="3" name="description" type="text" class="description-box-input  validate" placeholder="Describe Your Trip"></textarea>
                         </div>
 
                         <div class="form-group share-item">
@@ -227,21 +227,21 @@
                     <div class="editable-inputs" ng-show="editOptions">
                         <div class="row">
                             <div class="col s12">
-                                <input type="text" ng-model="item.title" class="form-control editable-input-fields">
+                                <input type="text" ng-model="item.title" class=" editable-input-fields">
                             </div>
                             <div class="col s12">
-                                <input type="text" ng-model="item.description" class="form-control editable-input-fields">
+                                <input type="text" ng-model="item.description" class=" editable-input-fields">
                             </div>
                             <div class="col s4">
-                                <input type="text" ng-model="item.city" class="form-control editable-input-fields">
-                            </div>
-
-                            <div class="col s4">
-                                <input type="text" ng-model="item.state" class="form-control editable-input-fields">
+                                <input type="text" ng-model="item.city" class=" editable-input-fields">
                             </div>
 
                             <div class="col s4">
-                                <input type="text" ng-model="item.country" class="form-control editable-input-fields">
+                                <input type="text" ng-model="item.state" class=" editable-input-fields">
+                            </div>
+
+                            <div class="col s4">
+                                <input type="text" ng-model="item.country" class=" editable-input-fields">
                             </div>
                         </div>
                     </div>
@@ -259,7 +259,7 @@
                                     <div class="form-group">
                                         <p class="activity-question" ng-hide="editOptions">What are you interested in?</p>
                                         <div class="form-inline input-group add-interest-form" ng-hide="editOptions">
-                                            <input placeholder="e.g. Museums" ng-model="item.newActivity.name" type="text" class="validate form-control">
+                                            <input placeholder="e.g. Museums" ng-model="item.newActivity.name" type="text" class="validate ">
                                             <div class="input-group-btn">
                                                 btn-success" ng-submit="addActivity(item.id, item.newActivity)" ng-click="addActivity(item.id, item.newActivity)">Add</button>
                                             </div>

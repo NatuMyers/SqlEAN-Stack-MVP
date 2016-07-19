@@ -6,7 +6,7 @@
   <div class="row add-comment-row">
     <div class="col-sm-5">
       <div class="form-inline input-group search-items">
-        <input type="text" ng-model="search.city" ng-change="filterGeo(); numItins()" ng-model-options=" { debounce: 500 } " class="form-control" placeholder="Search a specific location">
+        <input type="text" ng-model="search.city" ng-change="filterGeo(); numItins()" ng-model-options=" { debounce: 500 } " class="" placeholder="Search a specific location">
         <div class="input-group-btn">
           <button ng-click="filterGeo()" class="btn btn-success">Search</button>
         </div>
@@ -91,15 +91,15 @@
           <div class="form-group clearfix" ng-show="showCommentBox">
             <form>
               <div class="col s12 interest-col">
-                <input type="text" class="form-control mdLgFields formPadding inputField" id="comment" ng-model="comment.text" placeholder="Add a comment for {{item.User.username}} to visit.">
+                <input type="text" class=" mdLgFields formPadding inputField" id="comment" ng-model="comment.text" placeholder="Add a comment for {{item.User.username}} to visit.">
 
 
               </div>
               <div class="col s6 interest-col">
-                <input ng-model="comment.address" class="form-control col s6 latest-address-input" type="text"  placeholder="Street Address"/>
+                <input ng-model="comment.address" class=" col s6 latest-address-input" type="text"  placeholder="Street Address"/>
               </div>
               <div class="col s6 interest-col">
-                <input ng-model="comment.link" class="form-control col s6 latest-address-input"  type="text"  placeholder="Website"/>
+                <input ng-model="comment.link" class=" col s6 latest-address-input"  type="text"  placeholder="Website"/>
               </div>
             </form>
           </div>
