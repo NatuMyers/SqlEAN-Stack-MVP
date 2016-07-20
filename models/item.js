@@ -1,27 +1,21 @@
 
 module.exports = function(sequelize, DataTypes) {
-  var Item = sequelize.define('Item', {
+  var Item = sequelize.define('item', {
     title: {
       type: DataTypes.STRING,
       allowNull: false,
-      validate: {
-        notEmpty: true
-      }
     },
     availibility: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      validate: {
-        notEmpty: true
-      }
     }
 
   }, {
     classMethods: {
       associate: function(models) {
-        Item.belongsTo(models.User),
-        Item.hasMany(models.Comment),
-        Item.hasMany(models.Activity)
+        item.belongsTo(models.User),
+        item.hasMany(models.Comment),
+        item.hasMany(models.Activity)
       }
     }
   });
