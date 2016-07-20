@@ -4,31 +4,10 @@ module.exports = function(sequelize, DataTypes) {
     title: {
       type: DataTypes.STRING,
       allowNull: false,
-      validate: {
-        notEmpty: true
-      }
     },
-    city: {
-      type: DataTypes.STRING,
+    availibility: {
+      type: DataTypes.INTEGER,
       allowNull: false,
-      validate: {
-        notEmpty: true
-      }
-    },
-    state: {
-      type: DataTypes.STRING
-    },
-    country: {
-      type: DataTypes.STRING
-    },
-    description:{
-      type: DataTypes.STRING
-    },
-    availibility:{
-      type: DataTypes.INTEGER
-    },
-    price:{
-      type: DataTypes.INTEGER
     }
 
   }, {

@@ -5,7 +5,7 @@ var models = require("./models");
 
 var app = express();
 
-var PORT = process.env.PORT || 4000;
+var PORT = process.env.PORT || 80;
 
 app.use(logger('dev'));
 app.use(express.static('public'));

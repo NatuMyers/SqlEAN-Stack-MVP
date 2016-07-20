@@ -1,56 +1,40 @@
 <div ng-controller="AppCtrl">
-  <div class="container card  z-depth-1 col s12 m6 l6 offset-s3 ">
+<div class = "container">
+<div class = "col s12 m4 l4 offset-s5 ">
+  <div class=" card  z-depth-1 ">
       <div class="card-content center black-text">
         <form class="form-horizontal formLogin">
-          <h3 class="loginSignup">Login</h3>
+          <h3 class="thin">Login</h3>
 
           <div class="form-group">
             <div class="col m6 l6 inputField">
                 <h7 class="dash-item-heading fields">Username</h7>
-              <input type="text" class="form-control validate mdLgFields formPadding" id="username" name="username" ng-model="username">
+              <input type="text" class=" validate mdLgFields formPadding" id="username" name="username" ng-model="username">
             </div>
-
 
             <div class="col m6 l6 ">
               <h7 class="dash-item-heading fields">Password</h7>
-              <input type="password" class="form-control mdLgFields formPadding inputField" id="password" ng-model="password">
+              <input type="password" class=" mdLgFields formPadding inputField" id="password" ng-model="password">
               <uib-alert ng-repeat="alert in alerts" type="danger" close="closeAlert($index)">{{alert.msg}}</uib-alert>
-
             </div>
 
-            <div class="col s 10 col s offset-1">
+            <div class="col s10 offset s1">
               <button class="loginSubmitBtn btn btn-success" ng-click="login()" type="submit">Log in</button>
               <div class="text-center already">
 
-                <span class="grey-text">New to Trip Chats?</span>
+                <br>
+                <span class="grey-text">New to MVP?</span>
                 <a href="/signup">Sign up</a>
               </div>
             </div>
           </div>
 
-          <div class="row">
-            <div class="col-sm-5 col s 5">
-              <hr class="loginDivder">
-            </div>
-            <div class="col-sm-2 col s 2">
-              <h6 class="or">or</h6>
-            </div>
-            <div class="col-sm-5 col s 5">
-              <hr class="loginDivder">
-            </div>
           </div>
 
-          <div class="row">
-            <div class="guestLogin">
-              <h7 class="quickLogin">Quick Log in</h7>
-              <br>
-              <h7>Username: <strong>username</strong></h7>
-              <br>
-              <h7>Password: <strong>password</strong></h7>
-            </div>
-          </div>
           <br/>
         </form>
       </div>
     </div>
+</div>
+</div>
 </div>
