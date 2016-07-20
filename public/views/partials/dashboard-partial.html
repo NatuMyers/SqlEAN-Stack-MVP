@@ -1,234 +1,201 @@
-<body class="grey lighten-4">
-
+<body>
     <br>
-    <main>
-        <div class="container">
-            <div class="row">
-                <div class="col s12">
-                    <center>
-                        <div class="card white z-depth-1">
-                            <div class="card-content black-text">
-                                <br>
-                                <div class="center">
+    <div ng-if="User.type == 'producer'">
+        <main>
+            <div class="container">
+                <div class="row">
+                    <div class="col s12">
+                        <center>
+                            <div class="card white z-depth-1">
+                                <div class="card-content black-text">
+                                    <br>
+                                    <div class="center">
+                                        <p>
+                                            <img class="main-profile-img" src="http://www.gravatar.com/avatar/{{ userData.email | gravatar }}?s=200&d=mm" width="150px">
+                                        </p>
+                                        <p>{{ user.fname }} of {{ user.company }}</p>
+                                        <p class="white-text darken-5">(@{{ user.username }})</p>
+                                    </div>
                                     <p>
-                                        <img class="main-profile-img" src="http://www.gravatar.com/avatar/{{ userData.email | gravatar }}?s=200&d=mm" width="150px">
+                                        <a href="/{{ user.username }}" type="button" class="btn pull-right">View Self</a>
                                     </p>
-                                    <p>{{ user.fname }} of {{ user.company }}</p>
-                                    <p class="white-text darken-5">(@{{ user.username }})</p>
                                 </div>
+                            </div>
+                        </center>
+                    </div>
+                    <!-- left section -->
+                    <div class="col s12 m4">
+                        <div class = "center">
+                            <div class="card  white lighten-5">
+                                <div class="card-content black-text center">
+                                    <form class="row container center" name="itemForm">
+                                        <div class="add-itin-form">
+                                            <br>
+                                            <div class="center ">
+                                                <input ng-model="foodItem.title" name="title" type="text" class=" validate" placeholder="Item Name">
+                                            </div>
+                                            <br>
+                                            <div class="center ">
+                                                <input ng-model="foodItem.availability" name="availability" type="text" class=" validate" placeholder="Amount">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="center">
+                                                <a class="waves-effect waves-light btn center" ng-click="addfoodItem()" ng-submit="addfoodItem()">View All</a>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card white lighten-5 hide-on-small-only">
+                            <div class="card-content black-text">
+                                <h5 class="thin card-title">
+                                    You have </i> <span ng-show="userItems.length">{{userItems.length}}</span>
+                                    <ng-pluralize ng-show="userItems.length" count="userItems.length"
+                                        when="{
+                                        '1': 'item',
+                                        'other': 'items'
+                                        }">
+                                    </ng-pluralize>
+                                    <span ng-show="!userItems.length">0 items</span>
+                                </h5>
+                                <div class="collection z-depth-1">
+                                    <a href="http://redhotchilipeppers.com" target="_blank" class="collection-item black-text">
+                                        Favourite Band
+                                        <p class="grey-text">Red Hot Chili Peppers</p>
+                                    </a>
+                                    <a href="http://redwings.nhl.com" target="_blank" class="collection-item black-text">
+                                        Favourite Hockey Team
+                                        <p class="grey-text">Detroit Red Wings</p>
+                                    </a>
+                                    <a href="http://www.barneysvideoresume.com/" target="_blank" class="collection-item black-text">
+                                        Favourite TV Show
+                                        <p class="grey-text">How I Met Your Mother</p>
+                                    </a>
+                                    <a href="http://www.imdb.com/title/tt0071562/" target="_blank" class="collection-item black-text">
+                                        Favourite Movie
+                                        <p class="grey-text">The Godfather</p>
+                                    </a>
+                                    <a href="http://compsci.ca/holtsoft/" target="_blank" class="collection-item black-text">
+                                        First Language
+                                        <p class="grey-text">Turing</p>
+                                    </a>
+                                    <a href="http://www.rosettastone.com/learn-vietnamese" target="_blank" class="collection-item black-text">
+                                        Real First Language
+                                        <p class="grey-text">Vietnamese</p>
+                                    </a>
+                                </div>
+                                <div class="center">
+                                    <a class="waves-effect waves-light btn center" ng-click="/invoices" ng-submit="invoices">View All</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 m8">
+                        <div class="card white lighten-5">
+                            <div class="card-content black-text">
+                                <span class="card-title black-text">Pending Orders</span>
                                 <p>
-                                    <a href="/{{ user.username }}" type="button" class="btn pull-right">View Self</a>
+                                    One
                                 </p>
-
                             </div>
                         </div>
-                    </center>
-                </div>
-
-                <!-- left section -->
-
-
-                <div class="col s12 m4">
-
-
-                                      <div class="card  white lighten-5">
-                                          <div class="card-content black-text center">
-                                              <form class="row container center" name="itemForm">
-                                                  <div class="add-itin-form">
-                                                      <br>
-                                                      <div class="form-group ">
-                                                          <input ng-model="foodItem.title" name="title" type="text" class=" validate" placeholder="Item Name">
-                                                      </div>
-                                                      <br>
-                                                      <div class="form-group ">
-                                                          <input ng-model="foodItem.availability" name="availability" type="text" class=" validate" placeholder="Amount">
-                                                      </div>
-                                                  </div>
-
-                                              <div class="row">
-                                                  <div class="form-group share-item">
-                                                      <a class="waves-effect waves-light black btn" ng-click="addfoodItem()" ng-submit="addfoodItem()">Add Item</a>
-                                                  </div>
-                                              </div>
-                                              </form>
-
-
-
-
-
-                                          </div>
-                                      </div>
-
-                    <div class="card white lighten-5 hide-on-small-only">
-                        <div class="card-content black-text">
-
-                            <h5 class="thin card-title">
-                You have </i> <span ng-show="userItems.length">{{userItems.length}}</span>
-                <ng-pluralize ng-show="userItems.length" count="userItems.length"
-                  when="{
-                    '1': 'item',
-                    'other': 'items'
-                  }">
-                </ng-pluralize>
-                <span ng-show="!userItems.length">0 items</span>
-              </h5>
-
-
-
-
-                            <div class="collection z-depth-1">
-                                <a href="http://redhotchilipeppers.com" target="_blank" class="collection-item black-text">Favourite Band
-                  <p class="grey-text">Red Hot Chili Peppers</p>
-                  </a>
-                                <a href="http://redwings.nhl.com" target="_blank" class="collection-item black-text">Favourite Hockey Team
-                  <p class="grey-text">Detroit Red Wings</p></a>
-                                <a href="http://www.barneysvideoresume.com/" target="_blank" class="collection-item black-text">Favourite TV Show
-                  <p class="grey-text">How I Met Your Mother</p></a>
-                                <a href="http://www.imdb.com/title/tt0071562/" target="_blank" class="collection-item black-text">Favourite Movie
-                  <p class="grey-text">The Godfather</p></a>
-                                <a href="http://compsci.ca/holtsoft/" target="_blank" class="collection-item black-text">First Language
-                  <p class="grey-text">Turing</p></a>
-                                <a href="http://www.rosettastone.com/learn-vietnamese" target="_blank" class="collection-item black-text">Real First Language
-                  <p class="grey-text">Vietnamese</p>
-                  </a>
+                        <div class="card white">
+                            <div class="card-content black-text">
+                                <span class="card-title black-text">Invoices</span>
+                                <div class="collection z-depth-1">
+                                    <a href="http://redhotchilipeppers.com" target="_blank" class="collection-item black-text">
+                                        Favourite Band
+                                        <p class="grey-text">Red Hot Chili Peppers</p>
+                                    </a>
+                                    <a href="http://redwings.nhl.com" target="_blank" class="collection-item black-text">
+                                        Favourite Hockey Team
+                                        <p class="grey-text">Detroit Red Wings</p>
+                                    </a>
+                                    <a href="http://www.barneysvideoresume.com/" target="_blank" class="collection-item black-text">
+                                        Favourite TV Show
+                                        <p class="grey-text">How I Met Your Mother</p>
+                                    </a>
+                                </div>
+                                <div class="center">
+                                    <a class="waves-effect waves-light btn center" ng-click="/invoices" ng-submit="invoices">View All</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
-                <div class="col s12 m8">
-
-
-                    <div class="card white lighten-5">
-                        <div class="card-content black-text">
-
-                            <span class="card-title black-text">About Me</span>
-                            <p>
-                                I'm a fourth year Computer Engineering and Economics student at Queen's University ready to enter the world of technology. My desire to go into tech is something that hasn't changed in almost a decade. <br><br> I've designed and developed all sorts of projects: mobile, desktop and full stack web applications, both personal and professional. I've also started two organizations from the ground up: Queen's Conference on Business and Technology, and PromoBands. Learn more about these in the <a href="portfolio.html">Portfolio section</a>.<br><br> Last summer, I developed software as an intern for the Mobile and Online Banking Team at RBC, Canada's largest bank. Before that, I was a Software Intern at AG-NAV Inc., and a Teaching Assistant for the data structures course (ELEC 278) at Queen's.<br><br> When I'm not studying, coding, or working, I like to play music (guitar and piano), soccer, and a little squash.<br><br>
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="card white">
-                        <div class="card-content black-text">
-
-                            <span class="card-title black-text">Invoices</span>
-                            <h5 style="font-size: 18px">Technical</h5>
-                            <p>
-                                <b>Proficient in:</b> Java, C/C++, Ruby on Rails, HTML/CSS<br>
-                                <b>Knowledge of:</b> JavaScript, Python, SQL<br>
-                                <b>Tools and services:</b> Photoshop, Illustrator, Git, SVN, Heroku, DigitalOcean
-                            </p>
-                            <h5 style="font-size: 18px">Non-Technical</h5>
-                            <p>
-                                Product Management, Leadership, Sales, Marketing, User Support
-                            </p>
-                        </div>
-                    </div>
-
-                </div>
-
             </div>
-        </div>
-
-
-    </main>
-
-
-
-
+        </main>
+    </div>
     pooo
-
     <div class="container">
-
         <!-- Producer -->
         <!-- postitem -->
-
         <div class=" header-background" ng-init="init()">
             <h3 class="dash-header">Producer Dashboard</h3>
         </div>
-
         <div class="">
             <div class="row add-comment-row">
                 <div class="col s8">
-
                     <div class="card white">
                         <div class="card-content ">
-
-
-
-
                         </div>
                     </div>
-
                 </div>
-
                 <div class="col-sm-4">
                     <h4 class="dash-main-header">Going somewhere? Share a new item!</h4>
                     <p class="dash-main-para">Share your interests with fellow mvpAppters and see where their suggestions take you!</p>
                 </div>
-
             </div>
-
             <div class="row interest-row">
                 <div class="col-sm-12">
                     <h5 class="thin">
-        You have </i> <span ng-show="userItems.length">{{userItems.length}}</span>
-        <ng-pluralize ng-show="userItems.length" count="userItems.length"
-          when="{
-            '1': 'item',
-            'other': 'items'
-          }">
-        </ng-pluralize>
-        <span ng-show="!userItems.length">0 items</span>
-      </h5>
+                        You have </i> <span ng-show="userItems.length">{{userItems.length}}</span>
+                        <ng-pluralize ng-show="userItems.length" count="userItems.length"
+                            when="{
+                            '1': 'item',
+                            'other': 'items'
+                            }">
+                        </ng-pluralize>
+                        <span ng-show="!userItems.length">0 items</span>
+                    </h5>
                 </div>
             </div>
-
         </div>
-
     </div>
-
     <!--- ---->
-
-
-
-
-
     <!--- profile -->
     <div class="">
-
         <div class="row interest-row">
             <div class="col s12">
                 <!-- Number of Items -->
-                <h4 class="item-number"> <!-- If user has items -->
-   Hey {{ user.fname }}! You have shared
-      <!-- <i class="fa fa-list-ul" aria-hidden="true"></i> --> <span ng-show="userItems.length">{{userItems.length}}</span>
-      <ng-pluralize ng-show="userItems.length" count="userItems.length"
-        when="{
-          '1': 'item',
-          'other': 'items'
-        }">
-      </ng-pluralize>
-      <!-- If user has no items -->
-      <span ng-show="!userItems.length">0 items</span>
-        and made
-    <!-- Number of Comments -->
-    <!-- If use has comments -->
-      <!-- <i class="fa fa-commenting" aria-hidden="true"></i> --> <span ng-show="numberOfComments"> {{ numberOfComments }}</span>
-
-      <ng-pluralize count="numberOfComments"
-        when="{
-          '1': 'comment',
-          'other': 'comments'
-        }">
-      </ng-pluralize>
-      <span ng-show="!numberOfComments">0 comments</span> <!-- If user has no comments -->
-    </h4>
+                <h4 class="item-number">
+                    <!-- If user has items -->
+                    Hey {{ user.fname }}! You have shared
+                    <!-- <i class="fa fa-list-ul" aria-hidden="true"></i> --> <span ng-show="userItems.length">{{userItems.length}}</span>
+                    <ng-pluralize ng-show="userItems.length" count="userItems.length"
+                        when="{
+                        '1': 'item',
+                        'other': 'items'
+                        }">
+                    </ng-pluralize>
+                    <!-- If user has no items -->
+                    <span ng-show="!userItems.length">0 items</span>
+                    and made
+                    <!-- Number of Comments -->
+                    <!-- If use has comments -->
+                    <!-- <i class="fa fa-commenting" aria-hidden="true"></i> --> <span ng-show="numberOfComments"> {{ numberOfComments }}</span>
+                    <ng-pluralize count="numberOfComments"
+                        when="{
+                        '1': 'comment',
+                        'other': 'comments'
+                        }">
+                    </ng-pluralize>
+                    <span ng-show="!numberOfComments">0 comments</span> <!-- If user has no comments -->
+                </h4>
             </div>
         </div>
-
-
         <div class="row">
             <!-- Items Column -->
             <div class="col s12 col m6 l6">
@@ -236,13 +203,11 @@
                     <div class="panel-heading itin-heading clearfix">
                         <h3 class="dash-item-heading clearfix"><a href="/items/{{item.id}}" class="profile-item-link">{{item.title}}</a></h3>
                     </div>
-
                     <div class="panel-body">
                         <div class="row">
                             <div ng-hide="deleted">
                                 <div small-map city="item.city" class="dash-map"></div>
                             </div>
-
                             <div ng-hide="deleted">
                                 <div class="description description-profile">
                                     <p class="description-text">{{item.description}}</p>
@@ -262,7 +227,6 @@
                     <div class="item-footer clearfix">
                         <div class="button-container pull-right">
                             <a ui-sref="showItem({id: item.id})" class="btn">Full Item</a>
-
                         </div>
                     </div>
                 </div>
@@ -271,11 +235,12 @@
             <!-- Comments Column -->
             <div class="col s12 col m4">
                 <div class="panel">
-
                     <div class="dash-latest-items dash-latest-items-mobile clearfix " ng-repeat="comment in userComments | orderBy:'-createdAt' | limitTo: 5">
                         <div class="panel-body-latest-itin ">
                             <div class="dash-latest-itin-heading">
-                                <span class="" ng-click=""><h5 class="inline">{{comment.User.username}} commented on <a href="/items/{{comment.ItemId}}">{{comment.Item.title}}</a></h5> <span class="date pull-right hide-on-small-only">{{comment.Item.createdAt | date: "mediumDate"}}</span>
+                                <span class="" ng-click="">
+                                <h5 class="inline">{{comment.User.username}} commented on <a href="/items/{{comment.ItemId}}">{{comment.Item.title}}</a></h5>
+                                <span class="date pull-right hide-on-small-only">{{comment.Item.createdAt | date: "mediumDate"}}</span>
                             </div>
                             <div class="latest-item-body clearfix">
                                 <p class="recent-comment-text">{{comment.text}}</p>
@@ -293,7 +258,6 @@
         <!-- end row -->
     </div>
     <!-- end container -->
-
     <!--- items -->
     <div class="">
         <div class="row">
@@ -302,7 +266,9 @@
                     <div class="panel-heading itin-heading clearfix">
                         <div class="dash-heading-container clearfix">
                             <div class="col s6">
-                                <a ui-sref="showItem({id: item.id})" class="text-dec-none"><h3 class="dash-item-heading clearfix">{{item.title}}</h3></a>
+                                <a ui-sref="showItem({id: item.id})" class="text-dec-none">
+                                    <h3 class="dash-item-heading clearfix">{{item.title}}</h3>
+                                </a>
                             </div>
                             <div class="col s6">
                                 <h3 class="dash-item-heading pull-right hide-on-small-only"> {{item.city}}, {{item.state}} {{item.country}}</h3>
@@ -321,17 +287,14 @@
                                 <div class="col s4">
                                     <input type="text" ng-model="item.city" class=" editable-input-fields">
                                 </div>
-
                                 <div class="col s4">
                                     <input type="text" ng-model="item.state" class=" editable-input-fields">
                                 </div>
-
                                 <div class="col s4">
                                     <input type="text" ng-model="item.country" class=" editable-input-fields">
                                 </div>
                             </div>
                         </div>
-
                         <div class="row">
                             <div class="col s4">
                                 <div small-map city="item.city" class="dash-map"></div>
@@ -352,7 +315,6 @@
                                             </div>
                                         </div>
                                     </form>
-
                                     <div ng-repeat="activity in item.Activities">
                                         <div class="col-md-4" ng-hide="deleted">
                                             <div class="interest text-center">
@@ -368,17 +330,13 @@
                             <!-- end col s9 -->
                         </div>
                         <!-- end row -->
-
                     </div>
-
-
                     <div class="item-footer clearfix">
                         <div class="button-container pull-right">
                             <a ui-sref="showItem({id: item.id})" class="btn">View</a>
                             <a ng-click="editItem(item); editOptions=false" ng-show="editOptions" class="btn">Done</a>
                             <a ng-click="showEditableItem(item.id); editOptions=true" ng-hide="editOptions" class="btn">Edit</a>
                             <a data-toggle="modal" data-target=".delete-confirmation" class="btn">Delete Item</a>
-
                             <!-- Delete Confirmation Modal -->
                             <aside>
                                 <div ng-controller="AppCtrl">
@@ -406,62 +364,43 @@
                                     </div>
                                 </div>
                             </aside>
-
                         </div>
                     </div>
                 </div>
                 <!-- End Itineray-panel -->
             </div>
             <!-- END col s8 -->
-
             <div class="col s12 l6">
                 <h3 class="thin">Latest Items</h3>
-
-
                 <div class="container section col s12 ">
                     <br>
                     <div class="row">
-
                         <!-- ngrepeat 3 times -->
                         <div class="dash-latest-items clearfix" ng-repeat="item in allItems | orderBy:'-createdAt' | limitTo: 3">
-
                             <div class="card hoverable z-depth-1">
                                 <div class="card-content center black-text">
                                     <span class="grey white-text badge">{{item.city}}, {{item.state}}, {{item.country}}</span><br>
                                     <br>
-                                    <span class="" ng-click=""><h4 class=" thin">{{item.title}}</h5></span> Posted by: <a ui-sref="user({username: item.User.username})" class="handle">  @{{item.User.username}}</a> <span class="date pull-right">{{item.createdAt | date: "mediumDate"}}</span>
+                                    <span class="" ng-click="">
+                                        <h4 class=" thin">
+                                        {{item.title}}</h5>
+                                    </span>
+                                    Posted by: <a ui-sref="user({username: item.User.username})" class="handle">  @{{item.User.username}}</a> <span class="date pull-right">{{item.createdAt | date: "mediumDate"}}</span>
                                     </br>
                                     <br></p>
                                     Description: {{item.description}} - {{item.User.fname}}
-
-
                                     <a ui-sref="showItem({id: item.id})" "waves-effect waves-light black black-text btn" class="btn waves-effect waves-light"><i class="material-icons left">send</i>View</a>
-
                                 </div>
                             </div>
-
                         </div>
-
                         <!-- END ROW -->
                         <!--<a class="waves-effect waves-light black btn" href="search.html">See All</a>-->
-
-
                         <a class="waves-effect waves-light black btn" href="/items">See All</a>
-
-
                     </div>
                     <!-- END CARDD -->
-
                 </div>
-
-
             </div>
             <!-- end row-->
-
-
-
-
-
         </div>
     </div>
     <!-- end container -->
