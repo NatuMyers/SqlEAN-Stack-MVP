@@ -34,7 +34,7 @@ module.exports = function(sequelize, DataTypes) {
         notEmpty: true
       }
     },
-    lname: {
+    company: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
@@ -62,6 +62,7 @@ module.exports = function(sequelize, DataTypes) {
     classMethods: {
       associate: function(models) {
         User.hasMany(models.Comment),
+        User.hasMany(models.Invoice),
         User.hasMany(models.Item)
       }
     }
