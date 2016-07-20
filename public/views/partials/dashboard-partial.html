@@ -67,16 +67,11 @@
 
                                   <ng-repeat="item in userItems | orderBy:'-createdAt'">
 
-                                  <a href="/items/{{item.id}}" class="profile-item-link">{{item.title}}</a>
-
-
-
                                     <a href="/items/{{item.id}}" target="_blank" class="collection-item black-text" ng-hide="deleted">
                                         {{item.title}}
                                         <p class="grey-text">{{item.availibility}} Availible</p>
                                     </a>
-
-
+                                    
                                 </div>
                                 <div class="center">
                                     <a class="waves-effect waves-light btn center" ng-click="/invoices" ng-submit="invoices">View All</a>
