@@ -30,7 +30,22 @@ angular.module("mvpApp")
     .then(function (result) {
       $scope.userItems.push(result.data);
       $scope.item.title = "";
-      $scope.item.availibility = ""; 
+      $scope.item.availibility = "";
+     },function(err) {
+      console.log(err)
+    });
+  };
+
+  $scope.addfoodItem = function(){
+    $http.post("/api/items", {
+      title:$scope.item.title,
+      availibility: $scope.item.availibility,
+      UserId: $scope.user.id
+    })
+    .then(function (result) {
+      $scope.userItems.push(result.data);
+      $scope.item.title = "";
+      $scope.item.availibility = "";
      },function(err) {
       console.log(err)
     });
