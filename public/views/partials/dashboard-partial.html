@@ -1,132 +1,133 @@
 <body>
     <br>
-    <main>
-        <div class="container">
-            <div class="row">
-                <div class="col s12">
-                    <center>
-                        <div class="card white z-depth-1">
-                            <div class="card-content black-text">
-                                <br>
-                                <div class="center">
+    <div ng-if="User.type == 'producer'">
+        <main>
+            <div class="container">
+                <div class="row">
+                    <div class="col s12">
+                        <center>
+                            <div class="card white z-depth-1">
+                                <div class="card-content black-text">
+                                    <br>
+                                    <div class="center">
+                                        <p>
+                                            <img class="main-profile-img" src="http://www.gravatar.com/avatar/{{ userData.email | gravatar }}?s=200&d=mm" width="150px">
+                                        </p>
+                                        <p>{{ user.fname }} of {{ user.company }}</p>
+                                        <p class="white-text darken-5">(@{{ user.username }})</p>
+                                    </div>
                                     <p>
-                                        <img class="main-profile-img" src="http://www.gravatar.com/avatar/{{ userData.email | gravatar }}?s=200&d=mm" width="150px">
+                                        <a href="/{{ user.username }}" type="button" class="btn pull-right">View Self</a>
                                     </p>
-                                    <p>{{ user.fname }} of {{ user.company }}</p>
-                                    <p class="white-text darken-5">(@{{ user.username }})</p>
                                 </div>
+                            </div>
+                        </center>
+                    </div>
+                    <!-- left section -->
+                    <div class="col s12 m4">
+                        <div class = "center">
+                            <div class="card  white lighten-5">
+                                <div class="card-content black-text center">
+                                    <form class="row container center" name="itemForm">
+                                        <div class="add-itin-form">
+                                            <br>
+                                            <div class="center ">
+                                                <input ng-model="foodItem.title" name="title" type="text" class=" validate" placeholder="Item Name">
+                                            </div>
+                                            <br>
+                                            <div class="center ">
+                                                <input ng-model="foodItem.availability" name="availability" type="text" class=" validate" placeholder="Amount">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="center">
+                                                <a class="waves-effect waves-light btn center" ng-click="addfoodItem()" ng-submit="addfoodItem()">View All</a>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card white lighten-5 hide-on-small-only">
+                            <div class="card-content black-text">
+                                <h5 class="thin card-title">
+                                    You have </i> <span ng-show="userItems.length">{{userItems.length}}</span>
+                                    <ng-pluralize ng-show="userItems.length" count="userItems.length"
+                                        when="{
+                                        '1': 'item',
+                                        'other': 'items'
+                                        }">
+                                    </ng-pluralize>
+                                    <span ng-show="!userItems.length">0 items</span>
+                                </h5>
+                                <div class="collection z-depth-1">
+                                    <a href="http://redhotchilipeppers.com" target="_blank" class="collection-item black-text">
+                                        Favourite Band
+                                        <p class="grey-text">Red Hot Chili Peppers</p>
+                                    </a>
+                                    <a href="http://redwings.nhl.com" target="_blank" class="collection-item black-text">
+                                        Favourite Hockey Team
+                                        <p class="grey-text">Detroit Red Wings</p>
+                                    </a>
+                                    <a href="http://www.barneysvideoresume.com/" target="_blank" class="collection-item black-text">
+                                        Favourite TV Show
+                                        <p class="grey-text">How I Met Your Mother</p>
+                                    </a>
+                                    <a href="http://www.imdb.com/title/tt0071562/" target="_blank" class="collection-item black-text">
+                                        Favourite Movie
+                                        <p class="grey-text">The Godfather</p>
+                                    </a>
+                                    <a href="http://compsci.ca/holtsoft/" target="_blank" class="collection-item black-text">
+                                        First Language
+                                        <p class="grey-text">Turing</p>
+                                    </a>
+                                    <a href="http://www.rosettastone.com/learn-vietnamese" target="_blank" class="collection-item black-text">
+                                        Real First Language
+                                        <p class="grey-text">Vietnamese</p>
+                                    </a>
+                                </div>
+                                <div class="center">
+                                    <a class="waves-effect waves-light btn center" ng-click="/invoices" ng-submit="invoices">View All</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 m8">
+                        <div class="card white lighten-5">
+                            <div class="card-content black-text">
+                                <span class="card-title black-text">Pending Orders</span>
                                 <p>
-                                    <a href="/{{ user.username }}" type="button" class="btn pull-right">View Self</a>
+                                    One
                                 </p>
                             </div>
                         </div>
-                    </center>
-                </div>
-                <!-- left section -->
-                <div class="col s12 m4">
-                    <div class = "center">
-                    <div class="card  white lighten-5">
-                        <div class="card-content black-text center">
-                            <form class="row container center" name="itemForm">
-                                <div class="add-itin-form">
-                                    <br>
-                                    <div class="center ">
-                                        <input ng-model="foodItem.title" name="title" type="text" class=" validate" placeholder="Item Name">
-                                    </div>
-                                    <br>
-                                    <div class="center ">
-                                        <input ng-model="foodItem.availability" name="availability" type="text" class=" validate" placeholder="Amount">
-                                    </div>
+                        <div class="card white">
+                            <div class="card-content black-text">
+                                <span class="card-title black-text">Invoices</span>
+                                <div class="collection z-depth-1">
+                                    <a href="http://redhotchilipeppers.com" target="_blank" class="collection-item black-text">
+                                        Favourite Band
+                                        <p class="grey-text">Red Hot Chili Peppers</p>
+                                    </a>
+                                    <a href="http://redwings.nhl.com" target="_blank" class="collection-item black-text">
+                                        Favourite Hockey Team
+                                        <p class="grey-text">Detroit Red Wings</p>
+                                    </a>
+                                    <a href="http://www.barneysvideoresume.com/" target="_blank" class="collection-item black-text">
+                                        Favourite TV Show
+                                        <p class="grey-text">How I Met Your Mother</p>
+                                    </a>
                                 </div>
-                                <div class="row">
-
-                                  <div class="center">
-                                      <a class="waves-effect waves-light btn center" ng-click="addfoodItem()" ng-submit="addfoodItem()">View All</a>
-                                  </div>
+                                <div class="center">
+                                    <a class="waves-effect waves-light btn center" ng-click="/invoices" ng-submit="invoices">View All</a>
                                 </div>
-                            </form>
-                        </div>
-                    </div>
-                  </div>
-                    <div class="card white lighten-5 hide-on-small-only">
-                        <div class="card-content black-text">
-                            <h5 class="thin card-title">
-                                You have </i> <span ng-show="userItems.length">{{userItems.length}}</span>
-                                <ng-pluralize ng-show="userItems.length" count="userItems.length"
-                                    when="{
-                                    '1': 'item',
-                                    'other': 'items'
-                                    }">
-                                </ng-pluralize>
-                                <span ng-show="!userItems.length">0 items</span>
-                            </h5>
-                            <div class="collection z-depth-1">
-                                <a href="http://redhotchilipeppers.com" target="_blank" class="collection-item black-text">
-                                    Favourite Band
-                                    <p class="grey-text">Red Hot Chili Peppers</p>
-                                </a>
-                                <a href="http://redwings.nhl.com" target="_blank" class="collection-item black-text">
-                                    Favourite Hockey Team
-                                    <p class="grey-text">Detroit Red Wings</p>
-                                </a>
-                                <a href="http://www.barneysvideoresume.com/" target="_blank" class="collection-item black-text">
-                                    Favourite TV Show
-                                    <p class="grey-text">How I Met Your Mother</p>
-                                </a>
-                                <a href="http://www.imdb.com/title/tt0071562/" target="_blank" class="collection-item black-text">
-                                    Favourite Movie
-                                    <p class="grey-text">The Godfather</p>
-                                </a>
-                                <a href="http://compsci.ca/holtsoft/" target="_blank" class="collection-item black-text">
-                                    First Language
-                                    <p class="grey-text">Turing</p>
-                                </a>
-                                <a href="http://www.rosettastone.com/learn-vietnamese" target="_blank" class="collection-item black-text">
-                                    Real First Language
-                                    <p class="grey-text">Vietnamese</p>
-                                </a>
-                            </div>
-                            <div class="center">
-                                <a class="waves-effect waves-light btn center" ng-click="/invoices" ng-submit="invoices">View All</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col s12 m8">
-                    <div class="card white lighten-5">
-                        <div class="card-content black-text">
-                            <span class="card-title black-text">Pending Orders</span>
-                            <p>
-                                One
-                            </p>
-                        </div>
-                    </div>
-                    <div class="card white">
-                        <div class="card-content black-text">
-                            <span class="card-title black-text">Invoices</span>
-                            <div class="collection z-depth-1">
-                                <a href="http://redhotchilipeppers.com" target="_blank" class="collection-item black-text">
-                                    Favourite Band
-                                    <p class="grey-text">Red Hot Chili Peppers</p>
-                                </a>
-                                <a href="http://redwings.nhl.com" target="_blank" class="collection-item black-text">
-                                    Favourite Hockey Team
-                                    <p class="grey-text">Detroit Red Wings</p>
-                                </a>
-                                <a href="http://www.barneysvideoresume.com/" target="_blank" class="collection-item black-text">
-                                    Favourite TV Show
-                                    <p class="grey-text">How I Met Your Mother</p>
-                                </a>
-                            </div>
-                            <div class="center">
-                                <a class="waves-effect waves-light btn center" ng-click="/invoices" ng-submit="invoices">View All</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </main>
+        </main>
+    </div>
     pooo
     <div class="container">
         <!-- Producer -->
