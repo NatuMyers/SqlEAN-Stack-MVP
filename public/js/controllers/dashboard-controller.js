@@ -37,7 +37,7 @@ angular.module("mvpApp")
   };
 
   $scope.addfoodItem = function(){
-    $http.post("/api/items", {
+    $http.post("/api/foodItems", {
       title:$scope.item.title,
       availability: $scope.item.availability,
       UserId: $scope.user.id
