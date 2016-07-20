@@ -6,7 +6,7 @@ var newUser1 = {
   username: 'dpetro07',
   password: 'password',
   fname: 'Daniel',
-  lname:'Petro'
+  company:'Petro'
 };
 
 models.User.create({
@@ -14,7 +14,7 @@ models.User.create({
   username: 'dpetro07',
   password: 'password',
   fname: 'Daniel',
-  lname:'Petro'
+  company:'Petro'
 })
 .then(function(result){
 
@@ -26,7 +26,7 @@ var newUser2 = {
   username: 'Jeremy',
   password: 'password',
   fname: 'Jeremy',
-  lname:'Miragliotta'
+  company:'Miragliotta'
 };
 
 models.User.create(newUser2)
@@ -40,7 +40,7 @@ var newUser3 = {
   username: 'paul',
   password: 'password',
   fname: 'Paul',
-  lname:'Santos'
+  company:'Santos'
 };
 
 models.User.create(newUser3)
@@ -54,7 +54,7 @@ var newUser4 = {
   username: 'Darryl',
   password: 'password',
   fname: 'Darryl',
-  lname:'Mendonez'
+  company:'Mendonez'
 };
 
 models.User.create(newUser4)
@@ -68,7 +68,7 @@ var newUser5 = {
   username: 'johndoe',
   password: 'password',
   fname: 'John',
-  lname:'Doe'
+  company:'Doe'
 };
 
 models.User.create(newUser5)
@@ -81,7 +81,7 @@ var newUser6 = {
   username: 'janedoe',
   password: 'password',
   fname: 'Jane',
-  lname:'Doe'
+  company:'Doe'
 };
 
 models.User.create(newUser6)
@@ -95,7 +95,7 @@ var newUser7 = {
   username: 'jstocks1',
   password: 'password',
   fname: 'John',
-  lname:'Stockton'
+  company:'Stockton'
 };
 
 models.User.create(newUser7)
@@ -109,7 +109,7 @@ var newUser8 = {
   username: 'ironmike',
   password: 'password',
   fname: 'Mike',
-  lname:'Tyson'
+  company:'Tyson'
 };
 
 models.User.create(newUser8)
@@ -123,7 +123,7 @@ var newUser8 = {
   username: 'shamoons',
   password: 'password',
   fname: 'Shamoon',
-  lname:'Siddiqui'
+  company:'Siddiqui'
 };
 
 models.User.create(newUser8)
@@ -137,7 +137,7 @@ var newUser9 = {
   username: 'exampleuser9',
   password: 'password',
   fname: 'Sean',
-  lname:'Conaty'
+  company:'Conaty'
 };
 
 models.User.create(newUser9)
@@ -150,7 +150,7 @@ var newUser10 = {
   username: 'exampleuser10',
   password: 'password',
   fname: 'Wolfgang',
-  lname:'Hall'
+  company:'Hall'
 };
 
 models.User.create(newUser10)

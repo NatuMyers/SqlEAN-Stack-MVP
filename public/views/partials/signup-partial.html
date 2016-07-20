@@ -2,7 +2,8 @@
 
 
 <div ng-controller="AppCtrl">
-  <div class="card hoverable z-depth-1 col s12 m6 l6">
+  <div class="card  z-depth-1 ">
+    <div class = "col s12 m6 l6">
       <div class="card-content center black-text">
 
         <form>
@@ -10,42 +11,63 @@
           <div class="row">
             <div class="col s12">
               <div class="form-group signupMargin">
-                <div class="col s3  offset s2">
-                  <h7 class="dash-item-heading fields">First Name</h7>
-                  <input type="text" class="form-control mdLgFields inputField" id="fname" placeholder="John" ng-model="fname">
-                </div>
-                <div class="col s3  offset s2">
-                  <h7 class="dash-item-heading fields">Last Name</h7>
-                  <input type="text" class="form-control mdLgFields inputField" id="lname" placeholder="Doe" ng-model="lname">
-                </div>
-                <div class="col s3  offset s2">
-                  <h7 class="dash-item-heading fields">Email Address</h7>
-                  <input type="email" class="form-control mdLgFields inputField" id="email" placeholder="example@example.com" ng-model="email">
+
+                <div class="row">
+
+                <div class="col s6">
+                  <h7 class="dash-item-heading fields">Name</h7>
+                  <input type="text" class="  inputField" id="fname" placeholder="John" ng-model="fname">
                 </div>
 
-                <div class="col s3 offset s2">
+                </div>
+                <div class="row">
 
-                <p>
-                  <input name="group1" type="radio" id="test1" ng-model="type" value="producer" />
+                <div class="col s6">
+                  <h7 class="dash-item-heading fields">Company Name</h7>
+                  <input type="text" class=" inputField" id="company" placeholder="Doe and Co." ng-model="company">
+                </div>
+                </div>
+                </div>
+
+                <br>
+                <div class = "row">
+                  <div class="col s6 offset s3  ">
+                    <h7 class="dash-item-heading fields">Email Address</h7>
+                    <input type="email" class=" mdLgFields inputField" id="email" placeholder="example@example.com" ng-model="email">
+                  </div>
+
+                </div>
+
+                <div class = "row">
+
+                <div class="col s6 ">
+
+                <span>
+                  <input checked="true" name="group1" type="radio" id="test1" ng-model="type" value="producer" />
+
                   <label for="test1">Producer</label>
-                </p>
-                <p>
                   <input name="group1" type="radio" id="test2" ng-model="type" value="purchaser" checked = "checked"/>
+
                   <label for="test2">Purchaser</label>
-                </p>
+                </span>
 
                 </div>
+                </div>
+
+
 
                 <div class="col s6 offset s2">
                   <h7 class="dash-item-heading fields">Username</h7>
-                  <input type="text" class="form-control mdLgFields inputField" id="username" placeholder="Username" ng-model="username">
+                  <input type="text" class=" mdLgFields inputField" id="username" placeholder="Username" ng-model="username">
                 </div>
-                <div class="col s6 offset s2">
+                <div class = "row">
+                <div class=" col s6 offset s2">
                   <label for="password" class="dash-item-heading fields">Password</label>
-                  <input type="password" class="form-control mdLgFields inputField" id="password" placeholder="Password" ng-model="password">
+                  <input type="password" class=" mdLgFields inputField" id="password" placeholder="Password" ng-model="password">
                 </div>
+              </div>
                 <div class="col s6 offset s3">
-                  <button ng-click="signup()"  type="submit" class="btn btn-success  thin large waves-effect waves-light signupBtn" >Sign Up</button>
+                  <button ng-click="signup()" type="submit" class="btn btn-success  thin large waves-effect waves-light signupBtn" >Sign Up</button>
                   <div class="text-center already">
                   <span class="grey-text">Already a member?</span>
                   <a href="/login">Log in</a>
@@ -58,5 +80,6 @@
 
 
       </div>
+    </div>
       </div>
 </div>

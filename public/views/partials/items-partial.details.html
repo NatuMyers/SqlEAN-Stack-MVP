@@ -1,4 +1,11 @@
-<div id="itemSuggestions" class="col-md-7 col-md-offset-1">
+
+      <div class="row">
+        <div class="col s12 m6">
+          <div class="card white z-depth-1 hoverable">
+            <div class="card-content ">
+
+
+<div id="itemSuggestions" class="col m7 offset m1">
   <h3 ng-init="getComments()">Comments</h3>
 
   <div ng-show="!comments.length">
@@ -9,7 +16,13 @@
       <h6><a ui-sref="user({username: comment.User.username})">{{comment.User.username}}</a> says:</h6>
       <p>{{comment.text}}</p>
     </div>
-    
+
     <div class="divider"></div>
   </div>
+</div>
+
+
+</div>
+</div>
+</div>
 </div>
