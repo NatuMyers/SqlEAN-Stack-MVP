@@ -60,31 +60,23 @@
                                     </ng-pluralize>
                                     <span ng-show="!userItems.length">0 items</span>
                                 </h5>
+
+
+
                                 <div class="collection z-depth-1">
-                                    <a href="http://redhotchilipeppers.com" target="_blank" class="collection-item black-text">
-                                        Favourite Band
-                                        <p class="grey-text">Red Hot Chili Peppers</p>
+
+                                  <ng-repeat="item in userItems | orderBy:'-createdAt'">
+
+                                  <a href="/items/{{item.id}}" class="profile-item-link">{{item.title}}</a>
+
+
+
+                                    <a href="/items/{{item.id}}" target="_blank" class="collection-item black-text" ng-hide="deleted">
+                                        {{item.title}}
+                                        <p class="grey-text">{{item.availibility}} Availible</p>
                                     </a>
-                                    <a href="http://redwings.nhl.com" target="_blank" class="collection-item black-text">
-                                        Favourite Hockey Team
-                                        <p class="grey-text">Detroit Red Wings</p>
-                                    </a>
-                                    <a href="http://www.barneysvideoresume.com/" target="_blank" class="collection-item black-text">
-                                        Favourite TV Show
-                                        <p class="grey-text">How I Met Your Mother</p>
-                                    </a>
-                                    <a href="http://www.imdb.com/title/tt0071562/" target="_blank" class="collection-item black-text">
-                                        Favourite Movie
-                                        <p class="grey-text">The Godfather</p>
-                                    </a>
-                                    <a href="http://compsci.ca/holtsoft/" target="_blank" class="collection-item black-text">
-                                        First Language
-                                        <p class="grey-text">Turing</p>
-                                    </a>
-                                    <a href="http://www.rosettastone.com/learn-vietnamese" target="_blank" class="collection-item black-text">
-                                        Real First Language
-                                        <p class="grey-text">Vietnamese</p>
-                                    </a>
+
+
                                 </div>
                                 <div class="center">
                                     <a class="waves-effect waves-light btn center" ng-click="/invoices" ng-submit="invoices">View All</a>
