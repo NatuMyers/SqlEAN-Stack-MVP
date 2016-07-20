@@ -1,6 +1,6 @@
 
 module.exports = function(sequelize, DataTypes) {
-  var Item = sequelize.define('item', {
+  var Item = sequelize.define('Item', {
     title: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -13,9 +13,9 @@ module.exports = function(sequelize, DataTypes) {
   }, {
     classMethods: {
       associate: function(models) {
-        item.belongsTo(models.User),
-        item.hasMany(models.Comment),
-        item.hasMany(models.Activity)
+        Item.belongsTo(models.User),
+        Item.hasMany(models.Comment),
+        Item.hasMany(models.Activity)
       }
     }
   });
