@@ -15,7 +15,7 @@ li.interest{
 
 .interest{
   background-color: #337AB7;
-  color: #fff;
+  color: #‎006F3A;
   font-size: 15px;
   height: 31px;
   margin-bottom: 15px;
@@ -28,7 +28,7 @@ li.interest{
   position: absolute;
   right: 0%;
   top: 0;
-  background-color: #fff;
+  background-color: #‎006F3A;
   color: #337AB7;
   border: 2px #337AB7 solid;
   border-radius: 20px;
@@ -76,7 +76,7 @@ h3.dash-item-heading{
 }
 
 .dash-header{
-  color: #fff;
+  color: #‎006F3A;
   font-size: 25px;
   padding: 2px 15px;
   text-align: center;
@@ -96,7 +96,7 @@ h3.dash-item-heading{
 
 .item-footer{
   margin-left: 15px;
-  background-color: #fff;
+  background-color: #‎006F3A;
   padding-left: 20px;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
@@ -113,7 +113,7 @@ h3.dash-item-heading{
   border: 1px solid #c7c7c7;
   padding: 10px;
   margin-bottom: 10px;
-  background-color:#fff;
+  background-color:#‎006F3A;
 }
 
 .panel{
@@ -123,7 +123,7 @@ h3.dash-item-heading{
 
 .panel-heading{
   background-color:#337AB7;
-  color:#fff;
+  color:#‎006F3A;
 
 }
 
@@ -141,11 +141,11 @@ h3.dash-item-heading{
 
 .panel-footer-link{
   font-size: 18px;
-  color: #fff;
+  color: #‎006F3A;
 }
 
 a.panel-footer-link:hover{
-  color: #fff;
+  color: #‎006F3A;
   text-decoration: none;
   cursor: pointer;
 }
@@ -213,16 +213,16 @@ a.latest-item-link:hover{
 .dash-main-header{
   margin-top: 15px;
   margin-bottom: 5px;
-  color: #fff;
+  color: #‎006F3A;
 }
 .dash-main-para{
-  color:#fff;
+  color:#‎006F3A;
   margin-top:22px;
   font-size: 15px;
 }
 
 .item-number{
-  color: #fff;
+  color: #‎006F3A;
 }
 
 .add-panel{
@@ -263,7 +263,7 @@ p{
 }
 
 .description{
-  background-color: #FFFFFF;
+  background-color: #‎006F3AFFF;
   padding: 10px;
   margin-right: 15px;
   border-bottom: 1px solid #c9c9c9;

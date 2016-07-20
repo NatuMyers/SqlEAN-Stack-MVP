@@ -2,7 +2,7 @@
 
 body {
   font-family: 'Questrial', sans-serif;
-  background-color: #F5F5F5;
+  background-color: #F5F5F0;
 }
 
 .navbar {
@@ -14,7 +14,7 @@ body {
 }
 
 a.navbar-brand:hover,a.navbar-brand:active, a.navbar-brand:focus {
-  color: #fff;
+  color: #‎006F3A;
   text-decoration: none;
 }
 
@@ -27,9 +27,9 @@ a.navbar-brand:hover,a.navbar-brand:active, a.navbar-brand:focus {
 }
 
 .btn-signup {
-  color: #fff;
+  color: #‎‎006f3a;
   border-radius: 3px;
-  border: 2px solid #fff;
+  border: 2px solid #‎006F3A;
   background-color: transparent;
   font-size: 14px;
   display: inline-block;
@@ -38,7 +38,7 @@ a.navbar-brand:hover,a.navbar-brand:active, a.navbar-brand:focus {
 }
 
 .btn-signup:hover {
-  color:#fff;
+  color:#‎006F3A;
   background-color: #337AB7;
   border: 2px solid #337AB7;
   text-decoration: none;
@@ -47,12 +47,12 @@ a.navbar-brand:hover,a.navbar-brand:active, a.navbar-brand:focus {
 
 .btn-logged-in{
   background-color: transparent;
-    color: #fff;
+    color: #‎006F3A;
     margin-top: 10px
 }
 
 .btn-logged-in:hover{
-    color: #fff;
+    color: #‎006F3A;
 }
 
 
@@ -61,7 +61,7 @@ a.navbar-brand:hover,a.navbar-brand:active, a.navbar-brand:focus {
 }
 
 .navbar-brand {
-  color: #fff;
+  color: #‎006F3A;
   font-size: 30px;
 }
 
@@ -104,7 +104,7 @@ a.navbar-brand:hover,a.navbar-brand:active, a.navbar-brand:focus {
 }
 
 .btn-success:hover {
-  color: #fff;
+  color: #‎006F3A;
   background-color: #449d44;
   border-color: #449d44;
 }

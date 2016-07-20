@@ -17,20 +17,20 @@
 }
 
 .slogan{
-  color: #fff;
+  color: #‎006F3A;
 }
 
 .btn-begin{
-  color: #fff;
+  color: #‎006F3A;
   border-radius: 3px;
-  border: 2px solid #fff;
+  border: 2px solid #‎006F3A;
   background-color: transparent;
   height: 45px;
   font-size: 18px;
 }
 
 .btn-begin:hover{
-  color: #fff;
+  color: #‎006F3A;
   border: 2px solid#549A17;
   background-color: #549A17;
 }
@@ -102,10 +102,10 @@
 }
 
 .discover-panel-location{
-  color: #fff;
+  color: #‎006F3A;
   font-size: 25px;
-  border-bottom: 2px solid #fff;
-  border-top: 2px solid #fff;
+  border-bottom: 2px solid #‎006F3A;
+  border-top: 2px solid #‎006F3A;
   display: inline-block;
   padding: 7px 10px;
   position: relative;
@@ -127,8 +127,8 @@
 .btn-view{
   color: #3E3B3B;
   font-size: 18px;
-  border: 2px solid #fff;
-  background-color: #fff;
+  border: 2px solid #‎006F3A;
+  background-color: #‎006F3A;
   border-top-left-radius: 3px;
   border-bottom-left-radius: 3px;
   border-bottom-right-radius: 0px;
@@ -136,14 +136,14 @@
 }
 
 .btn-view:hover{
-  color:#fff;
+  color:#‎006F3A;
   background-color: #549A17;
   border: 2px solid #549A17;
   text-decoration: none;
 }
 
 .btn-link{
-  color: #fff;
+  color: #‎006F3A;
   background-color: none;
   font-size: 15px;
   text-decoration: none;
@@ -159,7 +159,7 @@
 }
 
 .btn-all{
-  background-color: #fff;
+  background-color: #‎006F3A;
   color: #777;
   border: 1px solid #777;
   font-size: 18px;
