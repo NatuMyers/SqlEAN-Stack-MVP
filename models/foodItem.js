@@ -8,7 +8,7 @@ module.exports = function(sequelize, DataTypes) {
         notEmpty: true
       }
     },
-    availibility:{
+    availability:{
       type: DataTypes.INTEGER
     },
     price:{
