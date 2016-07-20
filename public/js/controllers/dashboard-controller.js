@@ -30,7 +30,7 @@ angular.module("mvpApp")
     .then(function (result) {
       $scope.userItems.push(result.data);
       $scope.item.title = "";
-      $scope.item.availibility = "";
+      $scope.item.availibility = ""; 
      },function(err) {
       console.log(err)
     });
