@@ -1,7 +1,6 @@
-<body class = "grey lighten-4">
+<body class="grey lighten-4">
 
     <br>
-
     <main>
         <div class="container">
             <div class="row">
@@ -10,18 +9,13 @@
                         <div class="card white z-depth-1">
                             <div class="card-content black-text">
                                 <br>
-
-
-
                                 <div class="center">
                                     <p>
                                         <img class="main-profile-img" src="http://www.gravatar.com/avatar/{{ userData.email | gravatar }}?s=200&d=mm" width="150px">
                                     </p>
-
                                     <p>{{ user.fname }} of {{ user.company }}</p>
                                     <p class="white-text darken-5">(@{{ user.username }})</p>
                                 </div>
-
                                 <p>
                                     <a href="/{{ user.username }}" type="button" class="btn pull-right">View Self</a>
                                 </p>
@@ -31,8 +25,39 @@
                     </center>
                 </div>
 
+                <!-- left section -->
+
 
                 <div class="col s12 m4">
+
+
+                                      <div class="card  white lighten-5">
+                                          <div class="card-content black-text center">
+                                              <form class="row container center" name="itemForm">
+                                                  <div class="add-itin-form">
+                                                      <br>
+                                                      <div class="form-group ">
+                                                          <input ng-model="item.title" name="title" type="text" class=" validate" placeholder="Item Name">
+                                                      </div>
+                                                      <br>
+                                                      <div class="form-group ">
+                                                          <input ng-model="item.availability" name="availability" type="text" class=" validate" placeholder="Amount">
+                                                      </div>
+                                                  </div>
+                                              </form>
+                                              <div class="row">
+                                                  <div class="form-group share-item">
+                                                      <a class="waves-effect waves-light black btn" ng-click="addItem()" ng-submit="addItem()">Add Item</a>
+                                                  </div>
+                                              </div>
+
+
+
+
+
+                                          </div>
+                                      </div>
+
                     <div class="card white lighten-5 hide-on-small-only">
                         <div class="card-content black-text">
 
@@ -69,40 +94,7 @@
                         </div>
                     </div>
 
-                    <div class="card  white lighten-5">
-                        <div class="card-content black-text center">
-
-
-                            <form class="row container center" name="itemForm">
-
-                                    <div class="add-itin-form">
-                                      <br>
-                                        <div class="form-group ">
-                                            <input ng-model="item.title" name="title" type="text" class=" validate" placeholder="Item Name">
-                                        </div>
-                                        <br>
-                                        <div class="form-group ">
-                                            <input ng-model="item.availability" name="availability" type="text" class=" validate" placeholder="Amount">
-                                        </div>
-                                    </div>
-
-
-                            </form>
-
-
-                                                        <div class="row">
-                                                            <div class="form-group share-item">
-                                                                <a class="waves-effect waves-light black btn" ng-click="addItem()" ng-submit="addItem()">Add Item</a>
-                                                            </div>
-                                                        </div>
-
-
-
-
-
-                        </div>
-                    </div>
-                    </div>
+                </div>
                 <div class="col s12 m8">
 
 
