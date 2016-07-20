@@ -41,7 +41,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="center">
-                                            <a class="waves-effect waves-light btn center" ng-click="addfoodItem()" ng-submit="addfoodItem()">View All</a>
+                                            <a class="waves-effect waves-light btn center" ng-click="addfoodItem()" ng-submit="addfoodItem()">Add Item</a>
                                         </div>
                                     </div>
                                 </form>
@@ -71,17 +71,35 @@
                             <div class="center">
                                 <a class="waves-effect waves-light btn center" ng-click="/invoices" ng-submit="invoices">View All</a>
                             </div>
+
                         </div>
                     </div>
                 </div>
                 <div class="col s12 m8">
                     <div class="card white lighten-5">
                         <div class="card-content black-text">
-                            <span class="card-title black-text">Pending Orders</span>
-                            <p>
-                                One
-                            </p>
-                        </div>
+                          <h5 class="thin card-title">
+                              You have </i> <span ng-show="userItems.length">{{userItems.length}}</span>
+                              <ng-pluralize ng-show="userItems.length" count="userItems.length"
+                                  when="{
+                                  '1': 'item',
+                                  'other': 'items'
+                                  }">
+                              </ng-pluralize>
+                              <span ng-show="!userItems.length">0 items</span>
+                          </h5>
+                          <div class="collection z-depth-1">
+                              <div ng-repeat="item in userItems | orderBy:'-createdAt'">
+                                  <a href="/items/{{item.id}}" target="_blank" class="collection-item black-text" ng-hide="deleted">
+                                      {{order.title}}
+                                      <p class="grey-text">{{order.userID}} Available</p>
+                                  </a>
+                              </div>
+                          </div>
+                          <div class="center">
+                              <a class="waves-effect waves-light btn center" ng-click="/invoices" ng-submit="invoices">View All</a>
+                          </div>
+
                     </div>
                     <div class="card white">
                         <div class="card-content black-text">
