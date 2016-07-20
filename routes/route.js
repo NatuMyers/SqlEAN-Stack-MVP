@@ -27,6 +27,15 @@ module.exports.routes = function(app) {
     associations: true
   });
 
+  var foodItemResource = epilogue.resource({
+    model: models.Item,
+    endpoints: [
+    '/api/foodItems',
+    '/api/foodItems/:id'
+    ],
+    associations: true
+  });
+
   var activityResource =  epilogue.resource({
     model: models.Activity,
     endpoints: [
