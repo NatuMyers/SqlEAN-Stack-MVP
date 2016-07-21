@@ -23,29 +23,20 @@ angular.module("mvpApp")
 
   $scope.addItem = function(){
     $http.post("/api/items", {
-      title:$scope.item.title,
-      availibility: $scope.item.availibility,
+      title: $scope.item.title,
+      city: $scope.item.city,
+      state: $scope.item.state,
+      country: $scope.item.country,
+      description: $scope.item.description,
       UserId: $scope.user.id
     })
     .then(function (result) {
       $scope.userItems.push(result.data);
       $scope.item.title = "";
-      $scope.item.availibility = "";
-     },function(err) {
-      console.log(err)
-    });
-  };
-
-  $scope.addfoodItem = function(){
-    $http.post("/api/items", {
-      title:$scope.item.title,
-      availibility: $scope.item.availibility,
-      UserId: $scope.user.id
-    })
-    .then(function (result) {
-      $scope.userItems.push(result.data);
-      $scope.item.title = "";
-      $scope.item.availibility = "";
+      $scope.item.city = "";
+      $scope.item.state = "";
+      $scope.item.country = "";
+      $scope.item.description = "";
      },function(err) {
       console.log(err)
     });
@@ -63,6 +54,7 @@ angular.module("mvpApp")
   $scope.editItem = function(item) {
     $http.put('/api/items/' + item.id, {
       title: item.title,
+      title: item.availability,
       city:item.city,
       state:item.state,
       country:item.country,

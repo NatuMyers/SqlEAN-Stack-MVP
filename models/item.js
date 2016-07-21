@@ -1,13 +1,27 @@
-
 module.exports = function(sequelize, DataTypes) {
   var Item = sequelize.define('Item', {
     title: {
       type: DataTypes.STRING,
       allowNull: false,
+      validate: {
+        notEmpty: true
+      }
     },
-    availibility: {
-      type: DataTypes.INTEGER,
+    city: {
+      type: DataTypes.STRING,
       allowNull: false,
+      validate: {
+        notEmpty: true
+      }
+    },
+    state: {
+      type: DataTypes.STRING
+    },
+    country: {
+      type: DataTypes.STRING
+    },
+    description:{
+      type: DataTypes.STRING
     }
 
   }, {

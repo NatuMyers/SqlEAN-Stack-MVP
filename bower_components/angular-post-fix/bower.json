@@ -1,0 +1,11 @@
+{
+  "name": "angular-post-fix",
+  "version": "0.1.0",
+  "homepage": "http://victorblog.com/2012/12/20/make-angularjs-http-service-behave-like-jquery-ajax/",
+  "authors": [
+    "Ezekiel Victor"
+  ],
+  "description": "Make AngularJS $http service behave like jQuery.ajax()",
+  "main": "postfix.js",
+  "license": "MIT"
+}

@@ -34,28 +34,6 @@ angular.module('mvpApp')
     })
   }
 
-
-  $scope.addUserLoc = function(){
-    $http.post("/api/items", {
-      title:$scope.item.title,
-      availibi: $scope.item.city,
-      state: $scope.item.state,
-      country: $scope.item.country,
-      description: $scope.item.description,
-      UserId: $scope.user.id
-    })
-    .then(function (result) {
-      $scope.userItems.push(result.data);
-      $scope.item.title = "";
-      $scope.item.city = "";
-      $scope.item.state = "";
-      $scope.item.country = "";
-      $scope.item.description = "";
-     },function(err) {
-      console.log(err)
-    });
-  };
-
   $scope.getUserComments = function(id) {
     $http.get('/api/comments?UserId=' + id)
     .then(function(result) {

@@ -1,22 +1,24 @@
 
 module.exports = function(sequelize, DataTypes) {
   var Order = sequelize.define('Order', {
-    toProducer: {
+    recievingProducer: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
         notEmpty: true
       }
     },
-    price:{
-      type: DataTypes.INTEGER
+    producerConfirmed: {
+      type: DataTypes.BOOLEAN
+    },
+    isPaid: {
+      type: DataTypes.BOOLEAN
     }
-
   }, {
     classMethods: {
       associate: function(models) {
         Order.belongsTo(models.User),
-        Order.hasMany(models.foodItem),
+        Order.hasMany(models.Item),
         Order.hasMany(models.Activity)
       }
     }

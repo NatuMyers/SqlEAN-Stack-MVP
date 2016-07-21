@@ -1,6 +1,6 @@
 
 module.exports = function(sequelize, DataTypes) {
-  var Order = sequelize.define('Order', {
+  var Invoice = sequelize.define('Invoice', {
     toProducer: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -15,12 +15,12 @@ module.exports = function(sequelize, DataTypes) {
   }, {
     classMethods: {
       associate: function(models) {
-        Order.belongsTo(models.User),
-        Order.hasMany(models.foodItem),
-        Order.hasMany(models.Activity)
+        Invoice.belongsTo(models.User),
+        Invoice.hasMany(models.Item),
+        Invoice.hasMany(models.Activity)
       }
     }
   });
 
-  return Order;
+  return Invoice;
 }
