@@ -105,7 +105,7 @@ angular.module('mvpApp')
         }
       });
     }
-    
+
   }
 
   $scope.deleteComment = function(commentId) {
