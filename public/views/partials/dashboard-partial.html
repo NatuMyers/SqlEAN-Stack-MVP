@@ -87,23 +87,25 @@
                     </div>
                 </div>
                 <div class="col s12 m8">
-                    <div class="card white lighten-5">
+                    <div class="card white ">
+
+
                         <div class="card-content black-text">
                           <h5 class="thin card-title">
-                              You have </i> <span ng-show="userItems.length">{{userItems.length}}</span>
-                              <ng-pluralize ng-show="userItems.length" count="userItems.length"
+                              You have </i> <span ng-show="userInvoices.length">{{userInvoices.length}}</span>
+                              <ng-pluralize ng-show="userInvoices.length" count="userInvoices.length"
                                   when="{
-                                  '1': 'request',
-                                  'other': 'requests'
+                                  '1': 'invoice',
+                                  'other': 'invoices'
                                   }">
                               </ng-pluralize>
-                              <span ng-show="!userItems.length">0 Requests</span>
+                              <span ng-show="!userInvoices.length">0 Requests</span>
                           </h5>
                           <div class="collection z-depth-1">
-                              <div ng-repeat="item in userItems | orderBy:'-createdAt'">
-                                  <a href="/items/{{item.id}}" target="_blank" class="collection-item black-text" ng-hide="deleted">
-                                      {{order.title}}
-                                      <p class="grey-text">{{order.userID}} Available</p>
+                              <div ng-repeat="invoice in userInvoices | orderBy:'-createdAt'">
+                                  <a href="/invoices/{{invoice.id}}" target="_blank" class="black-text" ng-hide="deleted">
+                                      {{invoice.title}}
+                                      <p class="grey-text">{{invoice.userID}} Available</p>
                                   </a>
                               </div>
                           </div>
@@ -112,6 +114,9 @@
                           </div>
 
                     </div>
+
+                    <br></br>
+
                     <div class="card white">
                         <div class="card-content black-text">
                             <span class="card-title black-text">Invoices</span>
