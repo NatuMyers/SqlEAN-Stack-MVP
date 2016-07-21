@@ -23,7 +23,7 @@ angular.module("mvpApp")
 
   $scope.addItem = function(){
     $http.post("/api/items", {
-      title:$scope.item.title,
+      title: $scope.item.title,
       city: $scope.item.city,
       state: $scope.item.state,
       country: $scope.item.country,
