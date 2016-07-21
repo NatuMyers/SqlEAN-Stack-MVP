@@ -93,11 +93,11 @@
                               You have </i> <span ng-show="userItems.length">{{userItems.length}}</span>
                               <ng-pluralize ng-show="userItems.length" count="userItems.length"
                                   when="{
-                                  '1': 'item',
-                                  'other': 'items'
+                                  '1': 'request',
+                                  'other': 'requests'
                                   }">
                               </ng-pluralize>
-                              <span ng-show="!userItems.length">0 items</span>
+                              <span ng-show="!userItems.length">0 Requests</span>
                           </h5>
                           <div class="collection z-depth-1">
                               <div ng-repeat="item in userItems | orderBy:'-createdAt'">
@@ -139,24 +139,21 @@
         </div>
     </main>
     <!--</div> -->
-    pooo
+
     <div class="container">
         <!-- Producer -->
         <!-- postitem -->
-        <div class=" header-background" ng-init="init()">
-            <h3 class="dash-header">Producer Dashboard</h3>
-        </div>
+
         <div class="">
             <div class="row add-comment-row">
                 <div class="col s8">
                     <div class="card white">
                         <div class="card-content ">
+                          <div class=" header-background" ng-init="init()">
+                              <h3 class="light dash-header">Stats</h3>
+                          </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-sm-4">
-                    <h4 class="dash-main-header">Going somewhere? Share a new item!</h4>
-                    <p class="dash-main-para">Share your interests with fellow mvpAppters and see where their suggestions take you!</p>
                 </div>
             </div>
             <div class="row interest-row">
@@ -180,31 +177,7 @@
     <div class="">
         <div class="row interest-row">
             <div class="col s12">
-                <!-- Number of Items -->
-                <h4 class="item-number">
-                    <!-- If user has items -->
-                    Hey {{ user.fname }}! You have shared
-                    <!-- <i class="fa fa-list-ul" aria-hidden="true"></i> --> <span ng-show="userItems.length">{{userItems.length}}</span>
-                    <ng-pluralize ng-show="userItems.length" count="userItems.length"
-                        when="{
-                        '1': 'item',
-                        'other': 'items'
-                        }">
-                    </ng-pluralize>
-                    <!-- If user has no items -->
-                    <span ng-show="!userItems.length">0 items</span>
-                    and made
-                    <!-- Number of Comments -->
-                    <!-- If use has comments -->
-                    <!-- <i class="fa fa-commenting" aria-hidden="true"></i> --> <span ng-show="numberOfComments"> {{ numberOfComments }}</span>
-                    <ng-pluralize count="numberOfComments"
-                        when="{
-                        '1': 'comment',
-                        'other': 'comments'
-                        }">
-                    </ng-pluralize>
-                    <span ng-show="!numberOfComments">0 comments</span> <!-- If user has no comments -->
-                </h4>
+
             </div>
         </div>
         <div class="row">
