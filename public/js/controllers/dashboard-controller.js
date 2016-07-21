@@ -21,20 +21,6 @@ angular.module("mvpApp")
     });
   };
 
-  $scope.addItem = function(){
-    $http.post("/api/items", {
-      title:$scope.item.title,
-      availability: $scope.item.availability,
-      UserId: $scope.user.id
-    })
-    .then(function (result) {
-      $scope.userItems.push(result.data);
-      $scope.item.title = "";
-      $scope.item.availability = "";
-     },function(err) {
-      console.log(err)
-    });
-  };
 
   $scope.addfoodItem = function(){
     $http.post("/api/foodItems", {
