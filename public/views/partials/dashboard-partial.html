@@ -13,7 +13,7 @@
                                     <p>
                                         <img class="main-profile-img" src="http://www.gravatar.com/avatar/{{ userData.email | gravatar }}?s=200&d=mm" width="150px">
                                     </p>
-                                    <h5 class = "thin"> <p>{{ user.fname }} of {{ user.company }}</p> </h5>
+                                    <h4 class = "thin"> <p>{{ user.fname }} <br> of {{ user.company }}</p> </h5>
                                     <p class="white-text darken-5">(@{{ user.username }})</p>
                                 </div>
                                 <p>
@@ -38,6 +38,17 @@
                                         <div class="center ">
                                             <input ng-model="item.city" name="city" type="text" class=" validate" placeholder="Amount">
                                         </div>
+
+                                        <div class="center ">
+                                            <input ng-model="item.state" name="state" type="text" class=" validate" placeholder="Amount">
+                                        </div>
+                                        <div class="center ">
+                                            <input ng-model="item.country" name="country" type="text" class=" validate" placeholder="Amount">
+                                        </div>
+                                        <div class="center ">
+                                            <input ng-model="item.description" name="description" type="text" class=" validate" placeholder="Amount">
+                                        </div>
+
                                     </div>
                                     <div class="row">
                                         <div class="center">
