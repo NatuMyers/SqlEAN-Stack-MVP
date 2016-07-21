@@ -1,11 +1,11 @@
 angular.module('mvpApp')
-.controller('itemsController', ['$scope', '$http', '$stateParams', function ($scope, $http, $stateParams) {
+.controller('invoicesController', ['$scope', '$http', '$stateParams', function ($scope, $http, $stateParams) {
   // Gets called when the directive is ready:
 
   $scope.init = function() {
-    $scope.getCurrentItem();
+    $scope.getCurrentInvoice();
     // $scope.getComments();
-    $scope.getItems();
+    $scope.getInvoices();
     $scope.makeMarkers();
     $scope.getGeo();
   }
@@ -14,20 +14,20 @@ angular.module('mvpApp')
 
   $scope.location = $stateParams.location;
 
-  $scope.getItems = function() {
-    $http.get('/api/items')
+  $scope.getInvoices = function() {
+    $http.get('/api/invoices')
     .then(function(result) {
-      $scope.allItems = result.data;
+      $scope.allInvoices = result.data;
     }, function(err) {
       console.log(err)
     });
   }
 
-  $scope.getCurrentItem = function() {
-    $http.get('/api/items/' + $stateParams.id)
+  $scope.getCurrentInvoice = function() {
+    $http.get('/api/invoices/' + $stateParams.id)
     .then(function(result) {
-      $scope.currentItem = result.data;
-      $scope.currentItemGeo($scope.currentItem.city)
+      $scope.currentInvoice = result.data;
+      $scope.currentInvoiceGeo($scope.currentInvoice.city)
       $scope.getComments();
     }, function(err) {
       console.log(err)
@@ -35,9 +35,9 @@ angular.module('mvpApp')
   }
 
   $scope.getComments = function() {
-    $http.get('/api/comments?ItemId=' + $stateParams.id)
+    $http.get('/api/comments?InvoiceId=' + $stateParams.id)
     .then(function(results) {
-      $scope.currentItem.comments = results.data;
+      $scope.currentInvoice.comments = results.data;
     }, function(err) {
       console.log(err);
     });
@@ -48,7 +48,7 @@ angular.module('mvpApp')
   $scope.comment = {};
   $scope.comment.link = '';
 
-  $scope.addComment = function(itemId, city) {
+  $scope.addComment = function(invoiceId, city) {
     var lng;
     var lat;
 
@@ -59,7 +59,7 @@ angular.module('mvpApp')
     if(!$scope.comment.address) {
       $http.post('/api/comments', {
         text: $scope.comment.text,
-        ItemId: itemId,
+        InvoiceId: invoiceId,
         UserId: $scope.user.id,
         address: $scope.comment.address,
         city: city,
@@ -83,7 +83,7 @@ angular.module('mvpApp')
           lng = result[0].geometry.location.lng();
           $http.post('/api/comments', {
             text: $scope.comment.text,
-            ItemId: itemId,
+            InvoiceId: invoiceId,
             UserId: $scope.user.id,
             address: $scope.comment.address,
             city: city,
@@ -269,21 +269,21 @@ angular.module('mvpApp')
   CURRENT ITINERARY
   =================================================================*/
 
-  $scope.currentItemGeo = function(city) {
+  $scope.currentInvoiceGeo = function(city) {
     geocoder.geocode({ address: city}, function (result, status) {
       if (status === google.maps.GeocoderStatus.OK) {
         $scope.map.center = {
           latitude: result[0].geometry.location.lat(),
           longitude: result[0].geometry.location.lng()
         }
-        $scope.currentItemMarkers();
+        $scope.currentInvoiceMarkers();
       }
     });
   }
 
-  $scope.currentItemMarkers = function() {
+  $scope.currentInvoiceMarkers = function() {
     $scope.map.markers = [];
-    $http.get('/api/comments?ItemId=' + $stateParams.id)
+    $http.get('/api/comments?InvoiceId=' + $stateParams.id)
       .then(function(result) {
         var markers = [];
         result.data.forEach(function(element, index) {

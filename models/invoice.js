@@ -1,15 +1,12 @@
 
 module.exports = function(sequelize, DataTypes) {
   var Invoice = sequelize.define('Invoice', {
-    toProducer: {
+    title: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
         notEmpty: true
       }
-    },
-    price:{
-      type: DataTypes.INTEGER
     }
 
   }, {
