@@ -2,11 +2,12 @@
 
 
 <div ng-controller="AppCtrl">
-  <div class="card  z-depth-1 ">
-    <div class = "col s12 m6 l6">
+
+<div class = "col s12 m4 l4 offset-s5">
+	<div class="card  z-depth-1 ">
       <div class="card-content center black-text">
 
-        <form>
+        <form class="form-horizontal formLogin">
           <h3 class="thin">Sign-Up</h3>
           <div class="row">
             <div class="col s12">
@@ -14,7 +15,7 @@
 
                 <div class="row">
 
-                <div class="col s6">
+                <div class="col s4 offset s2">
                   <h7 class="dash-item-heading fields">Name</h7>
                   <input type="text" class="  inputField" id="fname" placeholder="John" ng-model="fname">
                 </div>
@@ -22,16 +23,16 @@
                 </div>
                 <div class="row">
 
-                <div class="col s6">
-                  <h7 class="dash-item-heading fields">Company Name</h7>
-                  <input type="text" class=" inputField" id="company" placeholder="Doe and Co." ng-model="company">
-                </div>
+					<div class="col s4 offset s2">
+					  <h7 class="dash-item-heading fields">Company Name</h7>
+					  <input type="text" class=" inputField" id="company" placeholder="Doe and Co." ng-model="company">
+					</div>
                 </div>
                 </div>
 
                 <br>
                 <div class = "row">
-                  <div class="col s6 offset s3  ">
+                  <div class="col s4 offset s3  ">
                     <h7 class="dash-item-heading fields">Email Address</h7>
                     <input type="email" class=" mdLgFields inputField" id="email" placeholder="example@example.com" ng-model="email">
                   </div>
@@ -40,7 +41,7 @@
 
                 <div class = "row">
 
-                <div class="col s6 ">
+                <div class="col s4 ">
 
                 <span>
                   <input checked="true" name="group1" type="radio" id="test1" ng-model="type" value="producer" />
@@ -56,13 +57,13 @@
 
 
 
-                <div class="col s6 offset s2">
+                <div class="col s4 offset s2">
                   <h7 class="dash-item-heading fields">Username</h7>
                   <input type="text" class=" mdLgFields inputField" id="username" placeholder="Username" ng-model="username">
                 </div>
                 <div class = "row">
-                <div class=" col s6 offset s2">
-                  <label for="password" class="dash-item-heading fields">Password</label>
+                <div class=" col s4 offset s2">
+                  <h7>Password</h7>
                   <input type="password" class=" mdLgFields inputField" id="password" placeholder="Password" ng-model="password">
                 </div>
               </div>
