@@ -1,6 +1,16 @@
-# mvpapp
+#Week 15 Login with Authentication
 
-A full-stack project that allows users to post items of trips they plan on going to. Other users can post comments to suggest to the original poster so they can get advice of what places to see and activities to do. This gives users access to insight from locals or other travelers to make the best of their trip. Tools used are MySQL, express, AngularJS, Node.js, Bootstrap, and MVC Design Pattern
+### Introduction
 
+* You will use `Handlebars` to generate HTML
+* You will use `Sequelize` to create data models for the database storage
+* You will use `Express` for routing
+* You will use `Bootstrap` (or `Materialize`) as a frontend CSS framework
+* You will use jQuery for front end form validation
 
-https://mvpapps.herokuapp.com
+### User story
+
+My Class App. You will be creating a system for the class. It should have user
+registration and a user login. There should be a registration page, a login page,
+a `students` page, an `instructors` page. Students have one instructor and up to
+2 TA's. Instructors have many students. An Instructor can be either a TA or a Teacher.
