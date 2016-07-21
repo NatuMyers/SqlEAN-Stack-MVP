@@ -22,12 +22,6 @@ module.exports = function(sequelize, DataTypes) {
     },
     description:{
       type: DataTypes.STRING
-    },
-    availibility:{
-      type: DataTypes.INTEGER
-    },
-    price:{
-      type: DataTypes.INTEGER
     }
 
   }, {
