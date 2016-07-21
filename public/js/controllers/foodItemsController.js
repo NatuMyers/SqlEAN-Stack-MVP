@@ -9,10 +9,6 @@ angular.module('mvpApp')
   }
 
   $scope.search = {};
-
-  $scope.location = $stateParams.location;
-
-
     $scope.addfoodItem = function(){
       $http.post("/api/foodItems", {
         title: $scope.foodItem.title,
@@ -27,9 +23,6 @@ angular.module('mvpApp')
         console.log(err)
       });
     };
-
-
-
 
   $scope.getfoodItems = function() {
     $http.get('/api/foodItems')
@@ -49,14 +42,6 @@ angular.module('mvpApp')
     });
   }
 
-  $scope.getComments = function() {
-    $http.get('/api/comments?foodItemId=' + $stateParams.id)
-    .then(function(results) {
-      $scope.currentfoodItem.comments = results.data;
-    }, function(err) {
-      console.log(err);
-    });
-  }
 
 
 }]);
