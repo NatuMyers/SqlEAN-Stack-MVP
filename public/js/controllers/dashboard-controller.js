@@ -24,7 +24,6 @@ angular.module("mvpApp")
   $scope.addItem = function(){
     $http.post("/api/items", {
       title:$scope.item.title,
-      title:$scope.item.availability,
       city: $scope.item.city,
       state: $scope.item.state,
       country: $scope.item.country,
@@ -34,7 +33,6 @@ angular.module("mvpApp")
     .then(function (result) {
       $scope.userItems.push(result.data);
       $scope.item.title = "";
-      $scope.item.availability = "";
       $scope.item.city = "";
       $scope.item.state = "";
       $scope.item.country = "";
@@ -56,6 +54,7 @@ angular.module("mvpApp")
   $scope.editItem = function(item) {
     $http.put('/api/items/' + item.id, {
       title: item.title,
+      title: item.availability,
       city:item.city,
       state:item.state,
       country:item.country,
