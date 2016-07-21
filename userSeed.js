@@ -6,6 +6,7 @@ var newUser1 = {
   username: 'dpetro07',
   password: 'password',
   fname: 'Daniel',
+  type: 'producer',
   company:'Petro'
 };
 
@@ -14,6 +15,7 @@ models.User.create({
   username: 'dpetro07',
   password: 'password',
   fname: 'Daniel',
+  type: 'producer',
   company:'Petro'
 })
 .then(function(result){
@@ -26,6 +28,7 @@ var newUser2 = {
   username: 'Jeremy',
   password: 'password',
   fname: 'Jeremy',
+  type: 'producer',
   company:'Miragliotta'
 };
 
@@ -40,6 +43,7 @@ var newUser3 = {
   username: 'paul',
   password: 'password',
   fname: 'Paul',
+  type: 'producer',
   company:'Santos'
 };
 
@@ -54,6 +58,7 @@ var newUser4 = {
   username: 'Darryl',
   password: 'password',
   fname: 'Darryl',
+  type: 'producer',
   company:'Mendonez'
 };
 
@@ -68,6 +73,7 @@ var newUser5 = {
   username: 'johndoe',
   password: 'password',
   fname: 'John',
+  type: 'producer',
   company:'Doe'
 };
 
@@ -81,6 +87,7 @@ var newUser6 = {
   username: 'janedoe',
   password: 'password',
   fname: 'Jane',
+  type: 'producer',
   company:'Doe'
 };
 
@@ -95,6 +102,7 @@ var newUser7 = {
   username: 'jstocks1',
   password: 'password',
   fname: 'John',
+  type: 'producer',
   company:'Stockton'
 };
 
@@ -109,6 +117,7 @@ var newUser8 = {
   username: 'ironmike',
   password: 'password',
   fname: 'Mike',
+  type: 'producer',
   company:'Tyson'
 };
 
@@ -123,6 +132,7 @@ var newUser8 = {
   username: 'shamoons',
   password: 'password',
   fname: 'Shamoon',
+  type: 'producer',
   company:'Siddiqui'
 };
 
@@ -137,6 +147,7 @@ var newUser9 = {
   username: 'exampleuser9',
   password: 'password',
   fname: 'Sean',
+  type: 'producer',
   company:'Conaty'
 };
 
@@ -150,6 +161,7 @@ var newUser10 = {
   username: 'exampleuser10',
   password: 'password',
   fname: 'Wolfgang',
+  type: 'producer',
   company:'Hall'
 };
 
