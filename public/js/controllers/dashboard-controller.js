@@ -24,18 +24,21 @@ angular.module("mvpApp")
 
   $scope.addfoodItem = function(){
     $http.post("/api/foodItems", {
-      title:$scope.item.title,
+      title: $scope.foodItem.title,
       availability: $scope.item.availability,
       UserId: $scope.user.id
     })
     .then(function (result) {
       $scope.userItems.push(result.data);
-      $scope.item.title = "";
-      $scope.item.availability = "";
+      $scope.foodItem.title = "";
+      $scope.foodItem.availability = "";
      },function(err) {
       console.log(err)
     });
   };
+
+
+
 
   $scope.deleteItem = function(itemId){
     $http.delete("/api/items/" + itemId)
