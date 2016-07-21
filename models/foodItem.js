@@ -18,7 +18,7 @@ module.exports = function(sequelize, DataTypes) {
   }, {
     classMethods: {
       associate: function(models) {
-        foodItem.belongsTo(models.Order),
+        foodItem.belongsTo(models.User),
         foodItem.hasMany(models.Activity)
       }
     }

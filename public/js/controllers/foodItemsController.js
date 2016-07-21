@@ -4,6 +4,7 @@ angular.module('mvpApp')
 
   $scope.init = function() {
     $scope.getCurrentItem();
+	$scope.getfoodItems();
   }
 
   $scope.search = {};
