@@ -29,6 +29,8 @@ module.exports = function(sequelize, DataTypes) {
       associate: function(models) {
         Item.belongsTo(models.User),
         Item.hasMany(models.Comment),
+        Item.hasMany(models.Order),
+        Item.hasMany(models.Invoice),
         Item.hasMany(models.Activity)
       }
     }
