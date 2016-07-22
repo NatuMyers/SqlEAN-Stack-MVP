@@ -90,7 +90,6 @@
                 <div class="col s12 m8">
                     <div class="card white ">
 
-
                         <div class="card-content black-text">
                           <h5 class="thin card-title">
                               You have </i> <span ng-show="userInvoices.length">{{userInvoices.length}}</span>
@@ -120,7 +119,6 @@
 
                     <div class="card white">
                         <div class="card-content black-text">
-                            <span class="card-title black-text">Invoices</span>
                             <div class="card white ">
 
 
@@ -133,7 +131,7 @@
                                           'other': 'invoices'
                                           }">
                                       </ng-pluralize>
-                                      <span ng-show="!userInvoices.length">0 Requests</span>
+                                      <span ng-show="!userInvoices.length">0 Invoices</span>
                                   </h5>
                                   <div class="collection z-depth-1">
                                       <div ng-repeat="invoice in userInvoices | orderBy:'-createdAt'">
