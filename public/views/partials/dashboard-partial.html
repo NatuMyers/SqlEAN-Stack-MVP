@@ -1,7 +1,6 @@
 
 <body>
     <br>
-
     <main  ng-init="init()">
     <!-- <div ng-if="User.type == 'producer'"> -->
 
@@ -105,20 +104,20 @@
                   <div class="card white lighten-5 hide-on-small-only">
                       <div class="card-content black-text">
                           <h5 class="thin card-title">
-                              You have </i> <span ng-show="userItems.length">{{userItems.length}}</span>
-                              <ng-pluralize ng-show="userItems.length" count="userItems.length"
+                              You have </i> <span ng-show="userOrders.length">{{userOrders.length}}</span>
+                              <ng-pluralize ng-show="userOrders.length" count="userOrders.length"
                                   when="{
-                                  '1': 'item',
-                                  'other': 'items'
+                                  '1': 'order',
+                                  'other': 'orders'
                                   }">
                               </ng-pluralize>
-                              <span ng-show="!userItems.length">0 items</span>
+                              <span ng-show="!userOrders.length">0 orders</span>
                           </h5>
                           <div class="collection z-depth-1">
-                              <div ng-repeat="item in userItems | orderBy:'-createdAt'">
-                                  <a href="/items/{{item.id}}" target="_blank" class="collection-item black-text" ng-hide="deleted">
-                                      {{item.title}}
-                                      <p class="grey-text">{{item.availability}} Available</p>
+                              <div ng-repeat="order in userOrders | orderBy:'-createdAt'">
+                                  <a href="/orders/{{order.id}}" target="_blank" class="collection-order black-text" ng-hide="deleted">
+                                      {{order.title}}
+                                      <p class="grey-text">{{order.availability}} Available</p>
                                   </a>
                               </div>
                           </div>
@@ -129,25 +128,25 @@
                       </div>
                   </div>
 
-                  <br></br>
+                  <br>
                   <!-- number invoices  -->
                   <div class="card white lighten-5 hide-on-small-only">
                       <div class="card-content black-text">
                           <h5 class="thin card-title">
-                              You have </i> <span ng-show="userItems.length">{{userItems.length}}</span>
-                              <ng-pluralize ng-show="userItems.length" count="userItems.length"
+                              You have </i> <span ng-show="userInvoices.length">{{userInvoices.length}}</span>
+                              <ng-pluralize ng-show="userInvoices.length" count="userInvoices.length"
                                   when="{
-                                  '1': 'item',
-                                  'other': 'items'
+                                  '1': 'invoice',
+                                  'other': 'invoices'
                                   }">
                               </ng-pluralize>
-                              <span ng-show="!userItems.length">0 items</span>
+                              <span ng-show="!userInvoices.length">0 invoices</span>
                           </h5>
                           <div class="collection z-depth-1">
-                              <div ng-repeat="item in userItems | orderBy:'-createdAt'">
-                                  <a href="/items/{{item.id}}" target="_blank" class="collection-item black-text" ng-hide="deleted">
-                                      {{item.title}}
-                                      <p class="grey-text">{{item.availability}} Available</p>
+                              <div ng-repeat="invoice in userInvoices | invoiceBy:'-createdAt'">
+                                  <a href="/invoices/{{invoice.id}}" target="_blank" class="collection-invoice black-text" ng-hide="deleted">
+                                      {{invoice.title}}
+                                      <p class="grey-text">{{invoice.availability}} Available</p>
                                   </a>
                               </div>
                           </div>
