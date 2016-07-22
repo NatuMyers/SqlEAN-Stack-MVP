@@ -58,7 +58,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="center">
-                                            <a class="waves-effect waves-light btn center" ng-click="addItem()" type="submit" ng-submit="addItem()">Add Item</a>
+                                            <a class="waves-effect waves-light btn center white-text" ng-click="addItem()" type="submit" ng-submit="addItem()">Add Item</a>
                                         </div>
                                     </div>
                                 </form>
@@ -69,7 +69,7 @@
                     <!-- number of items -->
                     <div class="card  lighten-5 hide-on-small-only">
                         <div class="card-content black-text">
-                            <h5 class="thin card-title">
+                            <h5 class="thin card-title black-text">
                                 You have </i> <span ng-show="userItems.length">{{userItems.length}}</span>
                                 <ng-pluralize ng-show="userItems.length" count="userItems.length"
                                     when="{
@@ -132,7 +132,7 @@
                   <!-- number invoices  -->
                   <div class="card  lighten-5 hide-on-small-only">
                       <div class="card-content black-text">
-                          <h5 class="thin card-title">
+                          <h5 class="thin card-title black-text">
                               You have </i> <span ng-show="userInvoices.length">{{userInvoices.length}}</span>
                               <ng-pluralize ng-show="userInvoices.length" count="userInvoices.length"
                                   when="{
@@ -140,7 +140,7 @@
                                   'other': 'invoices'
                                   }">
                               </ng-pluralize>
-                              <span ng-show="!userInvoices.length">0 invoices</span>
+                              <span ng-show="!userInvoices.length" class = "black-text">0 invoices</span>
                           </h5>
                           <div class="collection z-depth-1">
                               <div ng-repeat="invoice in userInvoices | invoiceBy:'-createdAt'">
