@@ -25,17 +25,7 @@ angular.module("mvpApp")
 
   $scope.addItem = function(){
 
-    // order add
-    $http.post("/api/orders", {
-      title: $scope.item.title,
-    })
-    .then(function (result) {
-      $scope.userOrders.push(result.data);
-      $scope.item.title = "";
-     },function(err) {
-      console.log(err)
-    });
-  }
+
 
     // item add
     $http.post("/api/items", {
