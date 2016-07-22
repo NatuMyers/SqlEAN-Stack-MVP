@@ -44,6 +44,26 @@ angular.module("mvpApp")
     });
   };
 
+
+
+
+  // done-
+  $scope.addItem = function(){
+
+  $http.post("/api/orders", {
+    title: $scope.item.title,
+  })
+  .then(function (result) {
+    $scope.userOrders.push(result.data);
+    $scope.item.title = "";
+   },function(err) {
+    console.log(err)
+  });
+};
+
+
+
+
   $scope.deleteItem = function(itemId){
     $http.delete("/api/items/" + itemId)
     .then(function (result) {
