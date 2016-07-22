@@ -9,81 +9,97 @@ angular.module("mvpApp")
     },100);
   }
 
-// Items
+  // Items
 
-  $scope.getUserItems = function() {
-    $http.get('/api/items?UserId=' + $scope.user.id)
-    .then(function(result) {
-      $scope.userItems = result.data;
-      for(var i = 0; i < $scope.userItems.length; i++) {
-        $scope.userItems[i].newActivity = {};
-      }
-    }, function(err) {
-      console.log(err)
-    });
-  };
+  // Now made the add item function post an Order AND the item
+  // the items have Orderid bound to them instead of UserId
+  // orderId has userID bound to it as items did
+  // TODO strip out useless item parameters
 
-  $scope.addItem = function(){
-    $http.post("/api/items", {
+    $scope.getOrderItems = function() {
+      $http.get('/api/items?OrderId=' + $scope.order.id)
+      .then(function(result) {
+        $scope.userOrders = result.data;
+        for(var i = 0; i < $scope.userOrders.length; i++) {
+          $scope.userOrders[i].newActivity = {};
+        }
+      }, function(err) {
+        console.log(err)
+      });
+    };
+
+    // done-
+    $scope.addItem = function(){
+
+    $http.post("/api/orders", {
       title: $scope.item.title,
-      city: $scope.item.city,
-      state: $scope.item.state,
-      country: $scope.item.country,
-      description: $scope.item.description,
-      UserId: $scope.user.id
     })
     .then(function (result) {
-      $scope.userItems.push(result.data);
+      $scope.userOrders.push(result.data);
       $scope.item.title = "";
-      $scope.item.city = "";
-      $scope.item.state = "";
-      $scope.item.country = "";
-      $scope.item.description = "";
      },function(err) {
       console.log(err)
     });
   };
 
-  $scope.deleteItem = function(itemId){
-    $http.delete("/api/items/" + itemId)
-    .then(function (result) {
-      $scope.getUserItems();
-     }), (function(err) {
-      console.log(err);
-    });
-  };
-
-  $scope.editItem = function(item) {
-    $http.put('/api/items/' + item.id, {
-      title: item.title,
-      title: item.availability,
-      city:item.city,
-      state:item.state,
-      country:item.country,
-      description:item.description
-    });
-  };
-
-  //FOR SEARCH PARTIAL WHEN COMPLETED
-  $scope.getItems = function() {
-    $http.get('/api/items')
-      .then(function(result) {
-        $scope.allItems = result.data;
-      }, function(err) {
+      $http.post("/api/items", {
+        title: $scope.item.title,
+        city: $scope.item.city,
+        state: $scope.item.state,
+        country: $scope.item.country,
+        description: $scope.item.description,
+        OrderId: $scope.order.id
+      })
+      .then(function (result) {
+        $scope.userOrders.push(result.data);
+        $scope.item.title = "";
+        $scope.item.city = "";
+        $scope.item.state = "";
+        $scope.item.country = "";
+        $scope.item.description = "";
+       },function(err) {
         console.log(err)
       });
-    }
-  $scope.getItems();
+    };
 
-  $scope.addActivity = function(itemId, newActivity){
-    newActivity.ItemId = itemId;
-    $http.post("/api/activities", newActivity)
-    .then(function (result) {
-      $scope.getUserItems();
-     }), (function(err) {
-      console.log(err);
-    });
-  };
+    //
+
+    // made delete order
+    $scope.deleteOrder = function(orderId){
+      $http.delete("/api/orders/" + orderId)
+      .then(function (result) {
+        $scope.getOrderItems(); // get order items is extremely important
+       }), (function(err) {
+        console.log(err);
+      });
+
+      // when you delete order, you have to delete
+      // all items associated with it
+      // lets assume that happens for now - but i'm not sure tho.
+      // if you need a function insert it here------
+
+      // ---
+    };
+
+    $scope.deleteItem = function(itemId){
+      $http.delete("/api/items/" + itemId)
+      .then(function (result) {
+        $scope.getOrderItems();
+       }), (function(err) {
+        console.log(err);
+      });
+    };
+
+    $scope.editItem = function(item) {
+      $http.put('/api/items/' + item.id, {
+        title: item.title,
+        title: item.availability,
+        city:item.city,
+        state:item.state,
+        country:item.country,
+        description:item.description
+      });
+    };
 
 // Invoices
 
@@ -150,6 +166,10 @@ $scope.getInvoices = function() {
     });
   }
 $scope.getInvoices();
+
+
+
+
 
   $scope.deleteActivity = function(activityId){
 
