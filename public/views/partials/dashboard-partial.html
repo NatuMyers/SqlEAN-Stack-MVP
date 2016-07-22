@@ -70,13 +70,14 @@
                     <div class="card  lighten-5 hide-on-small-only">
                         <div class="card-content black-text">
                             <h5 class="thin card-title black-text">
-                                You have </i> <span ng-show="userItems.length">{{userItems.length}} ready to ship</span>
+                                You have </i> <span ng-show="userItems.length">{{userItems.length}}</span>
                                 <ng-pluralize ng-show="userItems.length" count="userItems.length"
                                     when="{
                                     '1': 'item',
                                     'other': 'items'
                                     }">
                                 </ng-pluralize>
+                                ready to order
                                 <span ng-show="!userItems.length">0 items</span>
                             </h5>
                             <div class="collection z-depth-1">
@@ -88,7 +89,7 @@
                                 </div>
                             </div>
                             <div class="center">
-                                <a class="waves-effect waves-light btn center white-text" ng-click="/invoices" ng-submit="invoices">View All</a>
+                                <a class="waves-effect waves-light btn center white-text" ng-click="/invoices" ng-submit="invoices">Make Order</a>
                             </div>
 
                         </div>
