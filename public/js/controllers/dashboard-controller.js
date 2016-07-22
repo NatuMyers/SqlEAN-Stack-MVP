@@ -35,7 +35,7 @@ angular.module("mvpApp")
      },function(err) {
       console.log(err)
     });
-  };
+  }
 
     // item add
     $http.post("/api/items", {
