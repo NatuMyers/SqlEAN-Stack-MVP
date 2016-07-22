@@ -12,9 +12,8 @@ module.exports = function(sequelize, DataTypes) {
   }, {
     classMethods: {
       associate: function(models) {
-        Invoice.belongsTo(models.User),
-        Invoice.hasMany(models.Item),
-        Invoice.hasMany(models.Activity)
+        Invoice.belongsTo(models.Order),
+        Invoice.belongsTo(models.User)
       }
     }
   });
