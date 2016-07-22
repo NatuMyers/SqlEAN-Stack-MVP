@@ -74,7 +74,11 @@
                                 <ng-pluralize ng-show="userItems.length" count="userItems.length"
                                     when="{
                                     '1': 'item',
-                                    'other': 'items'
+                                    '2: 'items',
+                                    '3: 'items',
+                                    '4: 'items',
+                                    '5: 'items',
+                                    'other': '5+ items'
                                     }">
                                 </ng-pluralize>
                                 ready to order
@@ -89,7 +93,7 @@
                                 </div>
                             </div>
                             <div class="center">
-                                <a class="waves-effect waves-light btn center white-text" ng-click="/invoices" ng-submit="invoices">Make Order</a>
+                                <a class="waves-effect waves-light btn center white-text" ng-click="/invoices" ng-submit="invoices">Go to Order</a>
                             </div>
 
                         </div>
