@@ -73,6 +73,7 @@ angular.module("mvpApp")
         console.log(err)
       });
     }
+
   $scope.getItems();
 
   $scope.addActivity = function(itemId, newActivity){
