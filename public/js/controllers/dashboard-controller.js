@@ -62,10 +62,10 @@ angular.module("mvpApp")
     $http.put('/api/items/' + item.id, {
       title: item.title,
       title: item.availability,
-      city:item.city,
-      state:item.state,
-      country:item.country,
-      description:item.description
+      city: item.city,
+      state: item.state,
+      country: item.country,
+      description: item.description
     });
   };
 
