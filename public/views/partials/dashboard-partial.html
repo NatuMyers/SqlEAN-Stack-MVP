@@ -65,7 +65,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="center">
-                                            <a class="waves-effect waves-light btn center white-text" ng-click="addItem()" type="submit" ng-submit="addItem()">Add Item</a>
+                                            <a class="waves-effect waves-light btn center white-text" ng-click="addOrder()" type="submit" ng-submit="addOrder()">Add Item</a>
                                         </div>
                                     </div>
                                 </form>
@@ -81,11 +81,7 @@
                                 <ng-pluralize ng-show="userItems.length" count="userItems.length"
                                     when="{
                                     '1': 'item',
-                                    '2: 'items',
-                                    '3: 'items',
-                                    '4: 'items',
-                                    '5: 'items',
-                                    'other': '5+ items'
+                                    'other': 'items'
                                     }">
                                 </ng-pluralize>
                                 Available
