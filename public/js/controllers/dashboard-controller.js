@@ -47,8 +47,6 @@ angular.module("mvpApp")
   };
 
 
-
-
   $scope.deleteItem = function(itemId){
     $http.delete("/api/items/" + itemId)
     .then(function (result) {
