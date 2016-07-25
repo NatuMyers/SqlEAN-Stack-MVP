@@ -3,9 +3,8 @@
     <br>
     <main  ng-init="init()">
 
-    nbefiowbofwieb {{User.type}}
     <!-- Purchaser Dashboard -->
-    <div ng-if="User.type == 'purchaser'">
+    <div id="{{user.type}}" ng-if="user.type == 'purchaser'">
         <!-- Containers-->
         <div class="container">
             <div class="row">
@@ -171,7 +170,7 @@
     </div>
 
     <!-- Producer Dashboard -->
-    <div ng-if="User.type == 'producer'">
+    <div id="{{user.type}}" ng-if="user.type == 'producer'">
         <!-- Containers-->
         <div class="container">
             <div class="row">
