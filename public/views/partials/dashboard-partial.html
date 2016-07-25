@@ -5,7 +5,7 @@
     <main  ng-init="init()">
 
     <!-- Purchaser Dashboard -->
-    <div ng-if="User.type == 'purchaser'">
+    <div ng-if="user.type == 'purchaser'">
         <!-- Containers-->
         <div class="container">
             <div class="row">
@@ -171,7 +171,7 @@
     </div>
 
     <!-- Producer Dashboard -->
-    <div ng-if="User.type == 'producer'">
+    <div ng-if="user.type == 'producer'">
         <!-- Containers-->
         <div class="container">
             <div class="row">
