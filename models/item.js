@@ -21,7 +21,7 @@ module.exports = function(sequelize, DataTypes) {
   }, {
     classMethods: {
       associate: function(models) {
-        Item.belongsTo(models.Order),
+        // Item.belongsTo(models.Order),
         Item.hasMany(models.Comment),
         // Each item can have an order (from purchaser)
         //then invoice (from farmer)
