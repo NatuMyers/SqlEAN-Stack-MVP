@@ -8,7 +8,7 @@ angular.module("mvpApp")
       $scope.getItems();
     },100);
   }
-  
+
 // Items
 
   $scope.getUserItems = function() {
@@ -29,8 +29,7 @@ angular.module("mvpApp")
     $http.post("/api/items", {
       title: $scope.item.title,
       city: $scope.item.city,
-      state: $scope.item.state,
-      UserId: $scope.user.id
+      state: $scope.item.state
     })
     .then(function (result) {
       $scope.userItems.push(result.data);

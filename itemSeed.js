@@ -4,8 +4,7 @@ var newItem1 = {
   title: 'Adventure Time!',
   city: 'New York City',
   state: 'NY',
-  UserId: 1,
-  description: 'put description here'
+  UserId: 1
 };
 
 models.Item.create(newItem1)
