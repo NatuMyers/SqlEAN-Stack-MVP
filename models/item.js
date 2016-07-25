@@ -16,12 +16,6 @@ module.exports = function(sequelize, DataTypes) {
     },
     state: {
       type: DataTypes.STRING
-    },
-    country: {
-      type: DataTypes.STRING
-    },
-    description:{
-      type: DataTypes.STRING
     }
 
   }, {
