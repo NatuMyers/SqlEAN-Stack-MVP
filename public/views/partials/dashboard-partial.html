@@ -37,6 +37,10 @@
                     <div class = "center">
                         <div class="card   lighten-5">
                             <div class="card-content black-text center">
+                              <h5 class="thin card-title black-text">
+                                  Publish items you have available
+                              </h5>
+
                                 <form class="row container center" name="itemForm">
                                     <div class="add-itin-form">
                                         <br>
@@ -84,7 +88,7 @@
                                     'other': '5+ items'
                                     }">
                                 </ng-pluralize>
-                                ready to order
+                                Available
                                 <span ng-show="!userItems.length">0 items</span>
                             </h5>
                             <div class="collection z-depth-1">
@@ -282,11 +286,11 @@
                               You have </i> <span ng-show="userOrders.length">{{userOrders.length}}</span>
                               <ng-pluralize ng-show="userOrders.length" count="userOrders.length"
                                   when="{
-                                  '1': 'order requests',
-                                  'other': 'orders requests'
+                                  '1': 'request',
+                                  'other': 'requests'
                                   }">
                               </ng-pluralize>
-                              <span ng-show="!userOrders.length">0 order requests</span>
+                              <span ng-show="!userOrders.length">0 requests</span>
                           </h5>
                           <div class="collection z-depth-1">
                               <div ng-repeat="order in userOrders | orderBy:'-createdAt'">
