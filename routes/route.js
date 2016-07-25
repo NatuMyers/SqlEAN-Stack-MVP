@@ -28,7 +28,7 @@ module.exports.routes = function(app) {
   });
 
   var orderResource = epilogue.resource({
-    model: models.Item,
+    model: models.Order,
     endpoints: [
     '/api/orders',
     '/api/orders/:id'
