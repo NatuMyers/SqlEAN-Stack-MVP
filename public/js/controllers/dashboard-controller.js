@@ -24,7 +24,7 @@ angular.module("mvpApp")
   };
 
   $scope.addItem = function(){
-
+    console.log("hello!!!!!!!!!!!!!!!!")
     // item add
     $http.post("/api/items", {
       title: $scope.item.title,
@@ -57,9 +57,7 @@ angular.module("mvpApp")
       title: item.title,
       title: item.availability,
       city: item.city,
-      state: item.state,
-      country: item.country,
-      description: item.description
+      state: item.state
     });
   };
 
