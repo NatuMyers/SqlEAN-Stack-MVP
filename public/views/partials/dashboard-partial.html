@@ -1,32 +1,41 @@
-<body>
+
+<body class = "grey lighten-5">
     <br>
-    <!-- <div ng-if="User.type == 'producer'"> -->
     <main  ng-init="init()">
+
+    nbefiowbofwieb {{User.type}}
+    <!-- Purchaser Dashboard -->
+    <div ng-if="User.type == 'purchaser'">
+        <!-- Containers-->
         <div class="container">
             <div class="row">
-                <div class="col s12">
+                <div class="col s12 m12 l12">
                     <center>
-                        <div class="card white z-depth-1">
+                        <div class="card  z-depth-1">
                             <div class="card-content black-text">
-                                <br>
+
+                                <div class=" pull-left grey-text"> Purchaser Dashboard </div><br></br>
                                 <div class="center">
                                     <p>
                                         <img class="main-profile-img" src="http://www.gravatar.com/avatar/{{ userData.email | gravatar }}?s=200&d=mm" width="150px">
                                     </p>
                                     <h4 class = "light"> <p>{{ user.fname }} <br> of {{ user.company }}</p> </h5>
-                                    <p class="white-text darken-5">(@{{ user.username }})</p>
+                                    <p class="-text darken-5">(@{{ user.username }})</p>
+                                    <a href="/{{ user.username }}" type="button" class="btn pull-right white-text">View Self</a>
+
                                 </div>
-                                <p>
-                                    <a href="/{{ user.username }}" type="button" class="btn pull-right">View Self</a>
-                                </p>
+
                             </div>
                         </div>
                     </center>
                 </div>
+
                 <!-- left section -->
-                <div class="col s12 m4">
+                <div class="col s12 m8 l8">
+
+                    <!-- add item -->
                     <div class = "center">
-                        <div class="card  white lighten-5">
+                        <div class="card   lighten-5">
                             <div class="card-content black-text center">
                                 <form class="row container center" name="itemForm">
                                     <div class="add-itin-form">
@@ -52,90 +61,280 @@
                                     </div>
                                     <div class="row">
                                         <div class="center">
-                                            <a class="waves-effect waves-light btn center" ng-click="addItem()" type="submit" ng-submit="addItem()">Add Item</a>
+                                            <a class="waves-effect waves-light btn center white-text" ng-click="addItem()" type="submit" ng-submit="addItem()">Add Item</a>
                                         </div>
                                     </div>
                                 </form>
                             </div>
                         </div>
                     </div>
-                    <div class="card white lighten-5 hide-on-small-only">
+
+                    <!-- number of items -->
+                    <div class="card  lighten-5 hide-on-small-only">
                         <div class="card-content black-text">
-                            <h5 class="thin card-title">
+                            <h5 class="thin card-title black-text">
                                 You have </i> <span ng-show="userItems.length">{{userItems.length}}</span>
                                 <ng-pluralize ng-show="userItems.length" count="userItems.length"
                                     when="{
                                     '1': 'item',
-                                    'other': 'items'
+                                    '2: 'items',
+                                    '3: 'items',
+                                    '4: 'items',
+                                    '5: 'items',
+                                    'other': '5+ items'
                                     }">
                                 </ng-pluralize>
+                                ready to order
                                 <span ng-show="!userItems.length">0 items</span>
                             </h5>
                             <div class="collection z-depth-1">
                                 <div ng-repeat="item in userItems | orderBy:'-createdAt'">
-                                    <a href="/items/{{item.id}}" target="_blank" class="collection-item black-text" ng-hide="deleted">
+                                    <a href="#!" class="secondary-content"><i class="material-icons">not_interested</i><a href="/items/{{item.id}}" target="_blank" class="collection-item black-text" ng-hide="deleted">
                                         {{item.title}}
                                         <p class="grey-text">{{item.availability}} Available</p>
                                     </a>
                                 </div>
                             </div>
                             <div class="center">
-                                <a class="waves-effect waves-light btn center" ng-click="/invoices" ng-submit="invoices">View All</a>
+                                <a class="waves-effect waves-light btn center white-text" ng-click="addOrder()" type="submit" ng-submit="addOrder">Add Item</a>
                             </div>
 
                         </div>
                     </div>
+
                 </div>
-                <div class="col s12 m8">
-                    <div class="card white lighten-5">
-                        <div class="card-content black-text">
-                          <h5 class="thin card-title">
-                              You have </i> <span ng-show="userItems.length">{{userItems.length}}</span>
-                              <ng-pluralize ng-show="userItems.length" count="userItems.length"
+
+                <!-- right section -->
+                <div class="col s12 m4 l4">
+
+
+                  <!-- number pending orders -->
+                  <div class="card  lighten-5 hide-on-small-only">
+                      <div class="card-content black-text">
+                          <h5 class="thin card-title black-text">
+                              You have </i> <span ng-show="userOrders.length">{{userOrders.length}}</span>
+                              <ng-pluralize ng-show="userOrders.length" count="userOrders.length"
                                   when="{
-                                  '1': 'request',
-                                  'other': 'requests'
+                                  '1': 'order',
+                                  'other': 'orders'
                                   }">
                               </ng-pluralize>
-                              <span ng-show="!userItems.length">0 Requests</span>
+                              <span ng-show="!userOrders.length">0 orders</span>
                           </h5>
                           <div class="collection z-depth-1">
-                              <div ng-repeat="item in userItems | orderBy:'-createdAt'">
-                                  <a href="/items/{{item.id}}" target="_blank" class="collection-item black-text" ng-hide="deleted">
+                              <div ng-repeat="order in userOrders | orderBy:'-createdAt'">
+                                  <a href="/orders/{{order.id}}" target="_blank" class="collection-order black-text" ng-hide="deleted">
                                       {{order.title}}
-                                      <p class="grey-text">{{order.userID}} Available</p>
+                                      <p class="grey-text">{{order.availability}} Available</p>
                                   </a>
                               </div>
                           </div>
                           <div class="center">
-                              <a class="waves-effect waves-light btn center" ng-click="/invoices" ng-submit="invoices">View All</a>
+                              <a class="waves-effect waves-light btn center white-text" ng-click="/invoices" ng-submit="invoices">View All</a>
                           </div>
 
-                    </div>
-                    <div class="card white">
-                        <div class="card-content black-text">
-                            <span class="card-title black-text">Invoices</span>
-                            <div class="collection z-depth-1">
-                                <a href="http://redhotchilipeppers.com" target="_blank" class="collection-item black-text">
-                                    Favourite Band
-                                    <p class="grey-text">Red Hot Chili Peppers</p>
-                                </a>
-                                <a href="http://redwings.nhl.com" target="_blank" class="collection-item black-text">
-                                    Favourite Hockey Team
-                                    <p class="grey-text">Detroit Red Wings</p>
-                                </a>
-                                <a href="http://www.barneysvideoresume.com/" target="_blank" class="collection-item black-text">
-                                    Favourite TV Show
-                                    <p class="grey-text">How I Met Your Mother</p>
-                                </a>
-                            </div>
-                            <div class="center">
-                                <a class="waves-effect waves-light btn center" ng-click="/invoices" ng-submit="invoices">View All</a>
-                            </div>
-                        </div>
-                    </div>
+                      </div>
+                  </div>
+
+                  <br>
+                  <!-- number invoices  -->
+                  <div class="card  lighten-5 hide-on-small-only">
+                      <div class="card-content black-text">
+                          <h5 class="thin card-title black-text">
+                              You have </i> <span ng-show="userInvoices.length">{{userInvoices.length}}</span>
+                              <ng-pluralize ng-show="userInvoices.length" count="userInvoices.length"
+                                  when="{
+                                  '1': 'invoice',
+                                  'other': 'invoices'
+                                  }">
+                              </ng-pluralize>
+                              <span ng-show="!userInvoices.length" class = "black-text">0 invoices</span>
+                          </h5>
+                          <div class="collection z-depth-1">
+                              <div ng-repeat="invoice in userInvoices | invoiceBy:'-createdAt'">
+                                  <a href="/invoices/{{invoice.id}}" target="_blank" class="collection-invoice black-text" ng-hide="deleted">
+                                      {{invoice.title}}
+                                      <p class="grey-text">{{invoice.availability}} Available</p>
+                                  </a>
+                              </div>
+                          </div>
+                          <div class="center">
+                              <a class="waves-effect waves-light btn center white-text" ng-click="/invoices" ng-submit="invoices">View All</a>
+                          </div>
+
+                      </div>
+                  </div>
+
                 </div>
             </div>
         </div>
+    </div>
+
+    <!-- Producer Dashboard -->
+    <div ng-if="User.type == 'producer'">
+        <!-- Containers-->
+        <div class="container">
+            <div class="row">
+                <div class="col s12 m12 l12">
+                    <center>
+                        <div class="card  z-depth-1">
+                            <div class="card-content black-text">
+
+                                <div class=" pull-left grey-text"> Producer Dashboard </div><br></br>
+                                <div class="center">
+                                    <p>
+                                        <img class="main-profile-img" src="http://www.gravatar.com/avatar/{{ userData.email | gravatar }}?s=200&d=mm" width="150px">
+                                    </p>
+                                    <h4 class = "light"> <p>{{ user.fname }} <br> of {{ user.company }}</p> </h5>
+                                    <p class="-text darken-5">(@{{ user.username }})</p>
+                                    <a href="/{{ user.username }}" type="button" class="btn pull-right white-text">View Self</a>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </center>
+                </div>
+
+                <!-- left section -->
+                <div class="col s12 m8 l8">
+
+                    <!-- add item -->
+                    <div class = "center">
+                        <div class="card   lighten-5">
+                            <div class="card-content black-text center">
+                                <form class="row container center" name="itemForm">
+                                    <div class="add-itin-form">
+                                        <br>
+                                        <div class="center ">
+                                            <input ng-model="item.title" name="title" type="text" class=" validate" placeholder="Item Name">
+                                        </div>
+                                        <br>
+                                        <div class="center ">
+                                            <input ng-model="item.city" name="city" type="text" class=" validate" placeholder="Amount">
+                                        </div>
+
+                                        <div class="center ">
+                                            <input ng-model="item.state" name="state" type="text" class=" validate" placeholder="Amount">
+                                        </div>
+                                        <div class="center ">
+                                            <input ng-model="item.country" name="country" type="text" class=" validate" placeholder="Amount">
+                                        </div>
+                                        <div class="center ">
+                                            <input ng-model="item.description" name="description" type="text" class=" validate" placeholder="Amount">
+                                        </div>
+
+                                    </div>
+                                    <div class="row">
+                                        <div class="center">
+                                            <a class="waves-effect waves-light btn center white-text" ng-click="addItem()" type="submit" ng-submit="addItem()">Add Item</a>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- number of items -->
+                    <div class="card  lighten-5 hide-on-small-only">
+                        <div class="card-content black-text">
+                            <h5 class="thin card-title black-text">
+                                You have </i> <span ng-show="userItems.length">{{userItems.length}}</span>
+                                <ng-pluralize ng-show="userItems.length" count="userItems.length"
+                                    when="{
+                                    '1': 'item',
+                                    '2: 'items',
+                                    '3: 'items',
+                                    '4: 'items',
+                                    '5: 'items',
+                                    'other': '5+ items'
+                                    }">
+                                </ng-pluralize>
+                                ready to order
+                                <span ng-show="!userItems.length">0 items</span>
+                            </h5>
+                            <div class="collection z-depth-1">
+                                <div ng-repeat="item in userItems | orderBy:'-createdAt'">
+                                    <a href="#!" class="secondary-content"><i class="material-icons">not_interested</i><a href="/items/{{item.id}}" target="_blank" class="collection-item black-text" ng-hide="deleted">
+                                        {{item.title}}
+                                        <p class="grey-text">{{item.availability}} Available</p>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="center">
+                                <a class="waves-effect waves-light btn center white-text" ng-click="addOrder()" type="submit" ng-submit="addOrder">Add Item</a>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- right section -->
+                <div class="col s12 m4 l4">
+
+
+                  <!-- number pending orders -->
+                  <div class="card  lighten-5 hide-on-small-only">
+                      <div class="card-content black-text">
+                          <h5 class="thin card-title black-text">
+                              You have </i> <span ng-show="userOrders.length">{{userOrders.length}}</span>
+                              <ng-pluralize ng-show="userOrders.length" count="userOrders.length"
+                                  when="{
+                                  '1': 'order',
+                                  'other': 'orders'
+                                  }">
+                              </ng-pluralize>
+                              <span ng-show="!userOrders.length">0 orders</span>
+                          </h5>
+                          <div class="collection z-depth-1">
+                              <div ng-repeat="order in userOrders | orderBy:'-createdAt'">
+                                  <a href="/orders/{{order.id}}" target="_blank" class="collection-order black-text" ng-hide="deleted">
+                                      {{order.title}}
+                                      <p class="grey-text">{{order.availability}} Available</p>
+                                  </a>
+                              </div>
+                          </div>
+                          <div class="center">
+                              <a class="waves-effect waves-light btn center white-text" ng-click="/invoices" ng-submit="invoices">View All</a>
+                          </div>
+
+                      </div>
+                  </div>
+
+                  <br>
+                  <!-- number invoices  -->
+                  <div class="card  lighten-5 hide-on-small-only">
+                      <div class="card-content black-text">
+                          <h5 class="thin card-title black-text">
+                              You have </i> <span ng-show="userInvoices.length">{{userInvoices.length}}</span>
+                              <ng-pluralize ng-show="userInvoices.length" count="userInvoices.length"
+                                  when="{
+                                  '1': 'invoice',
+                                  'other': 'invoices'
+                                  }">
+                              </ng-pluralize>
+                              <span ng-show="!userInvoices.length" class = "black-text">0 invoices</span>
+                          </h5>
+                          <div class="collection z-depth-1">
+                              <div ng-repeat="invoice in userInvoices | invoiceBy:'-createdAt'">
+                                  <a href="/invoices/{{invoice.id}}" target="_blank" class="collection-invoice black-text" ng-hide="deleted">
+                                      {{invoice.title}}
+                                      <p class="grey-text">{{invoice.availability}} Available</p>
+                                  </a>
+                              </div>
+                          </div>
+                          <div class="center">
+                              <a class="waves-effect waves-light btn center white-text" ng-click="/invoices" ng-submit="invoices">View All</a>
+                          </div>
+
+                      </div>
+                  </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     </main>
-    <!--</div> -->

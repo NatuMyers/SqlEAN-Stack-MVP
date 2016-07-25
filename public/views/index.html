@@ -2,12 +2,10 @@
 <html ng-app="mvpApp">
 <head>
 
-  <title>TEST</title>
+  <title>Foodvine</title>
 
-
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css"> 
-  <link rel="stylesheet" type="text/css" href="/css/main.css">
-
+  <!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">  -->
+  <link rel="stylesheet" type="text/css" href="css/materialize.css">
 
   <meta charset="utf-8">
   <!-- Viewport -->
@@ -18,11 +16,8 @@
   <!-- Questrial Google Font -->
   <link href='https://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'>
 
-
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-
-
 
   <!-- <!-- Angular -->
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.2/angular.min.js"></script>
@@ -30,9 +25,9 @@
   <base href="/" />
 
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
 </head>
-<body ng-controller="AppCtrl">
+
+<body ng-controller="AppCtrl" class ="grey lighten-5">
 
   <!-- Navbar -->
   <div ng-include="'/views/partials/navbar-partial.html'"></div>
@@ -45,18 +40,9 @@
     <ui-view></ui-view>
   <div>
 
-
-
-
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
     <script type="text/javascript" src="/elements.js"></script>
-
-
-
-
-
-
 
   <!-- Contact Modal -->
   <div ng-include="'/views/partials/contact-modal-partial.html'"></div>
