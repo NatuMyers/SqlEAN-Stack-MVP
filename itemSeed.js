@@ -4,7 +4,6 @@ var newItem1 = {
   title: 'Adventure Time!',
   city: 'New York City',
   state: 'NY',
-  country: 'USA',
   UserId: 1,
   description: 'put description here'
 };
@@ -18,7 +17,6 @@ var newItem2 = {
   title: 'Time for another adventure!',
   city: 'Jersey City',
   state: 'NJ',
-  country: 'USA',
   UserId: 1
 };
 
@@ -32,7 +30,6 @@ var newItem3 = {
   title: 'Beach time!',
   city: 'Miami',
   state: 'FL',
-  country: 'USA',
   UserId: 2
 };
 
@@ -46,7 +43,6 @@ var newItem4 = {
   title: 'Camping Trip',
   city: 'Catskill',
   state: 'NY',
-  country: 'USA',
   UserId: 3
 };
 
@@ -60,7 +56,6 @@ var newItem5 = {
   title: 'Surfing!',
   city: 'Juno',
   state: 'AK',
-  country: 'USA',
   UserId: 4
 };
 
@@ -74,7 +69,6 @@ var newItem6 = {
   title: 'Motorcycle Trip!',
   city: 'Los Angeles',
   state: 'CA',
-  country: 'USA',
   UserId: 5
 };
 
@@ -88,7 +82,6 @@ var newItem7 = {
   title: 'Museums',
   city: 'New York City',
   state: 'NY',
-  country: 'USA',
   UserId: 6
 };
 

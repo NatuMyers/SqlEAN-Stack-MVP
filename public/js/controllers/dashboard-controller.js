@@ -8,7 +8,7 @@ angular.module("mvpApp")
       $scope.getItems();
     },100);
   }
-
+  
 // Items
 
   $scope.getUserItems = function() {
