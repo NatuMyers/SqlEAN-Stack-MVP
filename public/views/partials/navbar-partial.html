@@ -4,6 +4,7 @@
 
 
 
+
 <nav role="navigation z-depth-3">
     <div class="nav-wrapper container ">
 
@@ -47,14 +48,22 @@
                   </form>
               </ul>
 
-              <ul class="right hide-on-med-and-down">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/dashboard">Dashboard</a></li>
-                    <li><a href="/{{ user.username }}">Profile</a></li>
-                    <li><a href="/items">All Items</a></li>
-                    <li role="separator" class="divider"></li>
-                    <li><a ng-click="logout()">Log Out</a></li>
-                </ul>
+
+              <!-- Dropdown Trigger -->
+              <a class='dropdown-button btn' href='#' data-activates='dropdown1'>{{user.fname}}</a>
+
+              <!-- Dropdown Structure -->
+              <ul id='dropdown1' class='dropdown-content right hide-on-med-and-down'>
+                <li><a href="/">Home</a></li>
+                <li><a href="/dashboard">Dashboard</a></li>
+                <li><a href="/{{ user.username }}">Profile</a></li>
+                <li><a href="/items">All Items</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="divider"></li>
+                <li><a ng-click="logout()">Log Out</a></li>
+              </ul>
+
+
 
             </div>
 
