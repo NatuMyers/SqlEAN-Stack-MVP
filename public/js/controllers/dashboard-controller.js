@@ -25,8 +25,6 @@ angular.module("mvpApp")
 
   $scope.addItem = function(){
 
-
-
     // item add
     $http.post("/api/items", {
       title: $scope.item.title,
@@ -158,8 +156,6 @@ $scope.getInvoices = function() {
     });
   }
 $scope.getInvoices();
-
-
 
 
 
