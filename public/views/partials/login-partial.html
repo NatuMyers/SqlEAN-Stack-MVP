@@ -1,0 +1,40 @@
+<div ng-controller="AppCtrl">
+<div class = "container">
+<div class = "col s12 m4 l4 offset-s5 ">
+  <div class=" card  z-depth-1 ">
+      <div class="card-content center black-text">
+        <form class="form-horizontal formLogin">
+          <h3 class="thin">Login</h3>
+
+          <div class="form-group">
+            <div class="col m6 l6">
+                <h7 class="dash-item-heading fields">Username</h7>
+              <input type="text" class="formPadding" id="username" name="username" ng-model="username">
+            </div>
+
+            <div class="col m6 l6 ">
+              <h7 class="dash-item-heading fields">Password</h7>
+              <input type="password" class="formPadding" id="password" ng-model="password">
+              <uib-alert ng-repeat="alert in alerts" type="danger" close="closeAlert($index)">{{alert.msg}}</uib-alert>
+            </div>
+
+            <div class="col s10 offset s1">
+              <button class="loginSubmitBtn btn btn-success" ng-click="login()" type="submit">Log in</button>
+              <div class="text-center already">
+
+                <br>
+                <span class="grey-text">New to MVP?</span>
+                <a href="/signup">Sign up</a>
+              </div>
+            </div>
+          </div>
+
+          </div>
+
+          <br/>
+        </form>
+      </div>
+    </div>
+</div>
+</div>
+</div>
