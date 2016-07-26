@@ -42,7 +42,6 @@
                               </h5>
 
                                 <form class="row container center" name="itemForm">
-                                    <div class="add-itin-form">
                                         <br>
                                         <div class="center ">
                                             <input ng-model="item.title" name="title" type="text" class=" validate" placeholder="Item Name">
@@ -55,8 +54,6 @@
                                         <div class="center ">
                                             <input ng-model="item.state" name="state" type="text" class=" validate" placeholder="Amount">
                                         </div>
-
-                                    </div>
                                     <div class="row">
                                         <div class="center">
                                             <a class="waves-effect waves-light btn center white-text" ng-click="addOrder()" type="submit" ng-submit="addOrder()">Add Item</a>
@@ -166,7 +163,7 @@
 
     <!-- Producer Dashboard -->
     <!-- these guys ADD ITEMS -->
-    <div id="{{user.type}}" ng-if="user.type == 'producer'">
+    <div ng-init="init()" id="{{user.type}}" ng-if="user.type == 'producer'">
         <!-- Containers-->
         <div class="container">
             <div class="row">

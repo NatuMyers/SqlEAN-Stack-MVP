@@ -14,6 +14,7 @@
                             <div class="card-content black-text">
 
                                 <div class=" pull-left grey-text"> Purchaser Dashboard </div><br></br>
+
                                 <div class="center">
                                     <p>
                                         <img class="main-profile-img" src="http://www.gravatar.com/avatar/{{ userData.email | gravatar }}?s=200&d=mm" width="150px">
@@ -37,7 +38,6 @@
                         <div class="card   lighten-5">
                             <div class="card-content black-text center">
                                 <form class="row container center" name="itemForm">
-                                    <div class="add-itin-form">
                                         <br>
                                         <div class="center ">
                                             <input ng-model="item.title" name="title" type="text" class=" validate" placeholder="Item Name">
@@ -46,12 +46,10 @@
                                         <div class="center ">
                                             <input ng-model="item.city" name="city" type="text" class=" validate" placeholder="Amount">
                                         </div>
-
                                         <div class="center ">
                                             <input ng-model="item.state" name="state" type="text" class=" validate" placeholder="Amount">
                                         </div>
 
-                                    </div>
                                     <div class="row">
                                         <div class="center">
                                             <a class="waves-effect waves-light btn center white-text" ng-click="addItem()" type="submit" ng-submit="addItem()">Add Item</a>
