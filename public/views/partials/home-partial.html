@@ -11,9 +11,22 @@
       <div class="row center">
         <h5 class="header col s12 light">The big brother you always wanted.</h5>
       </div>
+
+      <form>
+
+      <span>
+        <input checked="true" name="group1" type="radio" id="test1" ng-model="type" value="producer" />
+
+        <label for="test1">Producer</label>
+        <input name="group1" type="radio" id="test2" ng-model="type" value="purchaser" checked = "checked"/>
+
+        <label for="test2">Purchaser</label>
+      </span>
+
       <div class="row center">
-        <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light ">Get Started</a>
+        <a href="/login" id="download-button" ng-click="gotoLogin()" type="submit" class="btn btn-success  thin large waves-effect waves-light signupBtn">Join</a>
       </div>
+      </form>
       <br><br>
 
     </div>
@@ -26,9 +39,9 @@
   <div class="section">
 
 
-    <!-- Signup Modal 
-    <div ng-include="'/views/partials/signup-modal-partial.html'"></div> 
-	
+    <!-- Signup Modal
+    <div ng-include="'/views/partials/signup-modal-partial.html'"></div>
+
     <!--   Icon Section   -->
     <div class="row">
       <div class="col s12 m4">
@@ -69,4 +82,3 @@
 <!-- <div class-"footer-bar" ng-include="'/views/partials/footer-bar-partial.html'"></div>  Footer Bar -->
 
 </div>
-
