@@ -63,7 +63,7 @@ module.exports = function(sequelize, DataTypes) {
       associate: function(models) {
         User.hasMany(models.Comment),
         User.hasMany(models.Invoice),
-        User.hasMany(models.Order)
+        User.hasMany(models.Item)
       }
     }
   });
