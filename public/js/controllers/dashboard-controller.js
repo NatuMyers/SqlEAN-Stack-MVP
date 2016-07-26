@@ -31,7 +31,7 @@ angular.module("mvpApp")
       state: $scope.item.state,
       UserId: $scope.user.id
     })
-    .then(function (result) {
+    .then(function (result) { // push it then empty it
       $scope.userItems.push(result.data);
       $scope.item.title = "";
       $scope.item.city = "";
