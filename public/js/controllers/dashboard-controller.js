@@ -19,7 +19,7 @@ angular.module("mvpApp")
     }, function(err) {
       console.log(err)
     });
-  };
+  }
 
   $scope.addItem = function(){
     $http.post("/api/items", {
@@ -36,7 +36,7 @@ angular.module("mvpApp")
      },function(err) {
       console.log(err)
     });
-  };
+  }
 
   $scope.deleteItem = function(itemId){
     $http.delete("/api/items/" + itemId)
@@ -45,7 +45,7 @@ angular.module("mvpApp")
      }), (function(err) {
       console.log(err);
     });
-  };
+  }
 
   $scope.editItem = function(item) {
     $http.put('/api/items/' + item.id, {
@@ -56,7 +56,7 @@ angular.module("mvpApp")
       country:item.country,
       description:item.description
     });
-  };
+  }
 
   $scope.addActivity = function(itemId, newActivity){
     newActivity.ItemId = itemId;
@@ -66,7 +66,7 @@ angular.module("mvpApp")
      }), (function(err) {
       console.log(err);
     });
-  };
+  }
 
   $scope.deleteActivity = function(activityId){
 
@@ -77,7 +77,7 @@ angular.module("mvpApp")
      }), (function(err) {
       console.log(err);
     });
-  };
+  }
 
   //FOR SEARCH PARTIAL WHEN COMPLETED
   $scope.getItems = function() {
