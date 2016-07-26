@@ -25,7 +25,6 @@
     "epilogue": "^0.6.5",
     "express": "^4.13.4",
     "express-session": "^1.13.0",
-    "materialize-sass": "^0.95.2",
     "morgan": "^1.7.0",
     "mysql": "^2.10.2",
     "passport": "^0.3.2",

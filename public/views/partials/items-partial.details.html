@@ -12,7 +12,7 @@
     <h6>Be the first to comment on this item!</h6>
   </div>
   <div ng-show="comments" ng-repeat="comment in comments">
-
+    <div>
       <h6><a ui-sref="user({username: comment.User.username})">{{comment.User.username}}</a> says:</h6>
       <p>{{comment.text}}</p>
     </div>

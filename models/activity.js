@@ -14,7 +14,7 @@ module.exports = function(sequelize, DataTypes) {
   }, {
     classMethods: {
       associate: function(models) {
-        //nActivity.belongsTo(models.Item)
+        Activity.belongsTo(models.Item)
       }
     }
   }

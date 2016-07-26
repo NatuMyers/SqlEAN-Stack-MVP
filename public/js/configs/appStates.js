@@ -45,11 +45,6 @@ angular.module('mvpApp')
       controller: 'userController',
       templateUrl: 'views/partials/profile-partial.html'
     })
-    .state('handshake', {
-      url: '/handshake',
-      //controller: 'formController',
-      templateUrl: 'views/partials/handshake-partial.html'
-    })
 
-  $locationProvider.html5Mode(true); //removes annoying hashtage from url
+  $locationProvider.html5Mode(true);
 }]);

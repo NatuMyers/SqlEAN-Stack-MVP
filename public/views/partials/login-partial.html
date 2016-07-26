@@ -7,14 +7,14 @@
           <h3 class="thin">Login</h3>
 
           <div class="form-group">
-            <div class="col m6 l6">
+            <div class="col m6 l6 inputField">
                 <h7 class="dash-item-heading fields">Username</h7>
-              <input type="text" class="formPadding" id="username" name="username" ng-model="username">
+              <input type="text" class=" validate mdLgFields formPadding" id="username" name="username" ng-model="username">
             </div>
 
             <div class="col m6 l6 ">
               <h7 class="dash-item-heading fields">Password</h7>
-              <input type="password" class="formPadding" id="password" ng-model="password">
+              <input type="password" class=" mdLgFields formPadding inputField" id="password" ng-model="password">
               <uib-alert ng-repeat="alert in alerts" type="danger" close="closeAlert($index)">{{alert.msg}}</uib-alert>
             </div>
 

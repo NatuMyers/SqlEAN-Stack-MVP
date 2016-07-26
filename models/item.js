@@ -16,17 +16,20 @@ module.exports = function(sequelize, DataTypes) {
     },
     state: {
       type: DataTypes.STRING
+    },
+    country: {
+      type: DataTypes.STRING
+    },
+    description:{
+      type: DataTypes.STRING
     }
 
   }, {
     classMethods: {
       associate: function(models) {
-        // Item.belongsTo(models.Order),
-        Item.belongsTo(models.User)
-        //Item.hasMany(models.Comment),
-        // Each item can have an order (from purchaser)
-        //then invoice (from farmer)
-        //nItem.hasMany(models.Activity)
+        Item.belongsTo(models.User),
+        Item.hasMany(models.Comment),
+        Item.hasMany(models.Activity)
       }
     }
   });

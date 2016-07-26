@@ -27,25 +27,6 @@ module.exports.routes = function(app) {
     associations: true
   });
 
-  var orderResource = epilogue.resource({
-    model: models.Order,
-    endpoints: [
-    '/api/orders',
-    '/api/orders/:id'
-    ],
-    associations: true
-  });
-
-
-  var itemResource = epilogue.resource({
-    model: models.Item,
-    endpoints: [
-    '/api/items',
-    '/api/items/:id'
-    ],
-    associations: true
-  });
-
   var activityResource =  epilogue.resource({
     model: models.Activity,
     endpoints: [
