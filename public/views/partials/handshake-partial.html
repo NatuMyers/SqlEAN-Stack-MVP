@@ -82,7 +82,7 @@
                                 <div ng-repeat="item in userItems | orderBy:'-createdAt'">
                                     <a href="#!" class="secondary-content"><i class="material-icons">not_interested</i><a href="/items/{{item.id}}" target="_blank" class="collection-item black-text" ng-hide="deleted">
                                         {{item.title}}
-                                        <p class="grey-text">{{item.availability}} Available</p>
+                                        <p class="grey-text">{{item.city}} Available</p>
                                     </a>
                                 </div>
                             </div>
