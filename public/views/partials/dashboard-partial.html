@@ -199,26 +199,17 @@
                                   Show Purchasers What You Have Available
                               </h5>
                                 <form class="row container center" name="itemForm" ng-submit="addItem()">
-                                    <div class="add-itin-form">
+
+                                  <div class="center ">
                                         <br>
-                                        <div class="center ">
                                             <input ng-model="item.title" name="title" type="text" class="form-control validate" placeholder="Item Name">
-                                        </div>
                                         <br>
-                                        <div class="center ">
                                             <input ng-model="item.city" name="city" type="text" class="form-control validate" placeholder="Amount">
-                                        </div>
-
-                                        <div class="center ">
                                             <input ng-model="item.state" name="state" type="text" class="form-control validate" placeholder="Amount">
-                                        </div>
 
+                                          <a class="waves-effect waves-light btn center white-text" ng-click="addItem()" type="submit" ng-submit="addItem()">Add Item</a>
                                     </div>
-                                    <div class="row">
-                                        <div class="center">
-                                            <a class="waves-effect waves-light btn center white-text" onclick="addItem()" type="submit" ng-submit="addItem()">Add Item</a>
-                                        </div>
-                                    </div>
+
                                 </form>
                             </div>
                         </div>
