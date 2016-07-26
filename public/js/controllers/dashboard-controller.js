@@ -25,6 +25,7 @@ angular.module("mvpApp")
 
   $scope.addItem = function(){
     // item add
+    console.log("hiiiiiiii")
     $http.post("/api/items", {
       title: $scope.item.title,
       city: $scope.item.city,
