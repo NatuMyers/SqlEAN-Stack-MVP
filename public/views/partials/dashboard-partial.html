@@ -207,7 +207,7 @@
                                             <input ng-model="item.city" name="city" type="text" class="form-control validate" placeholder="Amount">
                                             <input ng-model="item.state" name="state" type="text" class="form-control validate" placeholder="Amount">
 
-                                          <button class="waves-effect waves-light btn center white-text" type="submit">Add Item</button>
+                                          <button class="waves-effect waves-light btn center white-text" ng-click="addItem()" type="submit" ng-submit="addItem()">Add Item</button>
                                     </div>
 
                                 </form>

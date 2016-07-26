@@ -22,7 +22,7 @@ angular.module("mvpApp")
   };
 
   $scope.addItem = function(){
-    $http.post("/api/items", {
+    $http.post('/api/items', {
       title: $scope.item.title,
       city: $scope.item.city,
       state: $scope.item.state,
@@ -50,8 +50,8 @@ angular.module("mvpApp")
   $scope.editItem = function(item) {
     $http.put('/api/items/' + item.id, {
       title: item.title,
-      city:item.city,
-      state:item.state
+      city: item.city,
+      state: item.state
     });
   };
 
