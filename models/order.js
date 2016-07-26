@@ -1,4 +1,5 @@
 
+// Order (-> item )->  Invoice
 module.exports = function(sequelize, DataTypes) {
   var Order = sequelize.define('Order', {
     recievingProducer: {
@@ -18,7 +19,8 @@ module.exports = function(sequelize, DataTypes) {
     classMethods: {
       associate: function(models) {
         Order.belongsTo(models.User),
-        Order.hasMany(models.Item),
+        Order.hasOne(models.Invoice),
+        //nOrder.hasMany(models.Item),
         Order.hasMany(models.Activity)
       }
     }

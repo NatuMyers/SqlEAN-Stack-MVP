@@ -1,6 +1,17 @@
 angular.module('mvpApp')
 .controller('AppCtrl', function($scope, $rootScope, $http, $state) {
 
+
+  $scope.gotoLogin = function() {
+      type: $scope.type
+    .then(function(result) {
+      //$('.login')
+      // After you successfully signup
+      $state.go('signup');
+    })
+  } // end sign up
+
+
   $scope.signup = function() {
     $http.post('/signup', {
       username: $scope.username,
