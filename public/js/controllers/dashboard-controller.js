@@ -26,8 +26,6 @@ angular.module("mvpApp")
       title:$scope.item.title,
       city: $scope.item.city,
       state: $scope.item.state,
-      country: $scope.item.country,
-      description: $scope.item.description,
       UserId: $scope.user.id
     })
     .then(function (result) {
@@ -35,8 +33,6 @@ angular.module("mvpApp")
       $scope.item.title = "";
       $scope.item.city = "";
       $scope.item.state = "";
-      $scope.item.country = "";
-      $scope.item.description = "";
      },function(err) {
       console.log(err)
     });
@@ -55,9 +51,7 @@ angular.module("mvpApp")
     $http.put('/api/items/' + item.id, {
       title: item.title,
       city:item.city,
-      state:item.state,
-      country:item.country,
-      description:item.description
+      state:item.state
     });
   };
 
