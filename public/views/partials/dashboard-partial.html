@@ -1,11 +1,11 @@
 
 <body class = "grey lighten-5">
     <br>
-    <main  ng-init="init()">
+    <main  >
 
     <!-- Purchaser Dashboard -->
     <!-- these guys ADD ORDERS -->
-    <div id="{{user.type}}" ng-if="user.type == 'purchaser'">
+    <div id="{{user.type}}" ng-init="init()" ng-if="user.type == 'purchaser'">
         <!-- Containers-->
         <div class="container">
             <div class="row">
@@ -41,7 +41,7 @@
                                   Create A New Order
                               </h5>
 
-                                <form class="row container center" name="itemForm">
+                                <form class="row container center" name="itemForm" ng-submit="addOrder()">
                                         <br>
                                         <div class="center ">
                                             <input ng-model="item.title" name="title" type="text" class=" validate" placeholder="Item Name">
@@ -82,7 +82,7 @@
                                 <div ng-repeat="item in userItems | orderBy:'-createdAt'">
                                     <a href="#!" class="secondary-content"><i class="material-icons">not_interested</i><a href="/items/{{item.id}}" target="_blank" class="collection-item black-text" ng-hide="deleted">
                                         {{item.title}}
-                                        <p class="grey-text">{{item.availability}} Available</p>
+                                        <p class="grey-text">{{item.city}} Available</p>
                                     </a>
                                 </div>
                             </div>
@@ -242,7 +242,7 @@
                                 <div ng-repeat="item in userItems | orderBy:'-createdAt'">
                                     <a href="#!" class="secondary-content"><i class="material-icons">not_interested</i><a href="/items/{{item.id}}" target="_blank" class="collection-item black-text" ng-hide="deleted">
                                         {{item.title}}
-                                        <p class="grey-text">{{item.availability}} Available</p>
+                                        <p class="grey-text">{{item.city}} Available</p>
                                     </a>
                                 </div>
                             </div>
