@@ -20,7 +20,7 @@ module.exports = function(sequelize, DataTypes) {
       associate: function(models) {
         Order.belongsTo(models.User),
         Order.hasOne(models.Invoice),
-        //Order.hasMany(models.Item),
+        //nOrder.hasMany(models.Item),
         Order.hasMany(models.Activity)
       }
     }

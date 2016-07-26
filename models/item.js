@@ -23,10 +23,10 @@ module.exports = function(sequelize, DataTypes) {
       associate: function(models) {
         // Item.belongsTo(models.Order),
         Item.belongsTo(models.User),
-        Item.hasMany(models.Comment),
+        //Item.hasMany(models.Comment),
         // Each item can have an order (from purchaser)
         //then invoice (from farmer)
-        Item.hasMany(models.Activity)
+        //nItem.hasMany(models.Activity)
       }
     }
   });
