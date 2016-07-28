@@ -61,7 +61,6 @@
                                 <span ng-show="!userItems.length">0 items</span>
                             </h5>
                             <input type="text" ng-model="searchBox"  placeholder="Search for an item...">
-<<<<<<< HEAD
                             <div class="collection z-depth-1">
                                 <div ng-repeat="item in allItems | filter: searchBox | orderBy:'-createdAt'">
                                     <a href="#!" class="secondary-content"><i class="material-icons">not_interested</i><a href="/items/{{item.id}}" target="_blank" class="collection-item black-text" ng-hide="deleted">
@@ -70,10 +69,8 @@
                                     </a>
                                 </div>
                             </div>
-=======
->>>>>>> 36e0b0f91a4a88a2150c4b34f1adacceb8a25c86
                             <div class="collection z-depth-1">
-                                <div ng-repeat="item in userItems | filter: searchBox | orderBy:'-createdAt'">
+                                <div ng-repeat="item in userItems | orderBy:'-createdAt'">
                                     <a href="#!" class="secondary-content"><i class="material-icons">not_interested</i><a href="/items/{{item.id}}" target="_blank" class="collection-item black-text" ng-hide="deleted">
                                         {{item.title}}
                                         <p class="grey-text">{{item.city}} Available</p>
@@ -81,7 +78,7 @@
                                 </div>
                             </div>
                             <div class="center">
-                                <a href='/orderforms' class="waves-effect waves-light btn center white-text" ng-click="addOrder()" type="submit" ng-submit="addOrder">Add Order</a>
+                                <a class="waves-effect waves-light btn center white-text" ng-click="addOrder()" type="submit" ng-submit="addOrder">Add Item</a>
                             </div>
 
                         </div>
@@ -234,9 +231,8 @@
                                 available
                                 <span ng-show="!userItems.length">0 items</span>
                             </h5>
-                            <input type="text" ng-model="searchBox"  placeholder="Search for an item...">
                             <div class="collection z-depth-1">
-                                <div ng-repeat="item in userItems | filter: searchBox | orderBy:'-createdAt'">
+                                <div ng-repeat="item in userItems | orderBy:'-createdAt'">
                                     <a href="#!" class="secondary-content"><i class="material-icons">not_interested</i><a href="/items/{{item.id}}" target="_blank" class="collection-item black-text" ng-hide="deleted">
                                         {{item.title}}
                                         <p class="grey-text">{{item.city}} Available</p>
@@ -244,8 +240,7 @@
                                 </div>
                             </div>
                             <div class="center">
-                               <!-- <a class="waves-effect waves-light btn center white-text" ng-click="addOrder()" type="submit" ng-submit="addOrder">Add Item</a> -->
-                               <a href='/orderforms' class="waves-effect waves-light btn center white-text" ng-click="addOrder()" type="submit" ng-submit="addOrder">Add Order</a>
+                                <a class="waves-effect waves-light btn center white-text" ng-click="addOrder()" type="submit" ng-submit="addOrder">Add Item</a>
                             </div>
 
                         </div>
