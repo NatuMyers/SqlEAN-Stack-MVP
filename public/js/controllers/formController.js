@@ -13,6 +13,10 @@ angular.module('mvpApp')
 
 
   $scope.signup = function() {
+	 // if($scope.username.length < 6) {// for some reason this fucks
+     //  $scope.alerts = [];			// everything up
+     //   $scope.alerts.push({msg: 'Your username is too short'});
+     // } else { 
     $http.post('/signup', {
       username: $scope.username,
       password: $scope.password,
@@ -20,7 +24,8 @@ angular.module('mvpApp')
       fname: $scope.fname,
       company: $scope.company,
       type: $scope.type
-    })
+    //}
+	  })
     .then(function(result) {
       //$('.login')
       // After you successfully signup
