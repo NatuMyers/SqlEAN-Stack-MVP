@@ -33,7 +33,7 @@ var newItem3 = {
   city: 'Miami',
   state: 'FL',
   country: 'USA',
-  UserId: 2
+  UserId: 1
 };
 
 
@@ -47,7 +47,7 @@ var newItem4 = {
   city: 'Catskill',
   state: 'NY',
   country: 'USA',
-  UserId: 3
+  UserId: 1
 };
 
 
@@ -61,7 +61,7 @@ var newItem5 = {
   city: 'Juno',
   state: 'AK',
   country: 'USA',
-  UserId: 4
+  UserId: 1
 };
 
 
@@ -75,7 +75,7 @@ var newItem6 = {
   city: 'Los Angeles',
   state: 'CA',
   country: 'USA',
-  UserId: 5
+  UserId: 1
 };
 
 
@@ -89,7 +89,7 @@ var newItem7 = {
   city: 'New York City',
   state: 'NY',
   country: 'USA',
-  UserId: 6
+  UserId: 1
 };
 
 
