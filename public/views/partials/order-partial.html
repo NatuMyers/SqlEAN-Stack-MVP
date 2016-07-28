@@ -1,0 +1,26 @@
+<body class = "grey lighten-5">
+    <br>
+    <main  ng-init="init()">
+
+      <div class="collection z-depth-1">
+        <table>
+          <tr>
+            <th>Item</th>
+            <th>Farmer</th>
+            <th>Unit</th>
+            <th>Price/Unit</th>
+            <th>Quantity</th>
+            <th>Subtotal</th>
+          </tr>
+          <tr ng-repeat="item in userItems | orderBy:'-createdAt'">
+              <td>{{item.title}}</td>
+              <td>{{item.User}}</td>
+              <td>{{item.city}}</td>
+              <td>{{item.state}}</td>
+              <td><input name="quantity" type="text" class=" validate" placeholder="Quantity"></td>
+              <td>Subtotal here</td>
+          </tr>
+        </table>
+      </div>
+
+    </main>
