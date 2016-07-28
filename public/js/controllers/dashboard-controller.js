@@ -1,6 +1,9 @@
 angular.module("mvpApp")
 .controller('dashboardCtrl', ['$scope', '$http', '$location', function($scope, $http, $location) {
 
+
+// Producer
+
   $scope.init = function() {
     setTimeout(function() {
       $scope.checkAuthentication();
@@ -86,6 +89,29 @@ angular.module("mvpApp")
       });
     }
   $scope.getItems();
+
+
+// Purchaser
+
+// new - make order
+$scope.addOrder = function(){
+  $http.post('/api/orders', {
+    UserId: $scope.user.id
+  })
+};
+
+// new
+$scope.connectItemToOrder = function(orderId) {
+  $http.put('/api/items' + item.id, {
+    OrderId: orderId
+    // OrderId is an attribute of item automatically made in sequelize.
+    // it is what the item is bound to
+  });
+};
+
+
+
+// Finally, for both users
 
   // Block users from going to dashboard page when not logged in.
   $scope.checkAuthentication = function() {
