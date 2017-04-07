@@ -4,7 +4,7 @@
 
 * SQL (Sequelize)
 * Angular
-* Express
+* Express 
 * Node
 
 ### User story
